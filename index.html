@@ -20,6 +20,7 @@
       <a href="#top" class="brand"><svg class="brand-mark" viewBox="0 0 32 32" aria-hidden="true"><rect width="32" height="32" rx="7" fill="#0f766e"/><g stroke="#ffffff" stroke-width="1.9" stroke-linecap="round"><line x1="16.00" y1="12.80" x2="16.00" y2="3.80"/><line x1="18.26" y1="13.74" x2="24.63" y2="7.37"/><line x1="19.20" y1="16.00" x2="28.20" y2="16.00"/><line x1="18.26" y1="18.26" x2="24.63" y2="24.63"/><line x1="16.00" y1="19.20" x2="16.00" y2="28.20"/><line x1="13.74" y1="18.26" x2="7.37" y2="24.63"/><line x1="12.80" y1="16.00" x2="3.80" y2="16.00"/><line x1="13.74" y1="13.74" x2="7.37" y2="7.37"/></g><g fill="#ffffff"><circle cx="16.00" cy="3.40" r="1.7"/><circle cx="24.91" cy="7.09" r="1.7"/><circle cx="28.60" cy="16.00" r="1.7"/><circle cx="24.91" cy="24.91" r="1.7"/><circle cx="16.00" cy="28.60" r="1.7"/><circle cx="7.09" cy="24.91" r="1.7"/><circle cx="3.40" cy="16.00" r="1.7"/><circle cx="7.09" cy="7.09" r="1.7"/></g><circle cx="16" cy="16" r="8.3" fill="none" stroke="#ffffff" stroke-width="2.6"/><circle cx="16" cy="16" r="3" fill="#ffffff"/><circle cx="16" cy="16" r="1.1" fill="#0f766e"/></svg>Ondatrace</a>
       <nav class="topnav">
         <a href="#how">How it works</a>
+        <a href="#ai">How the AI works</a>
         <a href="thesis/">Product thesis</a>
         <a href="decisions/">Design decisions</a>
         <a href="try/" class="btn btn-small">Try the demo</a>
@@ -140,6 +141,49 @@
           <strong>Works with the tools you already use.</strong> Built on MCP, the open standard for
           connecting AI to business tools.
         </p>
+      </div>
+    </section>
+
+    <section class="section" id="ai">
+      <div class="wrap">
+        <h2>How the AI works</h2>
+        <p class="section-lede">
+          The AI does the reading and the writing. Fixed rules make the calls that have to come out
+          the same every time, and a person approves anything with real consequences.
+        </p>
+        <div class="cards cards-3 callouts">
+          <div class="card">
+            <p class="eyebrow">Reads</p>
+            <h3>Turns messy messages into facts</h3>
+            <p>It reads emails, chat, tickets and meeting transcripts, pulls out the commitments, dates and decisions in them, and matches the same work across tools. Each fact keeps a link to the message it came from.</p>
+          </div>
+          <div class="card">
+            <p class="eyebrow">Judges</p>
+            <h3>Rules decide, the AI explains</h3>
+            <p>Project health and what needs attention come from fixed rules built with practicing project managers. The AI writes the explanation, the next step and the coaching tip, but it can't change the result.</p>
+          </div>
+          <div class="card">
+            <p class="eyebrow">Acts</p>
+            <h3>You approve anything that matters</h3>
+            <p>Saving evidence happens on its own, and so can small internal task updates if you allow it. Moving a committed milestone, closing a risk, sending a message or changing a record in your own tools always waits for a person.</p>
+          </div>
+          <div class="card">
+            <p class="eyebrow">Runs on its own</p>
+            <h3>Works between your meetings</h3>
+            <p>It checks your connected tools every 15 to 30 minutes, and within about a minute of a Slack message. It reruns the analysis only on projects where something changed, so a quiet project doesn't use AI time or send you anything new.</p>
+          </div>
+          <div class="card">
+            <p class="eyebrow">Stays in its lane</p>
+            <h3>Permissions live in the app, not the AI</h3>
+            <p>What each person can see is enforced by the application, not by instructions to the AI. If a finding rests on someone's private email, people who can't read that email don't see the finding at all.</p>
+          </div>
+          <div class="card">
+            <p class="eyebrow">Works with your AI</p>
+            <h3>Your assistant can ask it too</h3>
+            <p>A read-only MCP connection lets assistants like Claude or Copilot ask Ondatrace what needs attention and see the evidence, with the same permissions you have. Next: hosted access with per-person sign-in, then letting assistants propose actions for you to approve.</p>
+          </div>
+        </div>
+        <p class="section-note">Ondatrace runs on Claude, from Anthropic. Text from emails, chats and tickets is treated as information to weigh, never as instructions to follow.</p>
       </div>
     </section>
 
