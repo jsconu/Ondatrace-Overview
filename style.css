@@ -860,7 +860,7 @@ h1, h2, h3 { font-family: var(--font-display); color: var(--ink); margin: 0; }
   .layer-diagram .a-top { grid-template-columns: 1fr; }
   .layer-diagram .a-steps { grid-template-columns: 1fr 1fr; }
   .layer-diagram .arw-top { grid-template-columns: 1fr; gap: 0; }
-  .layer-diagram .arw-top .arw-cell:first-child { display: none; }
+  .layer-diagram .arw-top .arw-cell:last-child { display: none; }
   .layer-diagram .lbl-desk { display: none; }
   .layer-diagram .lbl-mob { display: inline; }
   .layer-diagram .a-src-grid { grid-template-columns: repeat(2, 1fr); }
