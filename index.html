@@ -10,7 +10,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="style.css?v=5">
+  <link rel="stylesheet" href="style.css?v=6">
 </head>
 <body>
   <a href="#top" class="skip-link">Skip to main content</a>
@@ -20,6 +20,7 @@
       <a href="#top" class="brand"><svg class="brand-mark" viewBox="0 0 32 32" aria-hidden="true"><rect width="32" height="32" rx="7" fill="#0f766e"/><g stroke="#ffffff" stroke-width="1.9" stroke-linecap="round"><line x1="16.00" y1="12.80" x2="16.00" y2="3.80"/><line x1="18.26" y1="13.74" x2="24.63" y2="7.37"/><line x1="19.20" y1="16.00" x2="28.20" y2="16.00"/><line x1="18.26" y1="18.26" x2="24.63" y2="24.63"/><line x1="16.00" y1="19.20" x2="16.00" y2="28.20"/><line x1="13.74" y1="18.26" x2="7.37" y2="24.63"/><line x1="12.80" y1="16.00" x2="3.80" y2="16.00"/><line x1="13.74" y1="13.74" x2="7.37" y2="7.37"/></g><g fill="#ffffff"><circle cx="16.00" cy="3.40" r="1.7"/><circle cx="24.91" cy="7.09" r="1.7"/><circle cx="28.60" cy="16.00" r="1.7"/><circle cx="24.91" cy="24.91" r="1.7"/><circle cx="16.00" cy="28.60" r="1.7"/><circle cx="7.09" cy="24.91" r="1.7"/><circle cx="3.40" cy="16.00" r="1.7"/><circle cx="7.09" cy="7.09" r="1.7"/></g><circle cx="16" cy="16" r="8.3" fill="none" stroke="#ffffff" stroke-width="2.6"/><circle cx="16" cy="16" r="3" fill="#ffffff"/><circle cx="16" cy="16" r="1.1" fill="#0f766e"/></svg>Ondatrace</a>
       <nav class="topnav">
         <a href="#how">How it works</a>
+        <a href="#ai">Our PM agent</a>
         <a href="thesis/">Product thesis</a>
         <a href="decisions/">Design decisions</a>
         <a href="try/" class="btn btn-small">Try the demo</a>
@@ -140,6 +141,105 @@
           <strong>Works with the tools you already use.</strong> Built on MCP, the open standard for
           connecting AI to business tools.
         </p>
+      </div>
+    </section>
+
+    <section class="section" id="ai">
+      <div class="wrap">
+        <h2>How our project management agent works</h2>
+        <p class="section-lede">
+          Harness the power of our specially designed project management AI agent. It does the
+          reading and the writing, fixed rules make the calls that have to come out the same every
+          time, and a person approves anything with real consequences.
+        </p>
+
+        <figure class="layer-diagram" aria-label="Your sources feed the Ondatrace project management agent, which sends what needs attention to you and your team in Ondatrace, and optionally to AI assistants you connect.">
+  <div class="a-top">
+    <div class="a-user">
+      <p class="opt-tag opt-built">Built in</p>
+      <p class="ly-box-title">You and your team, in Ondatrace</p>
+      <p>No other AI tool needed. Your Today view and alerts show the few things that need you, each with a next step. For example, Ondatrace:</p>
+      <ul class="a-finds">
+        <li><b>Flags a customer promise at risk:</b> sales committed to a date the slipped work can't meet.</li>
+        <li><b>Spots a decision that didn't spread:</b> a spending freeze another team hasn't heard about.</li>
+        <li><b>Catches an overbooked person:</b> one engineer, three deadlines, one week off.</li>
+      </ul>
+    </div>
+    <div class="a-user">
+      <p class="opt-tag">Optional</p>
+      <p class="ly-box-title">Your AI assistants</p>
+      <p>Prefer to work from an AI assistant? Connect one through MCP and ask Ondatrace what matters, with your permissions.</p>
+      <div class="chips" style="margin-top:10px">
+        <span class="chip chip-plain">Claude</span>
+        <span class="chip chip-plain">Copilot</span>
+        <span class="chip chip-plain">Cursor</span>
+        <span class="chip chip-plain">Any MCP-compliant agent</span>
+      </div>
+    </div>
+  </div>
+  <div class="arw-row arw-top">
+    <div class="arw-cell"><span class="arw arw-big"></span><span class="arw-label"><span class="lbl-desk">What needs you today, with a next step</span><span class="lbl-mob">To your team in Ondatrace, and to your AI assistants if you connect one</span></span></div>
+    <div class="arw-cell"><span class="arw arw-big arw-opt"></span></div>
+  </div>
+  <div class="lyr a-core">
+    <p class="lyr-title">The judgment layer</p>
+    <p class="ly-core-name">Ondatrace project management agent</p>
+    <div class="a-steps">
+      <div class="a-step"><b>Reads &amp; links</b>Finds the same work across every tool</div>
+      <div class="a-step"><b>Judges like a PM</b>Fixed rules built with practicing PMs</div>
+      <div class="a-step"><b>Remembers</b>Risks stay open until something closes them</div>
+      <div class="a-step"><b>Respects access</b>Nobody sees what they couldn't read</div>
+    </div>
+  </div>
+  <div class="arw-row arw-bot">
+    <span class="arw"></span><span class="arw"></span><span class="arw"></span><span class="arw"></span><span class="arw"></span><span class="arw"></span><span class="arw"></span>
+  </div>
+  <div class="lyr a-src">
+    <div class="chips a-src-grid">
+      <span class="chip"><span class="dot dot-ico" style="background:#2456c9"><svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 8a2 2 0 0 0 0 4v4h18v-4a2 2 0 0 0 0-4V4H3z"/><path d="M14 4v12" stroke-dasharray="2 2"/></svg></span><span class="src-name">Tickets</span><span class="src-ex">Jira, Kantata</span></span>
+      <span class="chip"><span class="dot dot-ico" style="background:#c43d2f"><svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3 7 9 6 9-6"/></svg></span><span class="src-name">Email &amp; chat</span><span class="src-ex">Outlook, Gmail, Slack, Teams</span></span>
+      <span class="chip"><span class="dot dot-ico" style="background:#0b7fb3"><svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="6" width="14" height="12" rx="2"/><path d="m16 10 6-3v10l-6-3"/></svg></span><span class="src-name">Meetings</span><span class="src-ex">Teams transcripts</span></span>
+      <span class="chip"><span class="dot dot-ico" style="background:#6b4fd6"><svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="5" width="18" height="16" rx="2"/><path d="M3 10h18M8 3v4M16 3v4"/></svg></span><span class="src-name">Calendars</span><span class="src-ex">Outlook, Google</span></span>
+      <span class="chip"><span class="dot dot-ico" style="background:#2f7d54"><svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="4" width="18" height="16" rx="2"/><path d="M3 10h18M3 15h18M9 4v16"/></svg></span><span class="src-name">Plans &amp; sheets</span><span class="src-ex">Smartsheet, Excel</span></span>
+      <span class="chip"><span class="dot dot-ico" style="background:#3f8fd0"><svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 17l6-6 4 4 8-8"/><path d="M15 7h6v6"/></svg></span><span class="src-name">Deals</span><span class="src-ex">Salesforce</span></span>
+      <span class="chip"><span class="dot dot-ico" style="background:#b45309"><svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="4" width="15" height="16" rx="2"/><path d="M18 8h3v10a2 2 0 0 1-2 2M7 8h7M7 12h7M7 16h4"/></svg></span><span class="src-name">Industry news</span><span class="src-ex">Regulation, vendors, security</span></span>
+    </div>
+    <p class="lyr-title" style="margin:12px 0 0;text-align:center">Your sources</p>
+  </div>
+        </figure>
+        <div class="cards cards-3 callouts">
+          <div class="card">
+            <p class="eyebrow">Reads</p>
+            <h3>Turns messy messages into facts</h3>
+            <p>It reads emails, chat, tickets and meeting transcripts, pulls out the commitments, dates and decisions in them, and matches the same work across tools. Each fact keeps a link to the message it came from.</p>
+          </div>
+          <div class="card">
+            <p class="eyebrow">Judges</p>
+            <h3>Rules decide, the agent explains</h3>
+            <p>Project health and what needs attention come from fixed rules built with practicing project managers. The agent writes the explanation, the next step and the coaching tip, but it can't change the result.</p>
+          </div>
+          <div class="card">
+            <p class="eyebrow">Acts</p>
+            <h3>You approve anything that matters</h3>
+            <p>Saving evidence happens on its own, and so can small internal task updates if you allow it. Moving a committed milestone, closing a risk, sending a message or changing a record in your own tools always waits for a person.</p>
+          </div>
+          <div class="card">
+            <p class="eyebrow">Runs on its own</p>
+            <h3>Works between your meetings</h3>
+            <p>It checks your connected tools every 15 to 30 minutes, and within about a minute of a Slack message. It reruns the analysis only on projects where something changed, so a quiet project doesn't use AI time or send you anything new.</p>
+          </div>
+          <div class="card">
+            <p class="eyebrow">Stays in its lane</p>
+            <h3>Permissions live in the app, not the agent</h3>
+            <p>What each person can see is enforced by the application, not by instructions to the agent. If a finding rests on someone's private email, people who can't read that email don't see the finding at all.</p>
+          </div>
+          <div class="card">
+            <p class="eyebrow">Works with your AI</p>
+            <h3>Your assistant can ask it too</h3>
+            <p>A read-only MCP connection lets assistants like Claude or Copilot ask Ondatrace what needs attention and see the evidence, with the same permissions you have. Next: hosted access with per-person sign-in, then letting assistants propose actions for you to approve.</p>
+          </div>
+        </div>
+        <p class="section-note">Ondatrace runs on Claude, from Anthropic. Text from emails, chats and tickets is treated as information to weigh, never as instructions to follow.</p>
       </div>
     </section>
 
