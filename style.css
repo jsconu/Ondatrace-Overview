@@ -813,3 +813,58 @@ h1, h2, h3 { font-family: var(--font-display); color: var(--ink); margin: 0; }
 @media (max-width: 900px) { .helm-net { max-width: 460px; } }
 .callouts .card h3 { margin-bottom: 6px; }
 .section-note { margin: 24px 0 0; color: var(--ink-soft); font-size: 0.98rem; }
+
+/* ---------- layer diagram (How our project management agent works) ---------- */
+.layer-diagram { margin: 8px 0 40px; }
+.layer-diagram p { margin: 0; }
+.layer-diagram .lyr { border-radius: 14px; padding: 18px 20px; }
+.layer-diagram .lyr-title { font: 700 0.78rem var(--font-body); letter-spacing: .08em; text-transform: uppercase; margin: 0 0 12px; color: var(--ink-soft); }
+.layer-diagram .chips { display: flex; flex-wrap: wrap; gap: 10px; }
+.layer-diagram .chip { display: inline-flex; align-items: center; gap: 8px; padding: 7px 14px; border-radius: 999px;
+  background: var(--white); border: 1px solid var(--border); font: 600 0.9rem var(--font-body); color: var(--ink); }
+.layer-diagram .dot { width: 32px; height: 32px; border-radius: 50%; display: grid; place-items: center; }
+.layer-diagram .a-top { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; }
+.layer-diagram .a-user { background: var(--white); border: 1px solid var(--border); border-radius: 14px; padding: 16px 18px; }
+.layer-diagram .ly-box-title { margin: 0 0 4px; font: 700 1.05rem var(--font-display); color: var(--ink); }
+.layer-diagram .a-user > p:not(.ly-box-title):not(.opt-tag) { color: var(--ink-soft); font-size: .93rem; }
+.layer-diagram .opt-tag { display: inline-block; margin: 0 0 8px; padding: 3px 10px; border-radius: 999px; font: 700 .72rem var(--font-body);
+  letter-spacing: .06em; text-transform: uppercase; background: var(--bg-alt); color: var(--ink-soft); border: 1px dashed var(--border); }
+.layer-diagram .opt-built { background: var(--accent-ink-bg); color: var(--accent-ink); border: 1px solid transparent; }
+.layer-diagram .a-finds { margin: 10px 0 0; padding-left: 18px; color: var(--ink-soft); font-size: .93rem; line-height: 1.5; }
+.layer-diagram .a-finds li { margin-bottom: 4px; }
+.layer-diagram .a-finds b { color: var(--ink); }
+.layer-diagram .a-core { background: var(--primary); color: #fff; }
+.layer-diagram .a-core .lyr-title { color: rgba(255,255,255,.78); }
+.layer-diagram .ly-core-name { margin: 0 0 12px; font: 700 1.35rem var(--font-display); color: #fff; }
+.layer-diagram .a-steps { display: grid; grid-template-columns: repeat(4, 1fr); gap: 10px; }
+.layer-diagram .a-step { background: rgba(255,255,255,.12); border: 1px solid rgba(255,255,255,.25); border-radius: 10px; padding: 10px 12px; font-size: .9rem; }
+.layer-diagram .a-step b { display: block; font: 700 .95rem var(--font-display); margin-bottom: 2px; }
+.layer-diagram .a-src { background: var(--bg-alt); border: 1px solid var(--border); }
+.layer-diagram .a-src-grid { display: grid; grid-template-columns: repeat(7, 1fr); gap: 8px; }
+.layer-diagram .a-src-grid .chip { flex-direction: column; justify-content: flex-start; gap: 4px; border-radius: 12px; padding: 10px 6px; text-align: center; min-width: 0; }
+.layer-diagram .src-name { font: 700 .88rem var(--font-body); color: var(--ink); }
+.layer-diagram .src-ex { font: 500 .74rem var(--font-body); color: var(--ink-soft); line-height: 1.3; }
+.layer-diagram .arw { position: relative; display: block; width: 3px; height: 46px; margin: 12px auto 0; background: var(--primary); border-radius: 2px; }
+.layer-diagram .arw::after { content: ""; position: absolute; top: -11px; left: 50%; transform: translateX(-50%);
+  border-left: 8px solid transparent; border-right: 8px solid transparent; border-bottom: 12px solid var(--primary); }
+.layer-diagram .arw-big { width: 6px; height: 54px; margin: 16px 0 0; }
+.layer-diagram .arw-big::after { top: -14px; border-left-width: 13px; border-right-width: 13px; border-bottom-width: 16px; }
+.layer-diagram .arw-opt { background: repeating-linear-gradient(to top, var(--primary) 0 8px, transparent 8px 14px); opacity: .7; }
+.layer-diagram .arw-row { display: grid; padding: 4px 21px 6px; }
+.layer-diagram .arw-top { grid-template-columns: 1fr 1fr; gap: 14px; }
+.layer-diagram .arw-bot { grid-template-columns: repeat(7, 1fr); }
+.layer-diagram .arw-cell { display: flex; align-items: center; justify-content: center; gap: 14px; }
+.layer-diagram .arw-label { font: 600 .88rem var(--font-body); color: var(--accent-ink); max-width: 210px; }
+.layer-diagram .lbl-mob { display: none; }
+@media (max-width: 760px) {
+  .layer-diagram .a-top { grid-template-columns: 1fr; }
+  .layer-diagram .a-steps { grid-template-columns: 1fr 1fr; }
+  .layer-diagram .arw-top { grid-template-columns: 1fr; gap: 0; }
+  .layer-diagram .arw-top .arw-cell:first-child { display: none; }
+  .layer-diagram .lbl-desk { display: none; }
+  .layer-diagram .lbl-mob { display: inline; }
+  .layer-diagram .a-src-grid { grid-template-columns: repeat(2, 1fr); }
+  .layer-diagram .a-src-grid .chip { padding: 10px 8px; }
+  .layer-diagram .arw-bot { grid-template-columns: repeat(2, 1fr); }
+  .layer-diagram .arw-bot .arw:nth-child(n+3) { display: none; }
+}
