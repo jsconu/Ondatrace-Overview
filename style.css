@@ -840,7 +840,7 @@ h1, h2, h3 { font-family: var(--font-display); color: var(--ink); margin: 0; }
 .layer-diagram .a-step { background: rgba(255,255,255,.12); border: 1px solid rgba(255,255,255,.25); border-radius: 10px; padding: 10px 12px; font-size: .9rem; }
 .layer-diagram .a-step b { display: block; font: 700 .95rem var(--font-display); margin-bottom: 2px; }
 .layer-diagram .a-src { background: var(--bg-alt); border: 1px solid var(--border); }
-.layer-diagram .a-src-grid { display: grid; grid-template-columns: repeat(7, 1fr); gap: 8px; }
+.layer-diagram .a-src-grid { display: grid; grid-template-columns: repeat(6, 1fr); gap: 8px; }
 .layer-diagram .a-src-grid .chip { flex-direction: column; justify-content: flex-start; gap: 4px; border-radius: 12px; padding: 10px 6px; text-align: center; min-width: 0; }
 .layer-diagram .src-name { font: 700 .88rem var(--font-body); color: var(--ink); }
 .layer-diagram .src-ex { font: 500 .74rem var(--font-body); color: var(--ink-soft); line-height: 1.3; }
@@ -852,7 +852,7 @@ h1, h2, h3 { font-family: var(--font-display); color: var(--ink); margin: 0; }
 .layer-diagram .arw-opt { background: repeating-linear-gradient(to top, var(--primary) 0 8px, transparent 8px 14px); opacity: .7; }
 .layer-diagram .arw-row { display: grid; padding: 4px 21px 6px; }
 .layer-diagram .arw-top { grid-template-columns: 1fr 1fr; gap: 14px; }
-.layer-diagram .arw-bot { grid-template-columns: repeat(7, 1fr); }
+.layer-diagram .arw-bot { grid-template-columns: repeat(6, 1fr); }
 .layer-diagram .arw-cell { display: flex; align-items: center; justify-content: center; gap: 14px; }
 .layer-diagram .arw-label { font: 600 .88rem var(--font-body); color: var(--accent-ink); max-width: 210px; }
 .layer-diagram .lbl-mob { display: none; }
