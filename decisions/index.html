@@ -4,13 +4,13 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="color-scheme" content="light dark">
-  <title>Design decisions — Ondatrace</title>
-  <meta name="description" content="Choices made in the Ondatrace prototype, and the reasons behind them.">
+  <title>Design decisions | Ondatrace</title>
+  <meta name="description" content="Some of the decisions behind Ondatrace and the reasons for them.">
   <link rel="icon" type="image/svg+xml" href="../favicon.svg">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="../style.css?v=5">
+  <link rel="stylesheet" href="../style.css?v=6">
 </head>
 <body>
   <a href="#top" class="skip-link">Skip to main content</a>
@@ -22,6 +22,7 @@
         <a href="../#how">How it works</a>
         <a href="../thesis/">Product thesis</a>
         <a href="../decisions/" aria-current="page">Design decisions</a>
+        <a href="https://app.ondatrace.com/login">Sign in</a>
         <a href="../try/" class="btn btn-small">Try the demo</a>
       </nav>
     </div>
@@ -32,7 +33,7 @@
       <div class="wrap">
         <p class="hero-eyebrow">Design decisions</p>
         <h1>The choices behind Ondatrace, and why we made them</h1>
-        <p class="doc-lede">A selection of decisions from the prototype. Each one is meant to keep Ondatrace's findings accurate, checkable and under people's control.</p>
+        <p class="doc-lede">Some of the decisions behind Ondatrace. Most of them are about keeping its findings accurate and keeping people in control.</p>
         <nav class="doc-toc" aria-label="Decision groups">
           <a href="#trust">Evidence and trust</a>
           <a href="#people">People stay in charge</a>
@@ -55,9 +56,9 @@
           </article>
           <article class="card decision">
             <h3>Every finding keeps its sources</h3>
-            <p>Each finding links back to the messages, tickets and records behind it.</p>
+            <p>Each finding links back to the messages and tickets behind it.</p>
             <dl>
-              <dt>Why</dt><dd>Leaders should be able to check the evidence themselves, not just take the AI's word for it.</dd>
+              <dt>Why</dt><dd>Leaders should be able to check the evidence themselves instead of taking the AI's word for it.</dd>
             </dl>
           </article>
           <article class="card decision">
@@ -90,7 +91,7 @@
             </dl>
           </article>
           <article class="card decision">
-            <h3>The AI can suggest an action, not authorize it</h3>
+            <h3>The AI suggests actions but can't authorize them</h3>
             <p>The AI can recommend an action. Fixed rules decide whether it's allowed to happen.</p>
             <dl>
               <dt>Why</dt><dd>How confident the AI sounds should never decide what it's allowed to do.</dd>
@@ -105,7 +106,7 @@
         <h2>Reliability and security</h2>
         <div class="decisions">
           <article class="card decision">
-            <h3>Access control lives in the application, not the AI</h3>
+            <h3>The application controls access</h3>
             <p>Which organization and projects someone can see is enforced by the application and its database.</p>
             <dl>
               <dt>Why</dt><dd>Instructions given to an AI are not a security control.</dd>
@@ -128,7 +129,7 @@
           </article>
           <article class="card decision">
             <h3>Renewed tool logins are saved on their own</h3>
-            <p>When Ondatrace renews its access to a connected tool, it saves the new login right away, separately from the work that follows.</p>
+            <p>Ondatrace saves a renewed login to a connected tool right away, before doing any other work.</p>
             <dl>
               <dt>Why</dt><dd>Some tools replace the old login when they issue a new one. If a later error undid the save, the stored login would stop working for good.</dd>
             </dl>
@@ -144,7 +145,7 @@
 
   <footer class="site-footer">
     <div class="wrap footer-inner">
-      <p>&copy; 2026 Ondatrace. Prototype under active development.</p>
+      <p>&copy; 2026 Ondatrace. Private pilot. <a href="https://app.ondatrace.com/login">Sign in</a></p>
     </div>
   </footer>
 </body>
