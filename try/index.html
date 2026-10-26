@@ -1044,7 +1044,7 @@ const TOOLS = {
   zoom:{name:'Zoom',m:'Z',c:'#0b7fb3',n:9,unit:'meeting transcripts'},
   calendar:{name:'Google Calendar',m:'C',c:'#0f8a80',n:64,unit:'events'},
   salesforce:{name:'Salesforce',m:'S',c:'#3f8fd0',n:22,unit:'deal updates'},
-  monday:{name:'Monday',m:'M',c:'#c24f72',n:13,unit:'board changes'}
+  kantata:{name:'Kantata',m:'K',c:'#c24f72',n:13,unit:'task updates'}
 };
 const ALL = Object.keys(TOOLS);
 const dot = t => `<span class="dot" style="background:${TOOLS[t].c}" aria-hidden="true">${TOOLS[t].m}</span>`;
@@ -1078,11 +1078,11 @@ const PROJECTS = [
    m:{thr:[19,20,'story points'],blockers:0,scope:2,kpi:['Partners in pilot','0 / 12','pilot starts {d+30}']},
    ms:[[-12,'Invite flow prototype','done'],[30,'Partner pilot','dup'],[50,'Launch to all partners','on']],
    team:'Sam Okafor + 4 engineers', src:['jira','docs']},
-  {id:'pl',name:'Partner Launch',owner:'Jess Lin',tool:'monday',plan:'On track',purpose:'Partner invite emails and tax form collection',due:40,
+  {id:'pl',name:'Partner Launch',owner:'Jess Lin',tool:'kantata',plan:'On track',purpose:'Partner invite emails and tax form collection',due:40,
    budget:{total:260000,spent:162000,committed:10000,forecast:255000,why:'Overlaps with Partner Onboarding'},pct:60,elapsed:58,
    m:{thr:[11,10,'tasks'],blockers:0,scope:12,kpi:['Partners onboarded','3 / 12','by hand, via email']},
    ms:[[11,'API security review (owner: Priya)','priya'],[20,'Tax form collection live','dup'],[40,'All 12 partners onboarded','on']],
-   team:'Jess Lin + 2', src:['monday','docs']}
+   team:'Jess Lin + 2', src:['kantata','docs']}
 ];
 const money = v => v>=1e6?'$'+(v/1e6).toFixed(2).replace(/0$/,'')+'M':'$'+Math.round(v/1000)+'K';
 
@@ -1107,7 +1107,7 @@ const SCHED = {
         sT('Load-test sign-in','Kevin Doyle',15,26,'on',['jira:PLAT-420'])]),
       sG('API layer v3',['jira:Epic PLAT-380'],[
         sT('Rate limiting','Kevin Doyle',-25,5,'on',['jira:PLAT-388']),
-        sT('Partner endpoints','Kevin Doyle',0,30,'on',['jira:PLAT-430','monday:Partner Launch · API access']),
+        sT('Partner endpoints','Kevin Doyle',0,30,'on',['jira:PLAT-430','kantata:Partner Launch · API access']),
         sT('Deprecation shims for v2','Kevin Doyle',10,40,'on',['jira:PLAT-441'])])]),
     sG('Release',['jira:Fix version 3.0'],[
       sG('Security and performance',['jira:PLAT-450'],[
@@ -1181,30 +1181,30 @@ const SCHED = {
     sG('Build',['jira:Epic PON-2'],[
       sG('Self-service sign-up',['jira:PON-30'],[
         sT('Sign-up form','Sam Okafor',-10,15,'on',['jira:PON-31']),
-        sT('Invite emails','Sam Okafor',5,25,'risk',['jira:PON-38','monday:Partner Launch · invite emails'],'dup')]),
+        sT('Invite emails','Sam Okafor',5,25,'risk',['jira:PON-38','kantata:Partner Launch · invite emails'],'dup')]),
       sG('Tax forms',['jira:PON-40'],[
-        sT('Tax form collection','Sam Okafor',10,28,'risk',['jira:PON-44','monday:Partner Launch · tax forms'],'dup'),
+        sT('Tax form collection','Sam Okafor',10,28,'risk',['jira:PON-44','kantata:Partner Launch · tax forms'],'dup'),
         sT('Compliance review','Sam Okafor',20,30,'on',['docs:Compliance checklist'])])]),
     sG('Pilot and launch',['jira:Epic PON-3'],[
       sG('Pilot',['jira:PON-60'],[
-        sT('Partner pilot, 12 partners','Sam Okafor',30,40,'risk',['jira:PON-61','monday:Partner Launch board'],'dup')]),
+        sT('Partner pilot, 12 partners','Sam Okafor',30,40,'risk',['jira:PON-61','kantata:Partner Launch project'],'dup')]),
       sG('Launch',['jira:PON-70'],[
         sT('Launch to all partners','Sam Okafor',50,50,'on',['jira:PON-71'])])])],
   pl:[
-    sG('Setup',['monday:Group · Setup'],[
-      sG('Partner list',['monday:Item 3'],[
-        sT('Confirm the 12 partners','Jess Lin',-30,-15,'done',['monday:Item 4']),
-        sT('Contacts and owners','Jess Lin',-15,-5,'done',['monday:Item 5','gmail:Partner contacts'])]),
-      sG('Security',['monday:Item 12'],[
-        sT('API security review (owner: Priya)','Priya Shah',9,11,'risk',['monday:Item 14','calendar:Review block · Priya Shah'],'priya')])]),
-    sG('Onboarding',['monday:Group · Onboarding'],[
-      sG('Invites',['monday:Item 18'],[
-        sT('Send invite emails by hand','Jess Lin',-5,20,'on',['monday:Item 19','gmail:Sent invitations'])]),
-      sG('Tax forms',['monday:Item 21'],[
-        sT('Tax form collection live','Jess Lin',15,20,'risk',['monday:Item 22','docs:Tax form process'],'dup')])]),
-    sG('Complete',['monday:Group · Complete'],[
-      sG('All partners live',['monday:Item 30'],[
-        sT('All 12 partners onboarded','Jess Lin',35,40,'on',['monday:Item 31'])])])]
+    sG('Setup',['kantata:Phase · Setup'],[
+      sG('Partner list',['kantata:Task 3'],[
+        sT('Confirm the 12 partners','Jess Lin',-30,-15,'done',['kantata:Task 4']),
+        sT('Contacts and owners','Jess Lin',-15,-5,'done',['kantata:Task 5','gmail:Partner contacts'])]),
+      sG('Security',['kantata:Task 12'],[
+        sT('API security review (owner: Priya)','Priya Shah',9,11,'risk',['kantata:Task 14','calendar:Review block · Priya Shah'],'priya')])]),
+    sG('Onboarding',['kantata:Phase · Onboarding'],[
+      sG('Invites',['kantata:Task 18'],[
+        sT('Send invite emails by hand','Jess Lin',-5,20,'on',['kantata:Task 19','gmail:Sent invitations'])]),
+      sG('Tax forms',['kantata:Task 21'],[
+        sT('Tax form collection live','Jess Lin',15,20,'risk',['kantata:Task 22','docs:Tax form process'],'dup')])]),
+    sG('Complete',['kantata:Phase · Complete'],[
+      sG('All partners live',['kantata:Task 30'],[
+        sT('All 12 partners onboarded','Jess Lin',35,40,'on',['kantata:Task 31'])])])]
 };
 // Every Portfolio summary row links straight to its project view (schedule and risks).
 const projLink = p => `<button type="button" class="cite proj-link" data-proj="${p.id}">Schedule and risks →</button>`;
@@ -1215,7 +1215,7 @@ const PRISKS = {
   mig:[['Validation coverage at 62%','watch','Raj Mehta',30,['smartsheet:Risk log #2']],['Vendor price hold ends {d+3}','warn','Ana Ruiz',3,[['gmail','Stratus pricing email','ana-mail']]]],
   support:[['Trainers not confirmed for {d+4}','warn','Marcus Bell',4,['calendar:Training · {d+4}']],['Knowledge base articles behind schedule','watch','Carla Nguyen',15,['docs:Knowledge base drafts']]],
   pon:[['Scope overlaps with Partner Launch','watch','Sam Okafor',30,['jira:PON-2 comments']]],
-  pl:[['Invites by hand will not scale past 12 partners','watch','Jess Lin',40,['monday:Item 19 notes']]]
+  pl:[['Invites by hand will not scale past 12 partners','watch','Jess Lin',40,['kantata:Task 19 notes']]]
 };
 
 const INSIGHTS = [
@@ -1318,14 +1318,14 @@ const INSIGHTS = [
   title:'Priya is on the critical path of three projects during the week she\'s out.',
   why:'Three plans each name her for work due that week. None of them knows about the others or about her leave.',
   lede:'Priya Shah owns key work in Platform API v3, Data Migration and Partner Launch, all due between {d+8} and {d+12}. Her calendar shows her out of office for exactly those days. Someone raised it in a meeting, and nobody followed up.',
-  pids:['api','mig','pl'], people:'Priya Shah, Ana Ruiz, Jess Lin', needs:['calendar','smartsheet','monday'], extra:['jira','zoom'], span:'5 tools · 3 teams · 3 plans', stake:'3 deadlines',
+  pids:['api','mig','pl'], people:'Priya Shah, Ana Ruiz, Jess Lin', needs:['calendar','smartsheet','kantata'], extra:['jira','zoom'], span:'5 tools · 3 teams · 3 plans', stake:'3 deadlines',
   ev:[
     {t:'calendar',d:-20,where:'Priya Shah · calendar',who:'Priya Shah',text:'Out of office <mark>{d+8} – {d+12}</mark>'},
     {t:'jira',d:-9,where:'PLAT-412 · SSO token service',who:'Sprint 25',text:'Assignee: <mark>Priya Shah</mark> · only engineer on the ticket'},
     {t:'smartsheet',d:-7,where:'Data Migration · cutover rehearsal',who:'Ana Ruiz',text:'Owner: <mark>Priya Shah</mark> · due {d+10}'},
-    {t:'monday',d:-5,where:'Partner Launch · API security review',who:'Jess Lin',text:'Owner: <mark>P. Shah</mark> · due {d+11}'}
+    {t:'kantata',d:-5,where:'Partner Launch · API security review',who:'Jess Lin',text:'Owner: <mark>P. Shah</mark> · due {d+11}'}
   ],
-  alone:{calendar:['Not visible to planners','A personal calendar entry.'],jira:['Looks fine','Assigned and in progress.'],smartsheet:['Looks fine','Owner assigned.'],monday:['Looks fine','Owner assigned.']},
+  alone:{calendar:['Not visible to planners','A personal calendar entry.'],jira:['Looks fine','Assigned and in progress.'],smartsheet:['Looks fine','Owner assigned.'],kantata:['Looks fine','Owner assigned.']},
   talk:[
     {title:'Data Migration weekly',d:-2,len:'30 min',lines:[
       ['00:09:12','Ana Ruiz','Priya\'s running the cutover rehearsal on the {d+10}.'],
@@ -1372,15 +1372,15 @@ const INSIGHTS = [
 },
 { id:'dup', sev:'watch', kind:'Duplicate effort',
   title:'Two teams are building partner onboarding under different names.',
-  why:'"Partner Onboarding Modernization" in Jira and "Partner Launch" in Monday share 11 of 14 requirements.',
-  lede:'Sam\'s team calls it Partner Onboarding Modernization in Jira. Jess\'s team calls it Partner Launch in Monday. Both include a partner invite flow and tax-form upload, and together they have seven people on it. Jess\'s team started their own version to avoid waiting on engineering.',
-  pids:['pon','pl'], people:'Sam Okafor, Jess Lin', needs:['jira','monday'], extra:['docs','zoom'], span:'4 tools · 2 teams · 2 names', stake:'About 5 engineer-weeks',
+  why:'"Partner Onboarding Modernization" in Jira and "Partner Launch" in Kantata share 11 of 14 requirements.',
+  lede:'Sam\'s team calls it Partner Onboarding Modernization in Jira. Jess\'s team calls it Partner Launch in Kantata. Both include a partner invite flow and tax-form upload, and together they have seven people on it. Jess\'s team started their own version to avoid waiting on engineering.',
+  pids:['pon','pl'], people:'Sam Okafor, Jess Lin', needs:['jira','kantata'], extra:['docs','zoom'], span:'4 tools · 2 teams · 2 names', stake:'About 5 engineer-weeks',
   ev:[
     {t:'jira',d:-30,where:'PARTNER-88 · epic',who:'Sam Okafor',text:'Partner Onboarding Modernization · 4 engineers · stories include <mark>"Partner invite flow"</mark> and <mark>"W-9 upload"</mark>'},
-    {t:'monday',d:-21,where:'Partner Launch board',who:'Jess Lin',text:'3 people · items include <mark>"Partner invite emails"</mark> and <mark>"Tax form collection"</mark>'},
+    {t:'kantata',d:-21,where:'Partner Launch project',who:'Jess Lin',text:'3 people · items include <mark>"Partner invite emails"</mark> and <mark>"Tax form collection"</mark>'},
     {t:'docs',d:-14,where:'Two requirement docs',who:'Sam Okafor, Jess Lin',text:'<mark>11 of 14 requirements</mark> describe the same behavior in different words.'}
   ],
-  alone:{jira:['Looks healthy','Steady velocity, on schedule.'],monday:['Looks healthy','On schedule.'],docs:['Looks normal','Two docs with different owners.']},
+  alone:{jira:['Looks healthy','Steady velocity, on schedule.'],kantata:['Looks healthy','On schedule.'],docs:['Looks normal','Two docs with different owners.']},
   talk:[
     {title:'Platform planning',d:-30,len:'50 min',lines:[
       ['00:22:10','Sam Okafor','PARTNER-88 covers <mark>invites and W-9 uploads end to end</mark>.']]},
@@ -1395,15 +1395,15 @@ const INSIGHTS = [
     ['Estimated 5 engineer-weeks of overlap at current staffing.','inf']
   ],
   unknown:'Whether the two efforts serve different partner types for a reason that isn\'t written down.',
-  note:{to:'Sam Okafor, Jess Lin',subject:'Partner onboarding: are we building this twice?',body:'Sam, Jess,\n\nPARTNER-88 in Jira and the Partner Launch board in Monday look like the same work: invite flow, tax forms, and 11 of 14 matching requirements.\n\nCould you two compare notes this week and tell me whether they should be combined, or why they need to stay separate?\n\nMorgan'},
-  prop:{tool:'ondatrace',target:'Ondatrace project records',rows:[['Relationship','Separate projects','One initiative, two names'],['Tool changes','—','None. Jira and Monday stay as they are.']]}
+  note:{to:'Sam Okafor, Jess Lin',subject:'Partner onboarding: are we building this twice?',body:'Sam, Jess,\n\nPARTNER-88 in Jira and the Partner Launch project in Kantata look like the same work: invite flow, tax forms, and 11 of 14 matching requirements.\n\nCould you two compare notes this week and tell me whether they should be combined, or why they need to stay separate?\n\nMorgan'},
+  prop:{tool:'ondatrace',target:'Ondatrace project records',rows:[['Relationship','Separate projects','One initiative, two names'],['Tool changes','—','None. Jira and Kantata stay as they are.']]}
 }
 ];
 
 const FINE = [
   ['jira','Data Migration test runs: 14 of 14 passed'],
   ['gmail','Portal 2.0 beta: no open customer escalations'],
-  ['monday','Partner Launch budget: 62% spent at 60% complete'],
+  ['kantata','Partner Launch budget: 62% spent at 60% complete'],
   ['jira','Platform API v3 code review turnaround steady at 1.2 days'],
   ['calendar','Support Readiness: all 40 invitees accepted'],
   ['salesforce','3 other renewals this quarter have no delivery dependencies'],
@@ -1420,7 +1420,7 @@ const UPCOMING = [
 const SCANLOG = [
   ['jira','Reading 243 ticket changes'],['slack','Reading 612 messages in 31 channels'],['gmail','Reading 188 emails from 6 mailboxes'],
   ['smartsheet','Reading 4 plans'],['docs','Reading 37 edited documents'],['zoom','Reading 9 meeting transcripts (6.5 hours)'],['calendar','Reading 64 events'],
-  ['salesforce','Reading 22 deal updates'],['monday','Reading 13 board changes'],
+  ['salesforce','Reading 22 deal updates'],['kantata','Reading 13 task updates'],
   ['*','Matched "SSO token service" ↔ "SSO login live" ↔ "SSO"',1],['*','Resolved "Priya Shah" = "pshah" = "P. Shah"',1],
   ['*','Linked PLAT-412 → Portal 2.0 row 18 (no predecessor recorded)',1],['*','Found a go-live date said in steering but never written down',1],
   ['*','Compared vendor hold ($50K) with Stratus SOW ($186K)',1],['*','Matched PARTNER-88 with Partner Launch by requirements',1],
@@ -2095,11 +2095,11 @@ const SUCCESS = {
   pon:{charter:'Partners onboard themselves in under 5 days, down from 21, starting with 12 pilot partners.', src:'docs', approved:-90, fit:'match',
     fitNote:'Tracked as chartered. Partner Launch is chasing the same partners with a different measure.',
     metrics:[['Days from invite to first transaction','21','5','—','pending','Salesforce, from pilot'],['Pilot partners live','0','12','0','pending','Jira']]},
-  pl:{charter:'12 launch partners transacting by {d+40}.', src:'monday', approved:-45, fit:'drift',
+  pl:{charter:'12 launch partners transacting by {d+40}.', src:'kantata', approved:-45, fit:'drift',
     fitNote:'The team counts partners onboarded by hand. That meets its own number but works against the self-service goal in Partner Onboarding Modernization.', tracked:'Partners onboarded by hand, via email',
-    metrics:[['Launch partners transacting','0','12','3','behind','Monday']],
+    metrics:[['Launch partners transacting','0','12','3','behind','Kantata']],
     sugg:{why:'Partner Launch and Partner Onboarding Modernization serve the same partners with different success measures. One shared measure shows whether onboarding by hand is a stopgap or the plan.',
-      rows:[['Change','Launch partners transacting','Also report how many onboarded themselves vs. by hand','monday'],['Add','Days from invite to first transaction','Same measure as Partner Onboarding Modernization: 21 → 5 days','salesforce']]}}
+      rows:[['Change','Launch partners transacting','Also report how many onboarded themselves vs. by hand','kantata'],['Add','Days from invite to first transaction','Same measure as Partner Onboarding Modernization: 21 → 5 days','salesforce']]}}
 };
 const NEWPROJ = {
   name:'Unified Partner Onboarding',
@@ -2107,7 +2107,7 @@ const NEWPROJ = {
   from:'Draft charter · Google Docs · Sam Okafor and Jess Lin, today',
   metrics:[
     {name:'Days from invite to first transaction',why:'The charter\'s headline promise.',base:'21 days (Salesforce, last 20 partners)',target:'5 days',src:'salesforce'},
-    {name:'Partners who onboard with no manual help',why:'Separates real self-service from onboarding by hand over email.',base:'0% (Monday)',target:'80%',src:'monday'},
+    {name:'Partners who onboard with no manual help',why:'Separates real self-service from onboarding by hand over email.',base:'0% (Kantata)',target:'80%',src:'kantata'},
     {name:'Tax forms accepted on the first try',why:'Tax forms caused 40% of partner support emails last quarter.',base:'64% (support inbox)',target:'95%',src:'gmail'},
     {name:'Support emails per new partner',why:'Shows whether self-service removes work or just moves it.',base:'9.5 (support inbox)',target:'3',src:'gmail'}
   ],
@@ -2217,7 +2217,7 @@ const QA = [
     'Portal 2.0 reports green but is at risk. Go-live is either {d+21} or {d+38}; the plan and the steering decision disagree [dates].',
     'SSO, a launch requirement, now ends {d+22}. That affects a promise to Acme [acme] and support training on {d+4} [training]. Asks for the committee: confirm the go-live date, and decide what we tell Acme.']},
   {q:'Are any teams duplicating work?', re:/duplic|partner|overlap|twice|same work/i, a:[
-    'Likely one case. Partner Onboarding Modernization (Jira, 4 engineers) and Partner Launch (Monday, 3 people) share 11 of 14 requirements [dup]. Estimated overlap is about 5 engineer-weeks.']}
+    'Likely one case. Partner Onboarding Modernization (Jira, 4 engineers) and Partner Launch (Kantata, 3 people) share 11 of 14 requirements [dup]. Estimated overlap is about 5 engineer-weeks.']}
 ];
 
 /* change management, training and enablement: part of every suggested next step */
