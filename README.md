@@ -116,7 +116,7 @@ The Today experience surfaces:
 3. the management decision that needs attention, and
 4. a prior decision whose outcome still needs to be checked.
 
-Try the [interactive demo](https://jsconu.github.io/Ondatrace-Overview/try/).
+Try the [interactive demo](https://ondatrace.com/try/).
 
 ## Product thesis
 
@@ -124,7 +124,7 @@ Ondatrace is not intended to replace Jira, Smartsheet, Monday, or other systems 
 
 Its thesis is that the missing layer is **management intelligence across those systems**: preserving evidence, connecting consequences, identifying disagreement, focusing scarce human attention, and closing the loop after decisions.
 
-See the [product thesis](https://jsconu.github.io/Ondatrace-Overview/thesis/) and [design decisions](https://jsconu.github.io/Ondatrace-Overview/decisions/).
+See the [product thesis](https://ondatrace.com/thesis/) and [design decisions](https://ondatrace.com/decisions/).
 
 ## How AI coding agents are used
 
