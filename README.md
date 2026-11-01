@@ -2,9 +2,24 @@
 
 **A public product and architecture case study for a private working prototype.**
 
+[Try the fictional demo](https://ondatrace.com/try/) · [Design decisions](https://ondatrace.com/decisions/) · [How I build with AI](AI_COLLABORATION.md)
+
+**Status:** Private working prototype under active development, with design-partner validation as the next step. The demo illustrates intended workflows using fictional initiatives; it does not establish customer adoption, production reliability, or measured time savings.
+
 Ondatrace starts with the messy systems where work already happens, organizes what they collectively say, and surfaces the few things across projects that deserve management attention.
 
 It is designed for situations where the important conclusion does not live in one Jira issue, one status report, or even one project. A delivery change in one initiative may expose a launch elsewhere, consume a shared resource, contradict a stakeholder commitment, or create a decision that needs leadership attention.
+
+## Case study at a glance
+
+| Question | Design response |
+| --- | --- |
+| What problem is being addressed? | A change in one project can threaten commitments elsewhere without appearing in either project's status report. |
+| What does the demo show? | A blocked Platform API deliverable affects Customer Launch and downstream Training & Enablement, while sources disagree on the launch date. |
+| What should a leader receive? | The consequence, supporting evidence, conflicting signals, and a decision to resolve. |
+| Where is the control boundary? | Models interpret and recommend; deterministic rules, organization boundaries, and explicit review govern consequential actions. |
+| What do I own? | Product definition, domain model, prioritization, acceptance criteria, architecture review, and evaluation design. |
+| What remains to validate? | Whether findings are accurate and useful with real project data, whether connectors work reliably in customer environments, and whether the workflow saves PMs and leaders time. |
 
 ## Source-first by design
 
@@ -121,4 +136,4 @@ See [AI_COLLABORATION.md](AI_COLLABORATION.md).
 
 ## Status
 
-Ondatrace is a prototype under active development and is beginning design-partner testing.
+Ondatrace is a private working prototype under active development, with design-partner validation as the next step. Implemented prototype capabilities and the fictional demo should be distinguished from results validated in customer environments.
