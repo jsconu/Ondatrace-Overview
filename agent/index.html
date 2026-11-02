@@ -10,7 +10,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="../style.css?v=8">
+  <link rel="stylesheet" href="../style.css?v=9">
 </head>
 <body>
   <a href="#top" class="skip-link">Skip to main content</a>
@@ -21,8 +21,6 @@
       <nav class="topnav" aria-label="Main">
         <a href="../agent/" class="nav-key" aria-current="page">AI agent</a>
         <a href="../templates/" class="nav-key">Templates</a>
-        <a href="../thesis/" class="nav-extra">Product thesis</a>
-        <a href="../decisions/" class="nav-extra">Design decisions</a>
         <a href="https://app.ondatrace.com/login" class="nav-extra">Sign in</a>
         <a href="../try/" class="btn btn-small">Try the demo</a>
       </nav>
@@ -43,7 +41,7 @@
           </p>
           <div class="hero-ctas">
             <a href="../try/" class="btn btn-primary btn-large">Try the demo</a>
-            <a href="../thesis/" class="btn btn-ghost btn-large">Read the product thesis</a>
+            <a href="#thesis" class="btn btn-ghost btn-large">Why we built it this way</a>
           </div>
         </div>
 
@@ -244,6 +242,70 @@
           </div>
         </div>
         <p class="section-note">Ondatrace runs on Claude, from Anthropic. It treats the text of emails and messages as information to weigh. It never follows instructions written in them.</p>
+      </div>
+    </section>
+
+    <section class="section section-alt" id="thesis">
+      <div class="wrap">
+        <h2>Why we built it this way</h2>
+        <p class="section-lede">
+          Teams already have tools to track their work. What's missing is a way to see across them.
+          The first signs of trouble are scattered: an overdue ticket, a worried customer email, a
+          problem mentioned in a meeting. These are the six bets the pilot is testing.
+        </p>
+        <ol class="bets">
+          <li><b>Start from what happened.</b> Updates from your tools record who, when and which project, so they can build up a history.</li>
+          <li><b>Rules decide, AI explains.</b> Did a date move? Is a blocker still open? When a rule can decide, it does.</li>
+          <li><b>Remember what came before.</b> Whether a problem is new or has been getting worse for weeks matters as much as today's status.</li>
+          <li><b>End with a decision.</b> Decisions, risks and dependencies are kept as their own records, not buried in a status paragraph.</li>
+          <li><b>Earn trust one action at a time.</b> It takes on low-stakes work first, like refreshing data, long before anything like messaging a customer.</li>
+          <li><b>Work out the structure first.</b> It suggests which projects exist and how they link, and people confirm. No tidy setup needed.</li>
+        </ol>
+        <details class="fold">
+          <summary>What would prove us wrong</summary>
+          <p>We'd count Ondatrace as a failure if the people using it find that:</p>
+          <ul>
+            <li>Seeing across tools tells them little beyond what their tools already show.</li>
+            <li>Its suggestions are too noisy to be worth a manager's time.</li>
+            <li>The evidence is there but too hard to check.</li>
+            <li>Its review list becomes another inbox nobody trusts.</li>
+            <li>It can't explain why it did something, or why it didn't.</li>
+            <li>Fixing and supervising it takes more time than it saves.</li>
+          </ul>
+        </details>
+      </div>
+    </section>
+
+    <section class="section" id="decisions">
+      <div class="wrap">
+        <h2>Design decisions</h2>
+        <p class="section-lede">The choices that keep its findings accurate and people in control, and the reason for each.</p>
+        <div class="cards cards-3 decision-groups">
+          <div class="card">
+            <p class="eyebrow">Evidence and trust</p>
+            <ul>
+              <li><b>Rules set project health before AI writes about it.</b> The same facts should give the same answer every time.</li>
+              <li><b>Every finding keeps its sources.</b> Leaders can check the evidence instead of taking the AI's word.</li>
+              <li><b>A risk stays open until something closes it.</b> Teams often stop mentioning problems they haven't solved.</li>
+              <li><b>Automation settings never change the facts.</b> How much it does on its own shouldn't change what's true.</li>
+            </ul>
+          </div>
+          <div class="card">
+            <p class="eyebrow">People stay in charge</p>
+            <ul>
+              <li><b>Moving a promised milestone needs a person.</b> A milestone is a promise, and moving it has effects outside the project.</li>
+              <li><b>The AI suggests actions but can't authorize them.</b> How confident it sounds never decides what it's allowed to do.</li>
+            </ul>
+          </div>
+          <div class="card">
+            <p class="eyebrow">Reliability and security</p>
+            <ul>
+              <li><b>The application controls access.</b> Instructions given to an AI are not a security control.</li>
+              <li><b>Work only when something changed.</b> A quiet project shouldn't cost more or send new alerts because a day passed. An overdue milestone counts as a change.</li>
+              <li><b>One failure doesn't stop the rest.</b> If one tool connection fails, the others keep going.</li>
+            </ul>
+          </div>
+        </div>
       </div>
     </section>
 

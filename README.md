@@ -2,7 +2,7 @@
 
 **A public product and architecture case study for a private working prototype.**
 
-[Try the fictional demo](https://ondatrace.com/try/) · [Design decisions](https://ondatrace.com/decisions/) · [How I build with AI](AI_COLLABORATION.md)
+[Try the fictional demo](https://ondatrace.com/try/) · [Design decisions](https://ondatrace.com/agent/#decisions) · [How I build with AI](AI_COLLABORATION.md)
 
 **Status:** Private working prototype under active development, with design-partner validation as the next step. The demo illustrates intended workflows using fictional initiatives; it does not establish customer adoption, production reliability, or measured time savings.
 
@@ -124,7 +124,7 @@ Ondatrace is not intended to replace Jira, Smartsheet, Monday, or other systems 
 
 Its thesis is that the missing layer is **management intelligence across those systems**: preserving evidence, connecting consequences, identifying disagreement, focusing scarce human attention, and closing the loop after decisions.
 
-See the [product thesis](https://ondatrace.com/thesis/) and [design decisions](https://ondatrace.com/decisions/).
+See the [product thesis](https://ondatrace.com/agent/#thesis) and [design decisions](https://ondatrace.com/agent/#decisions).
 
 ## How AI coding agents are used
 
