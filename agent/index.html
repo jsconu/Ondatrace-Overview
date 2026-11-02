@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="color-scheme" content="light dark">
+  <title>AI agent | Ondatrace</title>
+  <meta name="description" content="Ondatrace gives a small PMO one shared memory of its projects. It reads the tools your teams already use and shows each person what needs their attention.">
+  <link rel="icon" type="image/svg+xml" href="../favicon.svg">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../style.css?v=8">
+</head>
+<body>
+  <a href="#top" class="skip-link">Skip to main content</a>
+
+  <header class="topbar">
+    <div class="wrap topbar-inner">
+      <a href="../" class="brand"><svg class="brand-mark" viewBox="0 0 32 32" aria-hidden="true"><rect width="32" height="32" rx="7" fill="#0f766e"/><g stroke="#ffffff" stroke-width="1.9" stroke-linecap="round"><line x1="16.00" y1="12.80" x2="16.00" y2="3.80"/><line x1="18.26" y1="13.74" x2="24.63" y2="7.37"/><line x1="19.20" y1="16.00" x2="28.20" y2="16.00"/><line x1="18.26" y1="18.26" x2="24.63" y2="24.63"/><line x1="16.00" y1="19.20" x2="16.00" y2="28.20"/><line x1="13.74" y1="18.26" x2="7.37" y2="24.63"/><line x1="12.80" y1="16.00" x2="3.80" y2="16.00"/><line x1="13.74" y1="13.74" x2="7.37" y2="7.37"/></g><g fill="#ffffff"><circle cx="16.00" cy="3.40" r="1.7"/><circle cx="24.91" cy="7.09" r="1.7"/><circle cx="28.60" cy="16.00" r="1.7"/><circle cx="24.91" cy="24.91" r="1.7"/><circle cx="16.00" cy="28.60" r="1.7"/><circle cx="7.09" cy="24.91" r="1.7"/><circle cx="3.40" cy="16.00" r="1.7"/><circle cx="7.09" cy="7.09" r="1.7"/></g><circle cx="16" cy="16" r="8.3" fill="none" stroke="#ffffff" stroke-width="2.6"/><circle cx="16" cy="16" r="3" fill="#ffffff"/><circle cx="16" cy="16" r="1.1" fill="#0f766e"/></svg>Ondatrace</a>
+      <nav class="topnav" aria-label="Main">
+        <a href="../agent/" class="nav-key" aria-current="page">AI agent</a>
+        <a href="../templates/" class="nav-key">Templates</a>
+        <a href="../thesis/" class="nav-extra">Product thesis</a>
+        <a href="../decisions/" class="nav-extra">Design decisions</a>
+        <a href="https://app.ondatrace.com/login" class="nav-extra">Sign in</a>
+        <a href="../try/" class="btn btn-small">Try the demo</a>
+      </nav>
+    </div>
+  </header>
+
+  <main id="top" tabindex="-1">
+    <section class="hero">
+      <div class="wrap hero-grid">
+        <div class="hero-copy">
+          <p class="hero-eyebrow">AI agent · private pilot</p>
+          <h1>Know where every project really stands.</h1>
+          <p class="hero-sub">
+            A promise to a customer sits in someone's email. A ticket slips two sprints. A new date
+            gets agreed in a meeting and never written down. Ondatrace reads across all of it and
+            keeps one shared memory for your whole PMO. Each project manager and the PMO leader sees
+            what needs their attention.
+          </p>
+          <div class="hero-ctas">
+            <a href="../try/" class="btn btn-primary btn-large">Try the demo</a>
+            <a href="../thesis/" class="btn btn-ghost btn-large">Read the product thesis</a>
+          </div>
+        </div>
+
+        <figure class="helm-card">
+          <svg class="helm-net" viewBox="-34 0 505 458" role="img" aria-label="A helm-shaped network with Ondatrace at the center, connected to tickets, deals, team chat, meetings, project management battle scars, email, plans and sheets, and calendars."><line class="hn-chord" x1="220.0" y1="52.0" x2="388.0" y2="220.0"/><line class="hn-chord" x1="220.0" y1="52.0" x2="338.8" y2="338.8"/><line class="hn-chord" x1="338.8" y1="101.2" x2="338.8" y2="338.8"/><line class="hn-chord" x1="338.8" y1="101.2" x2="220.0" y2="388.0"/><line class="hn-chord" x1="388.0" y1="220.0" x2="220.0" y2="388.0"/><line class="hn-chord" x1="388.0" y1="220.0" x2="101.2" y2="338.8"/><line class="hn-chord" x1="338.8" y1="338.8" x2="101.2" y2="338.8"/><line class="hn-chord" x1="338.8" y1="338.8" x2="52.0" y2="220.0"/><line class="hn-chord" x1="220.0" y1="388.0" x2="52.0" y2="220.0"/><line class="hn-chord" x1="220.0" y1="388.0" x2="101.2" y2="101.2"/><line class="hn-chord" x1="101.2" y1="338.8" x2="101.2" y2="101.2"/><circle class="hn-rim" cx="220" cy="220" r="128"/><line class="hn-spoke" x1="220.0" y1="160.0" x2="220.0" y2="76.0"/><line class="hn-spoke" x1="262.4" y1="177.6" x2="321.8" y2="118.2"/><line class="hn-spoke" x1="280.0" y1="220.0" x2="364.0" y2="220.0"/><line class="hn-spoke" x1="262.4" y1="262.4" x2="321.8" y2="321.8"/><line class="hn-spoke" x1="220.0" y1="280.0" x2="220.0" y2="364.0"/><line class="hn-spoke" x1="177.6" y1="262.4" x2="118.2" y2="321.8"/><line class="hn-spoke" x1="160.0" y1="220.0" x2="76.0" y2="220.0"/><line class="hn-spoke" x1="177.6" y1="177.6" x2="118.2" y2="118.2"/><g class="hn-node hn-tool"><circle cx="220.0" cy="52.0" r="23" fill="#2456c9"/><text class="hn-letter" x="220.0" y="57.8" font-size="16">J</text><text class="hn-label" x="220.0" y="20.0">Tickets</text></g><g class="hn-node hn-tool"><circle cx="338.8" cy="101.2" r="23" fill="#3f8fd0"/><text class="hn-letter" x="338.8" y="107.0" font-size="16">S</text><text class="hn-label" x="338.8" y="69.2">Deals</text></g><g class="hn-node hn-tool"><circle cx="388.0" cy="220.0" r="23" fill="#b45309"/><text class="hn-letter" x="388.0" y="225.8" font-size="16">T</text><text class="hn-label" x="374.0" y="264.0" style="text-anchor:start">Team chat</text></g><g class="hn-node hn-tool"><circle cx="338.8" cy="338.8" r="23" fill="#0b7fb3"/><text class="hn-letter" x="338.8" y="344.6" font-size="16">M</text><text class="hn-label" x="338.8" y="378.8">Meetings</text></g><g class="hn-node hn-craft"><circle cx="220.0" cy="388.0" r="23" fill="#0f766e"/><text class="hn-letter" x="220.0" y="394.5" font-size="18">&#9733;</text><text class="hn-label" x="220.0" y="428.0"><tspan x="220.0">Project management</tspan><tspan x="220.0" dy="18">battle scars</tspan></text></g><g class="hn-node hn-tool"><circle cx="101.2" cy="338.8" r="23" fill="#c43d2f"/><text class="hn-letter" x="101.2" y="344.6" font-size="16">E</text><text class="hn-label" x="101.2" y="378.8">Email</text></g><g class="hn-node hn-tool"><circle cx="52.0" cy="220.0" r="23" fill="#2f7d54"/><text class="hn-letter" x="52.0" y="225.8" font-size="16">P</text><text class="hn-label" x="66.0" y="264.0" style="text-anchor:end">Plans &amp; sheets</text></g><g class="hn-node hn-tool"><circle cx="101.2" cy="101.2" r="23" fill="#6b4fd6"/><text class="hn-letter" x="101.2" y="107.0" font-size="16">C</text><text class="hn-label" x="101.2" y="69.2">Calendars</text></g><circle class="hn-hub-ring" cx="220" cy="220" r="68"/><circle class="hn-hub" cx="220" cy="220" r="60"/><text class="hn-name" x="220" y="226">Ondatrace</text></svg>
+          <figcaption>Ondatrace reads your tools and meetings and judges them the way an experienced project manager would.</figcaption>
+        </figure>
+      </div>
+    </section>
+
+    <section class="section section-alt" id="demo">
+      <div class="wrap">
+        <h2>See it with a sample company</h2>
+        <p class="section-lede">
+          Play the VP of Delivery at a made-up healthcare software company for one busy week. It
+          takes about 10 minutes and there's nothing to sign up for. You'll find things like:
+        </p>
+        <div class="cards cards-3">
+          <div class="card">
+            <h3>A customer promise engineering can't keep</h3>
+            <p>Sales promised a date for a feature. The work behind it slipped two sprints, and the project plan still says it's on track.</p>
+          </div>
+          <div class="card">
+            <h3>A spending freeze the team never heard about</h3>
+            <p>The CFO paused new vendor contracts in a leadership meeting. Another team is about to sign one.</p>
+          </div>
+          <div class="card">
+            <h3>One engineer needed by three teams during her week off</h3>
+            <p>Three separate plans depend on the same person during the week she's on leave. None of them knows about the others.</p>
+          </div>
+        </div>
+        <div class="hero-ctas" style="margin-top:28px">
+          <a href="../try/" class="btn btn-primary btn-large">Start the demo</a>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="not-an-agent">
+      <div class="wrap">
+        <h2>One memory for the whole PMO</h2>
+        <p class="section-lede">
+          It handles routine status reporting. The real value is that it remembers what happens
+          across all your projects, so nothing depends on one person's notes.
+        </p>
+        <div class="cards cards-3 callouts">
+          <div class="card">
+            <h3>Status reports, drafted</h3>
+            <p>Each project manager gets a weekly status draft. The PMO leader gets a summary across the portfolio.</p>
+          </div>
+          <div class="card">
+            <h3>Sees across projects</h3>
+            <p>A slip in one project shows up where it lands in another, even when different people run them.</p>
+          </div>
+          <div class="card">
+            <h3>Shows when sources disagree</h3>
+            <p>When the plan says on track and the tickets say otherwise, it shows you both.</p>
+          </div>
+          <div class="card">
+            <h3>Follows decisions through</h3>
+            <p>A risk stays open until something shows it's fixed. Later, it checks whether a decision worked.</p>
+          </div>
+          <div class="card">
+            <h3>Judges like an experienced PM</h3>
+            <p>Project health comes from fixed rules built with practicing project managers. The AI explains the result but can't change it.</p>
+          </div>
+          <div class="card">
+            <h3>Includes the people side</h3>
+            <p>Each suggested next step also says who needs to hear about the change and who may need help with it.</p>
+          </div>
+        </div>
+        <p class="section-note">Every finding shows its sources, and nothing with real consequences happens until you approve it.</p>
+      </div>
+    </section>
+
+    <section class="section section-alt" id="sharing">
+      <div class="wrap">
+        <h2>What leaders see</h2>
+        <p class="section-lede">
+          Leaders get the picture they need without reading anyone's inbox.
+        </p>
+        <div class="cards cards-3">
+          <div class="card">
+            <h3>Takeaways only</h3>
+            <p>A leader sees what changed, which project it affects and how serious it is. They never see the original email or meeting transcript.</p>
+          </div>
+          <div class="card">
+            <h3>Private topics stay out</h3>
+            <p>Health, pay, performance reviews and personal life are kept out of what leaders see.</p>
+          </div>
+          <div class="card">
+            <h3>Access follows your tools</h3>
+            <p>If someone can't open a message in the original tool, they won't see findings based on it.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="how">
+      <div class="wrap">
+        <h2>How it works</h2>
+        <div class="cards cards-3">
+          <div class="card">
+            <p class="eyebrow">1. Connect</p>
+            <h3>Sign in to the tools you already have</h3>
+            <p>Connect each tool with a normal sign-in. Record your project meetings too, because many decisions and new dates are only ever said out loud.</p>
+          </div>
+          <div class="card">
+            <p class="eyebrow">2. Connect the dots</p>
+            <h3>It matches up the same work</h3>
+            <p>It recognizes the same project in different tools and finds projects nobody set up. You confirm the links.</p>
+          </div>
+          <div class="card">
+            <p class="eyebrow">3. Decide</p>
+            <h3>Each person sees what needs them</h3>
+            <p>Every item says why it matters and suggests what to do next.</p>
+          </div>
+        </div>
+        <p class="section-lede" style="margin:28px 0 0">
+          <strong>Works with the tools you already use:</strong> Jira, Kantata, Salesforce, Smartsheet,
+          Slack, Microsoft Teams, Outlook, Google and Microsoft calendars, Zoom, Webex and Google Meet.
+        </p>
+      </div>
+    </section>
+
+    <section class="section" id="ai">
+      <div class="wrap">
+        <h2>How our project management agent works</h2>
+        <p class="section-lede">
+          The agent does the reading and the writing. Fixed rules make the calls that have to come
+          out the same every time, and a person approves anything with real consequences.
+        </p>
+
+        <figure class="layer-diagram" aria-label="Your sources feed the Ondatrace project management agent, which sends what needs attention to you and your team in Ondatrace.">
+  <div class="a-top" style="grid-template-columns:1fr">
+    <div class="a-user">
+            <p class="ly-box-title">You and your team, in Ondatrace</p>
+      <p>Your Today view shows what needs your attention and what to do next. For example, Ondatrace:</p>
+      <ul class="a-finds">
+        <li><b>Flags a customer promise at risk:</b> sales committed to a date the slipped work can't meet.</li>
+        <li><b>Spots a decision that didn't spread:</b> a spending freeze another team hasn't heard about.</li>
+        <li><b>Catches an overbooked person:</b> one engineer is needed by three teams during her week off.</li>
+      </ul>
+    </div>
+  </div>
+  <div class="arw-row arw-top" style="grid-template-columns:1fr">
+    <div class="arw-cell"><span class="arw arw-big"></span><span class="arw-label"><span class="lbl-desk">What needs you today</span><span class="lbl-mob">What needs you today</span></span></div>
+  </div>
+  <div class="lyr a-core">
+    <p class="lyr-title">The judgment layer</p>
+    <p class="ly-core-name">Ondatrace project management agent</p>
+    <div class="a-steps">
+      <div class="a-step"><b>Reads &amp; links</b>Finds the same work across every tool</div>
+      <div class="a-step"><b>Judges like a PM</b>Fixed rules built with practicing PMs</div>
+      <div class="a-step"><b>Remembers</b>Risks stay open until something closes them</div>
+      <div class="a-step"><b>Respects access</b>Nobody sees what they couldn't read</div>
+    </div>
+  </div>
+  <div class="arw-row arw-bot">
+    <span class="arw"></span><span class="arw"></span><span class="arw"></span><span class="arw"></span><span class="arw"></span><span class="arw"></span>
+  </div>
+  <div class="lyr a-src">
+    <div class="chips a-src-grid">
+      <span class="chip"><span class="dot dot-ico" style="background:#2456c9"><svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 8a2 2 0 0 0 0 4v4h18v-4a2 2 0 0 0 0-4V4H3z"/><path d="M14 4v12" stroke-dasharray="2 2"/></svg></span><span class="src-name">Tickets</span><span class="src-ex">Jira, Kantata</span></span>
+      <span class="chip"><span class="dot dot-ico" style="background:#c43d2f"><svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3 7 9 6 9-6"/></svg></span><span class="src-name">Email &amp; chat</span><span class="src-ex">Outlook, Slack, Teams</span></span>
+      <span class="chip"><span class="dot dot-ico" style="background:#0b7fb3"><svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="6" width="14" height="12" rx="2"/><path d="m16 10 6-3v10l-6-3"/></svg></span><span class="src-name">Meetings</span><span class="src-ex">Teams, Zoom, Webex, Google Meet</span></span>
+      <span class="chip"><span class="dot dot-ico" style="background:#6b4fd6"><svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="5" width="18" height="16" rx="2"/><path d="M3 10h18M8 3v4M16 3v4"/></svg></span><span class="src-name">Calendars</span><span class="src-ex">Outlook, Google</span></span>
+      <span class="chip"><span class="dot dot-ico" style="background:#2f7d54"><svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="4" width="18" height="16" rx="2"/><path d="M3 10h18M3 15h18M9 4v16"/></svg></span><span class="src-name">Plans &amp; sheets</span><span class="src-ex">Smartsheet, Excel</span></span>
+      <span class="chip"><span class="dot dot-ico" style="background:#3f8fd0"><svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 17l6-6 4 4 8-8"/><path d="M15 7h6v6"/></svg></span><span class="src-name">Deals</span><span class="src-ex">Salesforce</span></span>
+    </div>
+    <p class="lyr-title" style="margin:12px 0 0;text-align:center">Your sources</p>
+  </div>
+        </figure>
+        <div class="cards cards-3 callouts">
+          <div class="card">
+            <p class="eyebrow">Reads</p>
+            <h3>Turns messy messages into facts</h3>
+            <p>It reads messages, tickets and meeting transcripts and pulls out the promises and decisions in them. Each fact links back to where it came from.</p>
+          </div>
+          <div class="card">
+            <p class="eyebrow">Judges</p>
+            <h3>Rules decide, the agent explains</h3>
+            <p>Project health and what needs attention come from fixed rules built with practicing project managers. The agent writes the explanation and the next step, but it can't change the result.</p>
+          </div>
+          <div class="card">
+            <p class="eyebrow">Acts</p>
+            <h3>You approve anything that matters</h3>
+            <p>It saves evidence on its own, and it can make small task updates if you allow it. Anything bigger waits for a person, such as moving a committed milestone or sending a message.</p>
+          </div>
+          <div class="card">
+            <p class="eyebrow">Runs on its own</p>
+            <h3>Works between your meetings</h3>
+            <p>It checks your tools every 15 to 30 minutes and picks up Slack messages within about a minute. It only reruns the analysis where something changed, so quiet projects stay quiet.</p>
+          </div>
+          <div class="card">
+            <p class="eyebrow">Stays in its lane</p>
+            <h3>The app enforces permissions</h3>
+            <p>The application decides what each person can see, and the agent can't change that. If a finding comes from someone's private email, people who can't read that email don't see the finding.</p>
+          </div>
+        </div>
+        <p class="section-note">Ondatrace runs on Claude, from Anthropic. It treats the text of emails and messages as information to weigh. It never follows instructions written in them.</p>
+      </div>
+    </section>
+
+    <section class="section section-alt" id="templates">
+      <div class="wrap tpl-teaser">
+        <div>
+          <h2>Project and change templates</h2>
+          <p class="section-lede">Not ready for a new tool? Our Excel templates link each change to the people it affects, the actions that support them and the tasks on your schedule. They work on their own, with no account needed.</p>
+        </div>
+        <a href="../templates/" class="btn btn-primary btn-large">See the templates</a>
+      </div>
+    </section>
+
+    <section class="section cta-band" id="why">
+      <div class="wrap">
+        <h2>Why I built this</h2>
+        <p class="section-lede">
+          After years leading programs, I've found the hardest project problems rarely live in the
+          project plan. They're spread across conversations and customer commitments. Ondatrace is my
+          bet that AI can pull that picture together without adding another system to keep up to date. It's now in a private pilot with a few PMOs,
+          and I'd love your feedback at <a href="mailto:ondatrace@ondatrace.com">ondatrace@ondatrace.com</a>.
+        </p>
+        <div class="hero-ctas">
+          <a href="../try/" class="btn btn-primary btn-large">Try the demo</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="wrap footer-inner">
+      <p>&copy; 2026 Ondatrace LLC. Private pilot. <a href="https://app.ondatrace.com/login">Sign in</a> · <a href="mailto:ondatrace@ondatrace.com">ondatrace@ondatrace.com</a></p>
+    </div>
+  </footer>
+</body>
+</html>

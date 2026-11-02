@@ -594,8 +594,8 @@ h1, h2, h3 { font-family: var(--font-display); color: var(--ink); margin: 0; }
   .hero { padding: 64px 0 56px; }
   .hero h1 { font-size: 1.9rem; }
   .cards-3, .cards-agents { grid-template-columns: 1fr; }
-  .topnav { gap: 10px; }
-  .topnav a:not(.btn) { display: none; }
+  .topnav { gap: 14px; }
+  .topnav a.nav-extra { display: none; }
 }
 
 /* ---------- document pages (product thesis, design decisions) ---------- */
@@ -944,11 +944,65 @@ h1, h2, h3 { font-family: var(--font-display); color: var(--ink); margin: 0; }
   .tpl-grid { grid-template-columns: 1fr; }
   .tpl-teaser { flex-direction: column; align-items: flex-start; gap: 20px; }
 }
-/* Keep each nav link on one line. Between phone and full width, drop the in-page anchors
-   (reachable by scrolling) and tighten spacing so the bar never overflows. */
+/* Keep each nav link on one line. Below full width, keep only the two product links and the
+   demo button so the bar never overflows; on the narrowest phones the button goes too, since
+   every page repeats it in its own content. */
 .topnav a { white-space: nowrap; }
 @media (max-width: 1120px) and (min-width: 761px) {
-  .topnav { gap: 12px; }
-  .topnav a { font-size: 0.88rem; }
-  .topnav a[href^="#"], .topnav a[href^="../#"] { display: none; }
+  .topnav a.nav-extra { display: none; }
+}
+@media (max-width: 480px) {
+  .topnav .btn { display: none; }
+}
+
+/* ---------- homepage: the two products side by side ---------- */
+.hub-products { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 24px; }
+.hub-product {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  background: var(--white);
+  border: 1px solid var(--border);
+  border-radius: 16px;
+  padding: 28px;
+}
+.hub-product h3 { font-size: 1.45rem; margin: 2px 0 0; }
+.hub-product p { margin: 0; color: var(--ink-soft); }
+.hub-product ul { margin: 0; padding-left: 18px; color: var(--ink-soft); }
+.hub-product li { margin-bottom: 4px; }
+.hub-product .tpl-tag { align-self: flex-start; }
+.hub-product .hero-ctas { margin-top: auto; padding-top: 8px; }
+.hub-note { font-size: 0.92rem; }
+.hub-visual {
+  margin: 0 0 6px;
+  aspect-ratio: 992 / 502;
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  overflow: hidden;
+  background: #ffffff;
+}
+.hub-visual img { display: block; width: 100%; height: 100%; object-fit: cover; object-position: top left; }
+.hub-today { aspect-ratio: auto; background: var(--bg-alt); padding: 18px 20px; display: flex; flex-direction: column; gap: 10px; }
+.hub-today-title { font-family: var(--font-display); font-weight: 600; color: var(--ink) !important; }
+.hub-today ul { list-style: none; padding: 0; display: grid; gap: 8px; }
+.hub-today li {
+  background: var(--white);
+  border: 1px solid var(--border);
+  border-left: 3px solid var(--accent);
+  border-radius: 8px;
+  padding: 8px 12px;
+  font-size: 0.92rem;
+  margin: 0;
+}
+.hub-today li b { color: var(--ink); }
+
+a.card-link { display: block; color: inherit; text-decoration: none; transition: border-color 0.15s; }
+a.card-link:hover { border-color: var(--accent-ink); }
+a.card-link h3 { color: var(--accent-ink); }
+
+@media (max-width: 760px) {
+  .hub-products { grid-template-columns: 1fr; }
+  .hub-product { padding: 20px; }
+  .hub-visual { aspect-ratio: auto; }
+  .hub-visual img { height: auto; }
 }
