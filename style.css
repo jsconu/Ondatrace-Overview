@@ -892,7 +892,16 @@ h1, h2, h3 { font-family: var(--font-display); color: var(--ink); margin: 0; }
   .topnav a.nav-extra { display: none; }
 }
 @media (max-width: 480px) {
+  .topnav { gap: 10px; }
+  .topnav a { font-size: 0.85rem; }
   .topnav .btn { display: none; }
+}
+@media (max-width: 359px) {
+  .topbar-inner { padding-left: 12px; padding-right: 12px; }
+  .topnav { gap: 8px; }
+  .topnav a { font-size: 0.8rem; }
+  .brand { font-size: 1rem; gap: 6px; }
+  .brand-mark { width: 24px; height: 24px; }
 }
 
 /* ---------- homepage: the two products side by side ---------- */
