@@ -137,3 +137,25 @@ See [AI_COLLABORATION.md](AI_COLLABORATION.md).
 ## Status
 
 Ondatrace is a private working prototype under active development, with design-partner validation as the next step. Implemented prototype capabilities and the fictional demo should be distinguished from results validated in customer environments.
+
+## Maintaining the site
+
+### Changing a template price
+
+Prices and checkout links are edited by hand. When a price changes, update every place it appears:
+
+1. **Stripe (live):** add the new price to the product and set it as the default. Create a Payment
+   Link for it with Managed Payments off, customer names collected, terms acceptance required and
+   the custom confirmation message. Deactivate the old link, then archive the old price.
+2. **`templates/index.html`:** the price and the Buy button's `buy.stripe.com` link.
+3. **`index.html`:** the price note on the templates card.
+4. **pmo-agents repo:** the price table in `templates/README.md` and, if the license changes,
+   `templates/policies/license.md`.
+5. Open the new link and the live templates page to check the amount, then confirm the old link
+   says it's no longer active.
+
+### Store policies
+
+The terms, refund policy, license and privacy notice (`terms/`, `refunds/`, `license/`,
+`privacy/`) are copies of the sources in the pmo-agents repo (`templates/policies/`). Change the
+source first, then update the page.

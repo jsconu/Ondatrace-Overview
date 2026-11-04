@@ -1011,3 +1011,26 @@ a.card-link h3 { color: var(--accent-ink); }
   .compare td:first-of-type::before { content: "General agent or scheduled job: "; font-weight: 600; }
   .compare td:last-child::before { content: "Ondatrace: "; font-weight: 600; color: var(--accent-ink); }
 }
+
+/* ---------- store policy pages ---------- */
+.policy > * { max-width: 760px; }
+.policy h2 { font-size: 1.35rem; margin: 36px 0 10px; }
+.policy h2:first-child { margin-top: 0; }
+.policy h3 { font-size: 1.08rem; margin: 24px 0 8px; }
+.policy p, .policy li { color: var(--ink-soft); }
+.policy p { margin: 0 0 12px; }
+.policy ul { margin: 0 0 12px; padding-left: 22px; }
+.policy li { margin-bottom: 6px; }
+.policy b { color: var(--ink); }
+.policy-table { width: 100%; border-collapse: collapse; margin: 8px 0 16px; font-size: 0.95rem; }
+.policy-table th, .policy-table td { text-align: left; vertical-align: top; padding: 10px 12px; border: 1px solid var(--border); }
+.policy-table th { color: var(--ink); background: var(--bg-alt); }
+.policy-table td { color: var(--ink-soft); }
+.policy-nav { margin-top: 40px !important; padding-top: 16px; border-top: 1px solid var(--border); }
+@media (max-width: 760px) {
+  .policy-table { display: block; overflow-x: auto; }
+}
+
+/* ---------- text links (the site had no link color, so dark mode showed browser lavender) ---------- */
+main a:not(.btn):not(.card-link):not(.tpl-preview) { color: var(--accent-ink); text-underline-offset: 2px; }
+.footer-inner a { color: #e6edf3; text-underline-offset: 2px; }
