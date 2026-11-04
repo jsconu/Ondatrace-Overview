@@ -386,6 +386,8 @@ h1, h2, h3 { font-family: var(--font-display); color: var(--ink); margin: 0; }
 }
 
 .cards-3 { grid-template-columns: repeat(3, 1fr); }
+.cards-2 { grid-template-columns: repeat(2, 1fr); }
+.subhead { margin-top: 2.5rem; }
 .cards-agents { grid-template-columns: repeat(2, 1fr); }
 
 .card {
@@ -593,7 +595,7 @@ h1, h2, h3 { font-family: var(--font-display); color: var(--ink); margin: 0; }
 @media (max-width: 760px) {
   .hero { padding: 64px 0 56px; }
   .hero h1 { font-size: 1.9rem; }
-  .cards-3, .cards-agents { grid-template-columns: 1fr; }
+  .cards-3, .cards-2, .cards-agents { grid-template-columns: 1fr; }
   .topnav { gap: 14px; }
   .topnav a.nav-extra { display: none; }
 }
