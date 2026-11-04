@@ -10,7 +10,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="../style.css?v=14">
+  <link rel="stylesheet" href="../style.css?v=15">
 </head>
 <body>
   <a href="#top" class="skip-link">Skip to main content</a>
@@ -36,7 +36,7 @@
           <h1>One shared memory for your whole PMO.</h1>
           <p class="hero-sub">
             Ondatrace reads the tools your teams already use, plus your project meetings, and keeps
-            a running record of every project. It uses that record to show each project manager
+            a long-term memory of every project. It uses that memory to show each project manager
             and PMO leader what is happening with schedules, risks and the actions that need
             someone.
           </p>
@@ -81,23 +81,49 @@
       </div>
     </section>
 
-    <section class="section section-alt" id="different">
+    <section class="section section-alt" id="memory">
       <div class="wrap">
-        <h2>How it's different from a general AI agent</h2>
+        <h2>Long-term memory that doesn't leak</h2>
         <p class="section-lede">
-          A general AI assistant answers the question in front of it, using whatever you give it.
-          Ondatrace works on its own and builds up knowledge of your projects over time.
+          Most AI agents and scheduled AI tasks have a leaky-bucket memory. Each run can only hold
+          so much text, so they carry forward a summary of what came before. Every summary drops
+          details. A few weeks later, the date a salesperson promised or the risk someone raised in
+          a meeting is gone. Ondatrace keeps a long-term memory built for project work.
+        </p>
+        <div class="cards cards-3 callouts">
+          <div class="card">
+            <h3>Stored as records</h3>
+            <p>Projects, dates, decisions, risks and promises are each kept as their own record, with a link to where they came from.</p>
+          </div>
+          <div class="card">
+            <h3>Updated, never summarized away</h3>
+            <p>Each check reads only what changed and updates those records. Older facts stay exactly as they were recorded.</p>
+          </div>
+          <div class="card">
+            <h3>History you can use</h3>
+            <p>It can tell you that a go-live date has moved three times, or that a risk has been open for six weeks.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="different">
+      <div class="wrap">
+        <h2>How it's different from AI agents and scheduled jobs</h2>
+        <p class="section-lede">
+          General AI agents and scheduled AI jobs can read your tools and run on a timer. What they
+          lack is a memory of your projects that lasts and a consistent way to judge them.
         </p>
         <table class="compare">
           <thead>
-            <tr><th scope="col"><span class="sr-only">Topic</span></th><th scope="col">General AI agent</th><th scope="col">Ondatrace</th></tr>
+            <tr><th scope="col"><span class="sr-only">Topic</span></th><th scope="col">General AI agent or scheduled job</th><th scope="col">Ondatrace</th></tr>
           </thead>
           <tbody>
-            <tr><th scope="row">Memory</th><td>Starts fresh in each conversation.</td><td>Keeps a running record of every project, decision and risk.</td></tr>
-            <tr><th scope="row">What it reads</th><td>What you paste in or point it to.</td><td>All your connected tools and meetings. It links the same work across them.</td></tr>
+            <tr><th scope="row">Memory</th><td>Starts each run from scratch or from a summary of the last one. Details fade over time.</td><td>Keeps every project, date, decision and risk as a lasting record with its source.</td></tr>
+            <tr><th scope="row">What it reads</th><td>The tools you set it up to read, one at a time.</td><td>All your connected tools and meetings. It links the same work across them.</td></tr>
             <tr><th scope="row">How it judges</th><td>The model decides, so answers can vary.</td><td>Fixed rules built with practicing project managers set project health. The AI explains the result but can't change it.</td></tr>
-            <tr><th scope="row">When it works</th><td>When you ask it something.</td><td>Every 15 to 30 minutes, on its own. It flags what changed.</td></tr>
-            <tr><th scope="row">Evidence</th><td>You check its answer yourself.</td><td>Every finding links to the messages, tickets and meetings behind it.</td></tr>
+            <tr><th scope="row">Change over time</th><td>Each run looks at today on its own. It can't tell a new problem from one that has been building for weeks.</td><td>Checks every 15 to 30 minutes and compares what it finds with what it already knows. It flags what is new or getting worse.</td></tr>
+            <tr><th scope="row">Evidence</th><td>You check its answers yourself.</td><td>Every finding links to the messages, tickets and meetings behind it.</td></tr>
             <tr><th scope="row">Privacy</th><td>Sees whatever it's given.</td><td>People only see findings from sources they can open. Leaders see takeaways and never the original messages.</td></tr>
           </tbody>
         </table>
@@ -105,7 +131,7 @@
       </div>
     </section>
 
-    <section class="section" id="connect">
+    <section class="section section-alt" id="connect">
       <div class="wrap">
         <h2>Works with the tools you already use</h2>
         <p class="section-lede" style="margin-bottom:0">
@@ -116,7 +142,7 @@
       </div>
     </section>
 
-    <section class="section section-alt" id="more">
+    <section class="section" id="more">
       <div class="wrap">
         <h2>More detail</h2>
         <details class="fold" id="thesis">

@@ -1008,6 +1008,6 @@ a.card-link h3 { color: var(--accent-ink); }
   .compare tbody th { width: auto; margin-bottom: 6px; }
   .compare td { width: auto; }
   .compare td { font-size: 0.95rem; padding: 6px 10px; border-radius: 8px; }
-  .compare td:first-of-type::before { content: "General AI agent: "; font-weight: 600; }
+  .compare td:first-of-type::before { content: "General agent or scheduled job: "; font-weight: 600; }
   .compare td:last-child::before { content: "Ondatrace: "; font-weight: 600; color: var(--accent-ink); }
 }
