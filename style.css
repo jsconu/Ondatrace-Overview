@@ -1034,3 +1034,7 @@ a.card-link h3 { color: var(--accent-ink); }
 /* ---------- text links (the site had no link color, so dark mode showed browser lavender) ---------- */
 main a:not(.btn):not(.card-link):not(.tpl-preview) { color: var(--accent-ink); text-underline-offset: 2px; }
 .footer-inner a { color: #e6edf3; text-underline-offset: 2px; }
+
+/* ---------- agent pricing ---------- */
+.price-card h3 { font-size: 1.2rem; }
+.price-main { border-color: var(--primary); box-shadow: 0 0 0 1px var(--primary) inset; }
