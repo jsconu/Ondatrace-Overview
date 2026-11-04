@@ -979,3 +979,35 @@ a.card-link h3 { color: var(--accent-ink); }
 @media (max-width: 760px) {
   .bets { grid-template-columns: 1fr; }
 }
+
+/* ---------- best value badge (templates toolkit) ---------- */
+.tpl-best {
+  display: inline-flex; align-items: center; gap: 5px; vertical-align: middle; margin-left: 8px;
+  font-family: var(--font-body); font-size: 0.8rem; font-weight: 700;
+  color: #ffffff; background: var(--primary); border-radius: 999px; padding: 3px 10px 3px 8px;
+}
+
+/* ---------- comparison table (agent page) ---------- */
+.sr-only { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; }
+.compare { width: 100%; border-collapse: collapse; background: var(--white); border: 1px solid var(--border); border-radius: 12px; overflow: hidden; }
+.compare th, .compare td { text-align: left; vertical-align: top; padding: 14px 18px; border-top: 1px solid var(--border); }
+.compare thead th { border-top: none; font-family: var(--font-display); font-size: 1rem; color: var(--ink); }
+.compare thead th:last-child { color: var(--accent-ink); }
+.compare tbody th { width: 16%; font-family: var(--font-display); font-weight: 600; color: var(--ink); }
+.compare td { width: 42%; color: var(--ink-soft); }
+.compare td:last-child { color: var(--ink); background: var(--accent-ink-bg); }
+#more .fold { max-width: 900px; }
+#more .fold:first-of-type { margin-top: 8px; }
+#more .bets, #more .decision-groups { margin-top: 16px; }
+@media (max-width: 760px) {
+  .compare thead { display: none; }
+  .compare, .compare tbody, .compare tr, .compare th, .compare td { display: block; width: auto; }
+  .compare tr { border-top: 1px solid var(--border); padding: 14px 16px; }
+  .compare tr:first-child { border-top: none; }
+  .compare th, .compare td { border: none; padding: 0; }
+  .compare tbody th { width: auto; margin-bottom: 6px; }
+  .compare td { width: auto; }
+  .compare td { font-size: 0.95rem; padding: 6px 10px; border-radius: 8px; }
+  .compare td:first-of-type::before { content: "General AI agent: "; font-weight: 600; }
+  .compare td:last-child::before { content: "Ondatrace: "; font-weight: 600; color: var(--accent-ink); }
+}
