@@ -896,7 +896,12 @@ h1, h2, h3 { font-family: var(--font-display); color: var(--ink); margin: 0; }
 @media (max-width: 480px) {
   .topnav { gap: 10px; }
   .topnav a { font-size: 0.85rem; }
+}
+/* Room for Consulting on phones: drop the demo button and the Contact link (every page repeats the
+   button in its content, and every footer carries the contact email). */
+@media (max-width: 640px) {
   .topnav .btn { display: none; }
+  .topnav a[href$="contact/"] { display: none; }
 }
 @media (max-width: 359px) {
   .topbar-inner { padding-left: 12px; padding-right: 12px; }
