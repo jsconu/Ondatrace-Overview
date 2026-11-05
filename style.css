@@ -1045,3 +1045,8 @@ main a:not(.btn):not(.card-link):not(.tpl-preview) { color: var(--accent-ink); t
 /* ---------- agent pricing ---------- */
 .price-card h3 { font-size: 1.2rem; }
 .price-main { border-color: var(--primary); box-shadow: 0 0 0 1px var(--primary) inset; }
+
+/* ---------- consulting buy buttons ---------- */
+.card-actions { margin-top: 16px !important; display: flex; flex-wrap: wrap; gap: 8px; }
+.card-actions .btn-ghost.btn-small { background: transparent; color: var(--ink) !important; border: 1px solid var(--border); }
+.card-actions .btn-ghost.btn-small:hover { border-color: var(--accent-ink); color: var(--accent-ink) !important; }
