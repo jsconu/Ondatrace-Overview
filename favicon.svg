@@ -1,12 +1,16 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64">
   <title>Ondatrace galleon</title>
-  <circle cx="32" cy="32" r="31" fill="#061923"/>
-  <g fill="none" stroke="#45ddcf" stroke-width="2.8" stroke-linecap="round" stroke-linejoin="round">
-    <circle cx="32" cy="32" r="29.5" stroke-width="2"/>
-    <path d="M31 12v31M20 22v21M45 23v20"/>
-    <path d="M29 16h12c-3 4-3 8 0 12H27c3-4 4-8 2-12Z" fill="#061923"/>
-    <path d="M17 26h10c-2 3-2 7 0 10H15c3-3 4-7 2-10Z" fill="#061923"/>
-    <path d="M43 27h9c-2 3-2 6 0 9H41c3-3 3-6 2-9Z" fill="#061923"/>
-    <path d="M12 43h37l7-5-7 13c-9 4-19 4-29 0Z" fill="#061923"/>
-  </g>
+  <defs>
+    <mask id="galleon" maskUnits="userSpaceOnUse" x="0" y="0" width="64" height="64">
+      <rect width="64" height="64" fill="white"/>
+      <g fill="black">
+        <path d="M29 13h12c-3 4-3 8 0 12H27c3-4 4-8 2-12Z"/>
+        <path d="M17 24h10c-2 3-2 7 0 10H15c3-3 4-7 2-10Z"/>
+        <path d="M43 25h9c-2 3-2 6 0 9H41c3-3 3-6 2-9Z"/>
+        <path d="M12 41h37l7-5-7 14c-9 5-19 5-29 0Z"/>
+      </g>
+      <path d="M31 10v32M20 21v21M45 22v20" fill="none" stroke="black" stroke-width="3" stroke-linecap="round"/>
+    </mask>
+  </defs>
+  <circle cx="32" cy="32" r="31" fill="#1f2328" mask="url(#galleon)"/>
 </svg>
