@@ -1068,7 +1068,7 @@ main a:not(.btn):not(.card-link):not(.tpl-preview) { color: var(--accent-ink); t
    Keep this below the original hero styles so it wins without changing other pages. */
 .hero.celestial-home {
   background: linear-gradient(90deg, rgba(2, 9, 24, .98) 0%, rgba(2, 11, 27, .95) 30%, rgba(2, 11, 27, .37) 61%, rgba(2, 11, 27, .08) 100%),
-    url("img/space-galleon-realistic.jpg") 50% center / cover no-repeat, #04132b;
+    url("img/space-galleon-realistic.jpg") right center / auto 380px no-repeat, #04132b;
   border-bottom: 1px solid #174368;
   min-height: 550px;
   display: flex;
@@ -1113,20 +1113,21 @@ main a:not(.btn):not(.card-link):not(.tpl-preview) { color: var(--accent-ink); t
 .hero.celestial-agent .hero-sub { color: #d9e8f3; }
 .doc-hero.celestial-consulting {
   background: linear-gradient(90deg, rgba(2, 11, 28, .97) 0%, rgba(2, 11, 28, .87) 53%, rgba(2, 11, 28, .45) 100%),
-    url("img/space-galleon-realistic.jpg") center 36% / cover no-repeat, #04132b;
+    url("img/space-galleon-realistic.jpg") right center / auto 380px no-repeat, #04132b;
   border-bottom: 1px solid #174368;
 }
 .doc-hero.celestial-consulting h1 { color: #fff; max-width: 740px; }
 .doc-hero.celestial-consulting .doc-lede { color: #d9e8f3; }
 @media (max-width: 800px) {
   .hero.celestial-home { min-height: auto; padding: 78px 0 84px;
-    background-position: center, 64% center; }
+    background-position: center, right center;
+    background-size: auto, auto 380px; }
   .hero.celestial-home h1, .hero.celestial-home .hero-sub { max-width: 100%; }
   .hero.celestial-home {
     background-image: linear-gradient(90deg, rgba(2,9,24,.97), rgba(2,9,24,.78)),
       url("img/space-galleon-realistic.jpg");
   }
-  .doc-hero.celestial-consulting { background-position: center, 68% center; }
+  .doc-hero.celestial-consulting { background-position: center, right center; background-size: auto, auto 380px; }
 }
 @media (prefers-reduced-motion: reduce) {
   .hero.celestial-home, .hero.celestial-agent, .doc-hero.celestial-consulting { animation: none; }
