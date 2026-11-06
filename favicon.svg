@@ -1,16 +1,7 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64">
-  <title>Ondatrace galleon</title>
-  <defs>
-    <mask id="galleon" maskUnits="userSpaceOnUse" x="0" y="0" width="64" height="64">
-      <rect width="64" height="64" fill="white"/>
-      <g fill="black">
-        <path d="M29 13h12c-3 4-3 8 0 12H27c3-4 4-8 2-12Z"/>
-        <path d="M17 24h10c-2 3-2 7 0 10H15c3-3 4-7 2-10Z"/>
-        <path d="M43 25h9c-2 3-2 6 0 9H41c3-3 3-6 2-9Z"/>
-        <path d="M12 41h37l7-5-7 14c-9 5-19 5-29 0Z"/>
-      </g>
-      <path d="M31 10v32M20 21v21M45 22v20" fill="none" stroke="black" stroke-width="3" stroke-linecap="round"/>
-    </mask>
-  </defs>
-  <circle cx="32" cy="32" r="31" fill="#1f2328" mask="url(#galleon)"/>
+<svg xmlns="http://www.w3.org/2000/svg" width="512" height="512" viewBox="0 0 64 64">
+  <title>Ondatrace compass O</title>
+  <circle cx="32" cy="32" r="26" fill="none" stroke="#15191d" stroke-width="7"/>
+  <g fill="none" stroke="#079b91" stroke-linejoin="round" stroke-linecap="round">
+    <path d="M32 14 37 27 50 32 37 37 32 50 27 37 14 32 27 27Z" stroke-width="2.7"/>
+  </g>
 </svg>
