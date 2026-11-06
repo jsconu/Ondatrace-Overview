@@ -1063,12 +1063,11 @@ main a:not(.btn):not(.card-link):not(.tpl-preview) { color: var(--accent-ink); t
 }
 
 
-/* Ondatrace celestial identity: one illustrated hero, restrained starfields elsewhere.
-   Bright point stars and cross-shaped stars deliberately signal outer space, not ocean.
-   Keep this below the original hero styles so it wins without changing other pages. */
+/* Original full-resolution chat artwork; text and buttons remain live HTML.
+   On phones the ship sits below the copy, rather than disappearing behind it. */
 .hero.celestial-home {
-  background: linear-gradient(90deg, rgba(2, 9, 24, .98) 0%, rgba(2, 11, 27, .95) 30%, rgba(2, 11, 27, .37) 61%, rgba(2, 11, 27, .08) 100%),
-    url("img/space-galleon-realistic.jpg") right center / auto 380px no-repeat, #04132b;
+  background: linear-gradient(90deg, rgba(2, 9, 24, .95) 0%, rgba(2, 11, 27, .88) 40%, rgba(2, 11, 27, .55) 54%, transparent 76%),
+    url("img/celestial-galleon.webp") right center / auto 100% no-repeat, #020b19;
   border-bottom: 1px solid #174368;
   min-height: 550px;
   display: flex;
@@ -1112,22 +1111,23 @@ main a:not(.btn):not(.card-link):not(.tpl-preview) { color: var(--accent-ink); t
 .hero.celestial-agent h1, .hero.celestial-agent .hero-copy h1 { color: #fff; }
 .hero.celestial-agent .hero-sub { color: #d9e8f3; }
 .doc-hero.celestial-consulting {
-  background: linear-gradient(90deg, rgba(2, 11, 28, .97) 0%, rgba(2, 11, 28, .87) 53%, rgba(2, 11, 28, .45) 100%),
-    url("img/space-galleon-realistic.jpg") right center / auto 380px no-repeat, #04132b;
+  background: linear-gradient(90deg, rgba(2, 11, 28, .96) 0%, rgba(2, 11, 28, .88) 45%, rgba(2, 11, 28, .25) 80%, rgba(2, 11, 28, .10) 100%),
+    url("img/celestial-galleon.webp") right center / auto 100% no-repeat, #020b19;
   border-bottom: 1px solid #174368;
 }
 .doc-hero.celestial-consulting h1 { color: #fff; max-width: 740px; }
 .doc-hero.celestial-consulting .doc-lede { color: #d9e8f3; }
 @media (max-width: 800px) {
-  .hero.celestial-home { min-height: auto; padding: 78px 0 84px;
-    background-position: center, right center;
-    background-size: auto, auto 380px; }
-  .hero.celestial-home h1, .hero.celestial-home .hero-sub { max-width: 100%; }
-  .hero.celestial-home {
-    background-image: linear-gradient(90deg, rgba(2,9,24,.97), rgba(2,9,24,.78)),
-      url("img/space-galleon-realistic.jpg");
+  .hero.celestial-home,
+  .doc-hero.celestial-consulting {
+    min-height: auto;
+    padding: 56px 0 290px;
+    background-image: linear-gradient(180deg, #020b19 0%, #020b19 calc(100% - 290px), transparent calc(100% - 190px)),
+      url("img/celestial-galleon.webp");
+    background-position: center, right bottom;
+    background-size: 100% 100%, auto 280px;
   }
-  .doc-hero.celestial-consulting { background-position: center, right center; background-size: auto, auto 380px; }
+  .hero.celestial-home h1, .hero.celestial-home .hero-sub { max-width: 100%; }
 }
 @media (prefers-reduced-motion: reduce) {
   .hero.celestial-home, .hero.celestial-agent, .doc-hero.celestial-consulting { animation: none; }

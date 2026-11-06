@@ -1,3 +1,20 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32">
-  <rect width="32" height="32" rx="7" fill="#0f766e"/><g stroke="#ffffff" stroke-width="1.9" stroke-linecap="round"><line x1="16.00" y1="12.80" x2="16.00" y2="3.80"/><line x1="18.26" y1="13.74" x2="24.63" y2="7.37"/><line x1="19.20" y1="16.00" x2="28.20" y2="16.00"/><line x1="18.26" y1="18.26" x2="24.63" y2="24.63"/><line x1="16.00" y1="19.20" x2="16.00" y2="28.20"/><line x1="13.74" y1="18.26" x2="7.37" y2="24.63"/><line x1="12.80" y1="16.00" x2="3.80" y2="16.00"/><line x1="13.74" y1="13.74" x2="7.37" y2="7.37"/></g><g fill="#ffffff"><circle cx="16.00" cy="3.40" r="1.7"/><circle cx="24.91" cy="7.09" r="1.7"/><circle cx="28.60" cy="16.00" r="1.7"/><circle cx="24.91" cy="24.91" r="1.7"/><circle cx="16.00" cy="28.60" r="1.7"/><circle cx="7.09" cy="24.91" r="1.7"/><circle cx="3.40" cy="16.00" r="1.7"/><circle cx="7.09" cy="7.09" r="1.7"/></g><circle cx="16" cy="16" r="8.3" fill="none" stroke="#ffffff" stroke-width="2.6"/><circle cx="16" cy="16" r="3" fill="#ffffff"/><circle cx="16" cy="16" r="1.1" fill="#0f766e"/>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64">
+  <title>Ondatrace galleon</title>
+  <rect width="64" height="64" rx="14" fill="#031327"/>
+  <path d="M56 6v8m-4-4h8M7 25v6m-3-3h6" stroke="#86eee4" stroke-width="2" stroke-linecap="round"/>
+  <circle cx="10" cy="11" r="1.3" fill="#fff3d8"/>
+  <g stroke="#c99049" stroke-width="2" stroke-linecap="round">
+    <path d="M18 17v31M32 6v42M45 16v31M49 45l12-8"/>
+  </g>
+  <path d="M32 5l9 2-9 3z" fill="#59dbd0"/>
+  <g fill="#ffedc6">
+    <path d="M14 19h10q-2 5 2 11H11q5-5 3-11z"/>
+    <path d="M27 11h12q-2 5 2 11H24q5-5 3-11z"/>
+    <path d="M25 25h15q-2 7 3 16H21q6-8 4-16z"/>
+    <path d="M42 19h9q-1 4 2 10H39q5-5 3-10z"/>
+    <path d="M41 32h11q-1 4 2 9H38q5-5 3-9z"/>
+  </g>
+  <path d="M8 40h9v6h37l7-7-6 14q-13 8-34 4L12 52z" fill="#b97938"/>
+  <path d="M10 46h44l6-6M16 52q20 5 40-2" fill="none" stroke="#f4cd86" stroke-width="2"/>
+  <path d="M20 49h4m5 1h4m5 0h4m5-1h4" stroke="#38281f" stroke-width="2"/>
 </svg>
