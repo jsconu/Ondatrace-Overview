@@ -1,20 +1,12 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64">
   <title>Ondatrace galleon</title>
-  <rect width="64" height="64" rx="14" fill="#031327"/>
-  <path d="M56 6v8m-4-4h8M7 25v6m-3-3h6" stroke="#86eee4" stroke-width="2" stroke-linecap="round"/>
-  <circle cx="10" cy="11" r="1.3" fill="#fff3d8"/>
-  <g stroke="#c99049" stroke-width="2" stroke-linecap="round">
-    <path d="M18 17v31M32 6v42M45 16v31M49 45l12-8"/>
+  <circle cx="32" cy="32" r="31" fill="#061923"/>
+  <g fill="none" stroke="#45ddcf" stroke-width="2.8" stroke-linecap="round" stroke-linejoin="round">
+    <circle cx="32" cy="32" r="29.5" stroke-width="2"/>
+    <path d="M31 12v31M20 22v21M45 23v20"/>
+    <path d="M29 16h12c-3 4-3 8 0 12H27c3-4 4-8 2-12Z" fill="#061923"/>
+    <path d="M17 26h10c-2 3-2 7 0 10H15c3-3 4-7 2-10Z" fill="#061923"/>
+    <path d="M43 27h9c-2 3-2 6 0 9H41c3-3 3-6 2-9Z" fill="#061923"/>
+    <path d="M12 43h37l7-5-7 13c-9 4-19 4-29 0Z" fill="#061923"/>
   </g>
-  <path d="M32 5l9 2-9 3z" fill="#59dbd0"/>
-  <g fill="#ffedc6">
-    <path d="M14 19h10q-2 5 2 11H11q5-5 3-11z"/>
-    <path d="M27 11h12q-2 5 2 11H24q5-5 3-11z"/>
-    <path d="M25 25h15q-2 7 3 16H21q6-8 4-16z"/>
-    <path d="M42 19h9q-1 4 2 10H39q5-5 3-10z"/>
-    <path d="M41 32h11q-1 4 2 9H38q5-5 3-9z"/>
-  </g>
-  <path d="M8 40h9v6h37l7-7-6 14q-13 8-34 4L12 52z" fill="#b97938"/>
-  <path d="M10 46h44l6-6M16 52q20 5 40-2" fill="none" stroke="#f4cd86" stroke-width="2"/>
-  <path d="M20 49h4m5 1h4m5 0h4m5-1h4" stroke="#38281f" stroke-width="2"/>
 </svg>
