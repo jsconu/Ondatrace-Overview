@@ -1064,16 +1064,16 @@ main a:not(.btn):not(.card-link):not(.tpl-preview) { color: var(--accent-ink); t
 /* Original full-resolution chat artwork; text and buttons remain live HTML.
    On phones the ship sits below the copy, rather than disappearing behind it. */
 .hero.celestial-home {
-  background: linear-gradient(90deg, rgba(2, 9, 24, .95) 0%, rgba(2, 11, 27, .88) 40%, rgba(2, 11, 27, .55) 54%, transparent 76%),
-    url("img/celestial-galleon.webp") right center / auto 100% no-repeat, #020b19;
-  border-bottom: 1px solid #174368;
+  background: linear-gradient(90deg, rgba(3, 17, 14, .95) 0%, rgba(3, 17, 14, .88) 40%, rgba(3, 17, 14, .55) 54%, transparent 76%),
+    url("img/teal-space-galleon.png") right center / auto 100% no-repeat, #061714;
+  border-bottom: 1px solid #24544b;
   min-height: 550px;
   display: flex;
   align-items: center;
 }
 .hero.celestial-home .hero-inner { max-width: 1080px; width: 100%; }
 .hero.celestial-home h1 { max-width: 570px; color: #fff; }
-.hero.celestial-home .hero-sub { max-width: 530px; color: #d9e8f3; }
+.hero.celestial-home .hero-sub { max-width: 530px; color: #d6e8df; }
 .hero.celestial-home .hero-eyebrow,
 .hero.celestial-agent .hero-eyebrow,
 .doc-hero.celestial-consulting .hero-eyebrow {
@@ -1094,34 +1094,26 @@ main a:not(.btn):not(.card-link):not(.tpl-preview) { color: var(--accent-ink); t
   color: #a6fff0;
 }
 .hero.celestial-agent {
-  background:
-    radial-gradient(circle at 82% 17%, #fff 0 2px, transparent 3px),
-    radial-gradient(circle at 13% 22%, #fff 0 1.5px, transparent 3px),
-    radial-gradient(circle at 48% 64%, #e1f9ff 0 1.5px, transparent 3px),
-    radial-gradient(circle at 77% 82%, #e1f9ff 0 2px, transparent 3px),
-    radial-gradient(circle at 37% 12%, #fff 0 1px, transparent 2.5px),
-    radial-gradient(circle at 58% 29%, #def7ff 0 1px, transparent 2.5px),
-    radial-gradient(circle at 93% 51%, #fff 0 1.5px, transparent 3px),
-    radial-gradient(ellipse at 75% 60%, rgba(8, 95, 134, .43), transparent 51%),
-    linear-gradient(120deg, #031022, #082546 62%, #040c1d);
-  border-bottom: 1px solid #174368;
+  background: linear-gradient(90deg, rgba(3, 17, 14, .97), rgba(3, 17, 14, .86) 52%, rgba(3, 17, 14, .4)),
+    url("img/teal-space-galleon.png") right center / cover no-repeat, #061714;
+  border-bottom: 1px solid #24544b;
 }
 .hero.celestial-agent h1, .hero.celestial-agent .hero-copy h1 { color: #fff; }
-.hero.celestial-agent .hero-sub { color: #d9e8f3; }
+.hero.celestial-agent .hero-sub { color: #d6e8df; }
 .doc-hero.celestial-consulting {
-  background: linear-gradient(90deg, rgba(2, 11, 28, .96) 0%, rgba(2, 11, 28, .88) 45%, rgba(2, 11, 28, .25) 80%, rgba(2, 11, 28, .10) 100%),
-    url("img/celestial-galleon.webp") right center / auto 100% no-repeat, #020b19;
-  border-bottom: 1px solid #174368;
+  background: linear-gradient(90deg, rgba(3, 17, 14, .96) 0%, rgba(3, 17, 14, .88) 45%, rgba(3, 17, 14, .25) 80%, rgba(3, 17, 14, .10) 100%),
+    url("img/teal-space-galleon.png") right center / auto 100% no-repeat, #061714;
+  border-bottom: 1px solid #24544b;
 }
 .doc-hero.celestial-consulting h1 { color: #fff; max-width: 740px; }
-.doc-hero.celestial-consulting .doc-lede { color: #d9e8f3; }
+.doc-hero.celestial-consulting .doc-lede { color: #d6e8df; }
 @media (max-width: 800px) {
   .hero.celestial-home,
   .doc-hero.celestial-consulting {
     min-height: auto;
     padding: 56px 0 290px;
-    background-image: linear-gradient(180deg, #020b19 0%, #020b19 calc(100% - 290px), transparent calc(100% - 190px)),
-      url("img/celestial-galleon.webp");
+    background-image: linear-gradient(180deg, #061714 0%, #061714 calc(100% - 290px), transparent calc(100% - 190px)),
+      url("img/teal-space-galleon.png");
     background-position: center, right bottom;
     background-size: 100% 100%, auto 280px;
   }
@@ -1160,3 +1152,14 @@ main a:not(.btn):not(.card-link):not(.tpl-preview) { color: var(--accent-ink); t
 @media (max-width: 520px) {
   .topnav { gap: 10px 14px; justify-content: flex-start; }
 }
+
+/* Match the navigation chart to the teal nebula and ivory sails of the galleon. */
+.celestial-agent .helm-card { background: rgba(6, 23, 20, .9); border: 1px solid #407568; border-radius: 18px; }
+.celestial-agent .hn-chord { stroke: #407568; }
+.celestial-agent .hn-rim, .celestial-agent .hn-spoke { stroke: #74b9a9; }
+.celestial-agent .hn-node circle { fill: #164f46; stroke: #86c5b4; stroke-width: 1.5; }
+.celestial-agent .hn-letter, .celestial-agent .hn-name { fill: #f2f0df; }
+.celestial-agent .hn-label { fill: #d6e8df; }
+.celestial-agent .hn-hub { fill: #0f766e; }
+.celestial-agent .hn-hub-ring { stroke: #d4c79d; }
+.celestial-agent .helm-card figcaption { color: #d6e8df; }
