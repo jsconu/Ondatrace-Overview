@@ -123,16 +123,16 @@
             <tr><th scope="col"><span class="sr-only">Topic</span></th><th scope="col">General AI agent or scheduled job</th><th scope="col">Ondatrace</th></tr>
           </thead>
           <tbody>
-            <tr><th scope="row">Memory</th><td>Starts each run from scratch or from a summary of the last one. Details fade over time.</td><td>Keeps every project, date, decision and risk as a lasting record with its source.</td></tr>
-            <tr><th scope="row">What it reads</th><td>The tools you set it up to read, one at a time.</td><td>All your connected tools and meetings. It links the same work across them.</td></tr>
+            <tr><th scope="row">Memory</th><td>Varies by assistant and configuration; some have persistent memory.</td><td>Stores project records, decisions and evidence references in a shared PMO workspace, subject to access and retention rules.</td></tr>
+            <tr><th scope="row">What it reads</th><td>Depends on the connectors, permissions and tools made available to that assistant.</td><td>Reads authorized Ondatrace records and supported direct integrations. Customer-managed Claude/ChatGPT evidence handoff is in development; host connections do not automatically grant Ondatrace access.</td></tr>
             <tr><th scope="row">How it judges</th><td>The model decides, so answers can vary.</td><td>Fixed rules built with practicing project managers set project health. The AI explains the result but can't change it.</td></tr>
             <tr><th scope="row">Change over time</th><td>Each run looks at today on its own. It can't tell a new problem from one that has been building for weeks.</td><td>Keeps your tools in sync through the day and analyzes everything new each evening, so Today is ready the next morning. Each run compares what it finds with what it already knows and flags what is new or getting worse.</td></tr>
-            <tr><th scope="row">Evidence</th><td>You check its answers yourself.</td><td>Every finding links to the messages, tickets and meetings behind it.</td></tr>
+            <tr><th scope="row">Evidence</th><td>May cite connected sources when retrieval supports it.</td><td>Shows supporting evidence where available and distinguishes recorded sources from inferred connections; missing or stale evidence should be treated as incomplete.</td></tr>
             <tr><th scope="row">Across the team</th><td>Separate personal agents can duplicate setup and apply different risk or status criteria across projects.</td><td>Shared configuration and consistent project-health rules across the PMO, without each PM maintaining their own agent.</td></tr>
             <tr><th scope="row">Privacy</th><td>Sees whatever it's given.</td><td>People only see findings from sources they can open. Leaders see takeaways and never the original messages.</td></tr>
           </tbody>
         </table>
-        <p class="section-note">Ondatrace runs on Claude, from Anthropic. It treats emails and messages as information to weigh and never follows instructions written in them.</p>
+        <p class="section-note">Ondatrace can be used through its Claude MCP connection. Source text is untrusted input, not permission to take action. These are product-design differences, not the results of a controlled comparison with a particular competing assistant.</p>
       </div>
     </section>
 
@@ -140,7 +140,7 @@
       <div class="wrap">
         <h2>Works with the tools you already use</h2>
         <p class="section-lede" style="margin-bottom:0">
-          Connect each tool with a normal sign-in: Jira, Kantata, Salesforce, Smartsheet, Slack,
+          For supported direct integrations, connect tools through Ondatrace, subject to their own account permissions: Jira, Kantata, Salesforce, Smartsheet, Slack,
           Microsoft Teams, Outlook, Microsoft calendars and Webex. Record your project meetings too,
           because many decisions are only ever said out loud.
         </p>
@@ -152,7 +152,7 @@
     <section class="section" id="pricing">
       <div class="wrap">
         <h2>Pricing</h2>
-        <p class="section-lede">Priced by team size. Everyone who signs in counts, project managers and leaders alike. Every plan includes the shared memory, insights on schedules, risks and next actions, every connector, and the AI usage a team that size needs. Every new team starts with a 14-day free trial.</p>
+        <p class="section-lede">Indicative team-size pricing for the planned self-service offer. Availability, supported integrations, AI usage and trial eligibility are confirmed during pilot onboarding; these are not a guarantee that every capability is currently enabled. The current app is invitation-only.</p>
         <div class="cards cards-3 callouts">
           <div class="card price-card">
             <p class="eyebrow">Small</p>
@@ -185,7 +185,7 @@
             <p>Tracks outside changes that affect your projects: regulation, vendors, competitors, customers and security. Each item links to its source, names the project it affects and puts a suggested action inside Today. Your team chooses the industry, vendors and topics to watch.</p>
           </div>
         </div>
-        <p class="section-note">Sign-up opens soon. To start early, email <a href="mailto:ondatrace@ondatrace.com?subject=AI%20agent">ondatrace@ondatrace.com</a>.</p>
+        <p class="section-note">Invitation-only access and pilot availability are confirmed individually. To enquire, email <a href="mailto:ondatrace@ondatrace.com?subject=AI%20agent">ondatrace@ondatrace.com</a>.</p>
       </div>
     </section>
 
