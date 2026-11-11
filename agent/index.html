@@ -125,11 +125,11 @@
           <tbody>
             <tr><th scope="row">Memory</th><td>Varies by assistant and configuration; some have persistent memory.</td><td>Stores project records, decisions and evidence references in a shared PMO workspace, subject to access and retention rules.</td></tr>
             <tr><th scope="row">What it reads</th><td>Depends on the connectors, permissions and tools made available to that assistant.</td><td>Reads authorized Ondatrace records and supported direct integrations. Customer-managed Claude/ChatGPT evidence handoff is in development; host connections do not automatically grant Ondatrace access.</td></tr>
-            <tr><th scope="row">How it judges</th><td>The model decides, so answers can vary.</td><td>Fixed rules built with practicing project managers set project health. The AI explains the result but can't change it.</td></tr>
-            <tr><th scope="row">Change over time</th><td>Each run looks at today on its own. It can't tell a new problem from one that has been building for weeks.</td><td>Keeps your tools in sync through the day and analyzes everything new each evening, so Today is ready the next morning. Each run compares what it finds with what it already knows and flags what is new or getting worse.</td></tr>
+            <tr><th scope="row">How it judges</th><td>Can use instructions, structured tools and deterministic checks, depending on setup.</td><td>Supports defined checks and evidence-backed findings; AI interpretations still need review.</td></tr>
+            <tr><th scope="row">Change over time</th><td>Depends on the host's history, connector permissions and scheduling.</td><td>Retains saved project history and can run configured checks. Claude-assisted AI review is on demand; automatic model analysis depends on separately enabled service settings.</td></tr>
             <tr><th scope="row">Evidence</th><td>May cite connected sources when retrieval supports it.</td><td>Shows supporting evidence where available and distinguishes recorded sources from inferred connections; missing or stale evidence should be treated as incomplete.</td></tr>
             <tr><th scope="row">Across the team</th><td>Separate personal agents can duplicate setup and apply different risk or status criteria across projects.</td><td>Shared configuration and consistent project-health rules across the PMO, without each PM maintaining their own agent.</td></tr>
-            <tr><th scope="row">Privacy</th><td>Sees whatever it's given.</td><td>People only see findings from sources they can open. Leaders see takeaways and never the original messages.</td></tr>
+            <tr><th scope="row">Privacy</th><td>Varies by host, connector and organization settings.</td><td>Membership and source-access rules determine visibility; some takeaways can be shared with leaders. See the <a href="https://app.ondatrace.com/privacy">app privacy notice</a>.</td></tr>
           </tbody>
         </table>
         <p class="section-note">Ondatrace can be used through its Claude MCP connection. Source text is untrusted input, not permission to take action. These are product-design differences, not the results of a controlled comparison with a particular competing assistant.</p>
@@ -144,8 +144,8 @@
           Microsoft Teams, Outlook, Microsoft calendars and Webex. Record your project meetings too,
           because many decisions are only ever said out loud.
         </p>
-        <p class="section-note">Google Workspace (Calendar, Meet and Docs) and Zoom are coming soon. We're
-          waiting for Google's and Zoom's approval before anyone outside our test accounts can connect them.</p>
+        <p class="section-note">Google Workspace and Zoom availability for outside accounts is subject to provider approval and your organization's access settings. Verify availability when onboarding.</p>
+        <p class="section-note">In development: a customer-managed option where Claude or ChatGPT retrieves evidence through its own connected tools and you explicitly submit selected notes to Ondatrace. Connection tokens are not transferred and unattended host sync is not currently promised.</p>
       </div>
     </section>
 
