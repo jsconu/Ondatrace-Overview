@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>App trust and data flow | Ondatrace</title>
+  <meta name="description" content="How Ondatrace receives project evidence, handles connected accounts, limits sharing, and keeps people in control.">
+  <link rel="icon" type="image/svg+xml" href="../favicon.svg?v=5">
+  <link rel="stylesheet" href="../style.css?v=30">
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+  <header class="topbar"><div class="wrap topbar-inner">
+    <a href="../" class="brand" aria-label="Ondatrace home">Ondatrace</a>
+    <nav class="topnav" aria-label="Main"><a href="../agent/">AI agent</a><a href="../about/">About Us</a><a href="../contact/">Contact</a><a href="https://app.ondatrace.com/login">Sign in</a></nav>
+  </div></header>
+  <main id="main">
+    <section class="section"><div class="wrap" style="max-width:850px">
+      <p class="eyebrow">How the app works</p>
+      <h1>Project evidence, permissions and data flow</h1>
+      <p class="section-lede">Last reviewed for product messaging: November 11, 2026. This overview distinguishes existing product behavior from an in-development host-assisted approach. It is not a certification or independent security audit.</p>
+
+      <h2>How project information reaches Ondatrace</h2>
+      <p><strong>Direct integrations:</strong> when supported and enabled for your team, an authorized person connects a source inside Ondatrace. Which data can be read depends on the source, permission scopes and configuration. Access and freshness may be incomplete, and not every listed connector is available to every organization.</p>
+      <p><strong>Through Claude or ChatGPT (in development):</strong> the customer connects a provider inside their AI host, the assistant retrieves selected source material under that host's access rules, and—only after a person chooses to submit it—passes a short observation to Ondatrace's proposed private evidence inbox. No host OAuth credentials are shared with Ondatrace. This does not provide a live feed or automatically scan all historical messages.</p>
+      <p><strong>Manual input:</strong> members can add project details and authorized notes. Do not submit material you are not entitled to share.</p>
+
+      <h2>What AI does—and does not do automatically</h2>
+      <p>Saved project records, explicit reviews and configured deterministic checks support Ondatrace's Today view. Claude-assisted review is performed when a person invokes it. Hosted model analysis, background collection and provider sync are deployment- and entitlement-dependent; do not assume nightly AI review is running. An assistant's response or source excerpt is not proof that every source was checked.</p>
+
+      <h2>Who sees evidence</h2>
+      <p>Organization membership, assigned projects and source-level visibility affect which records people may access. Depending on settings and source type, leaders may see a project takeaway without its underlying personal messages. The new host-submitted evidence design is private to the submitting member by default, labeled unverified, and not automatically shared or incorporated into Today. Cross-team access is not intended; privacy is enforced in the app, not by an AI prompt alone.</p>
+
+      <h2>Optional actions and human review</h2>
+      <p>Reviewing a finding does not send a message or change an outside system. Where enabled and authorized, Ondatrace provides optional reviewed communications, meeting scheduling and proposed changes. Those actions require appropriate permissions and explicit user interaction; connecting an account alone does not authorize every later send or update. Consequential changes remain subject to human approval and server-side checks.</p>
+
+      <h2>Processing providers and retention</h2>
+      <p>Ondatrace's app privacy notice describes the service providers involved in hosting, model processing, payments and error monitoring, and the retention and deletion rules applicable to connected data. If a user also works through Claude or ChatGPT, the host's own connection, processing and retention terms apply independently. Disconnecting in the host does not itself delete an already-submitted Ondatrace note. A private host-evidence record is designed to expire from normal views after 30 days, with deletion/cleanup as described in the app's evolving policy.</p>
+      <p>Regulated and highly sensitive information—including patient data, passwords, access tokens, and payment-card details—must not be submitted. Automated filtering of sensitive topics cannot be guaranteed.</p>
+
+      <h2>What is verified, and what remains to be tested</h2>
+      <p>Code-level permissions, source references, review controls and access checks have automated coverage. Production configuration and host compatibility can differ. Real Claude/ChatGPT interoperability, a full customer-managed evidence handoff, provider approval, support response operations, and any independent security assurance need separate validation. A fictional product demo is not a customer-outcome study.</p>
+
+      <h2>Policies and support</h2>
+      <p>Read the <a href="https://app.ondatrace.com/privacy">app privacy notice</a> and <a href="https://app.ondatrace.com/terms">app terms</a>. Store purchases have a <a href="../privacy/">separate store privacy notice</a>. For product questions or privacy requests, email <a href="mailto:ondatrace@ondatrace.com">ondatrace@ondatrace.com</a>. Do not include credentials, patient information or copied confidential source messages in support requests.</p>
+    </div></section>
+  </main>
+  <footer class="site-footer"><div class="wrap footer-inner"><p>&copy; 2026 Ondatrace LLC · <a href="../agent/">AI agent</a> · <a href="../privacy/">Store privacy</a> · <a href="https://app.ondatrace.com/privacy">App privacy</a> · <a href="mailto:ondatrace@ondatrace.com">Contact</a></p></div></footer>
+</body></html>
