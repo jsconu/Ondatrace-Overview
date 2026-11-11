@@ -1651,7 +1651,7 @@ function renderToday(){
   $('dismissed').innerHTML = dis.length?`Marked not an issue: ${dis.map(id=>`${esc(fmt(byId(id).title))} <button class="btn ghost small" type="button" data-undo="${id}">Undo</button>`).join(' · ')}`:'';
   renderNext14();
   $('morning-btn').disabled=S.morning;
-  $('morning-text').innerHTML = S.morning?'<b>It\'s tomorrow morning.</b> Findings with a green label changed overnight. Ondatrace remembers yesterday, so it can tell you what\'s new and what got better or worse.':'<b>See how findings change over time.</b> Ondatrace keeps watching. Jump ahead a day and new updates arrive overnight.';
+  $('morning-text').innerHTML = S.morning?'<b>It\'s tomorrow morning.</b> Findings with a green label changed overnight. Ondatrace remembers yesterday, so it can tell you what\'s new and what got better or worse.':'<b>See how findings change over time.</b> Jump ahead a day and new updates arrive overnight. <span class="muted">The demo does this on its own. In the current pilot, connected tools are checked on a schedule and the AI review runs when you ask Claude.</span>';
   const fine = FINE.filter(([t])=>on(t));
   $('fine-sum').textContent = `${Math.max(fine.length, Math.round(41*nOn/9))} items checked and fine`;
   applyDetail();

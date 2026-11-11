@@ -124,7 +124,7 @@
           </thead>
           <tbody>
             <tr><th scope="row">Memory</th><td>Varies by assistant and configuration; some have persistent memory.</td><td>Stores project records, decisions and evidence references in a shared PMO workspace, subject to access and retention rules.</td></tr>
-            <tr><th scope="row">What it reads</th><td>Depends on the connectors, permissions and tools made available to that assistant.</td><td>Reads authorized Ondatrace records and supported direct integrations. Customer-managed Claude/ChatGPT evidence handoff is in development; host connections do not automatically grant Ondatrace access.</td></tr>
+            <tr><th scope="row">What it reads</th><td>Depends on the connectors, permissions and tools made available to that assistant.</td><td>Reads authorized Ondatrace records and supported direct integrations. In the pilot you can also hand it single notes from tools you've connected in Claude or ChatGPT; connecting a tool there doesn't give Ondatrace access to it.</td></tr>
             <tr><th scope="row">How it judges</th><td>Can use instructions, structured tools and deterministic checks, depending on setup.</td><td>Supports defined checks and evidence-backed findings; AI interpretations still need review.</td></tr>
             <tr><th scope="row">Change over time</th><td>Depends on the host's history, connector permissions and scheduling.</td><td>Retains saved project history and can run configured checks. Claude-assisted AI review is on demand; automatic model analysis depends on separately enabled service settings.</td></tr>
             <tr><th scope="row">Evidence</th><td>May cite connected sources when retrieval supports it.</td><td>Shows supporting evidence where available and distinguishes recorded sources from inferred connections; missing or stale evidence should be treated as incomplete.</td></tr>
@@ -145,7 +145,7 @@
           because many decisions are only ever said out loud.
         </p>
         <p class="section-note">Google Workspace and Zoom availability for outside accounts is subject to provider approval and your organization's access settings. Verify availability when onboarding.</p>
-        <p class="section-note">In development: a customer-managed option where Claude or ChatGPT retrieves evidence through its own connected tools and you explicitly submit selected notes to Ondatrace. Connection tokens are not transferred and unattended host sync is not currently promised.</p>
+        <p class="section-note">New in the pilot: if you've connected a tool in Claude or ChatGPT, you can ask the assistant to pass a short note from it into Ondatrace. You choose each note. It stays private to you, your sign-in for that tool is never shared, and nothing is pulled in on its own.</p>
       </div>
     </section>
 
@@ -172,7 +172,7 @@
         </div>
         <p class="section-note">More than 40 people, or want to use your own AI account? <a href="../contact/">Talk to us</a> about an enterprise plan.</p>
         <h3 class="subhead">Add-ons</h3>
-        <p>$20, $50 or $150 a month each, matching your plan size.</p>
+        <p>$20, $50 or $150 a month each, matching your plan size. Add-ons are planned and are not part of the current pilot.</p>
         <div class="cards cards-2 callouts">
           <div class="card price-card">
             <p class="eyebrow">Add-on</p>
