@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="color-scheme" content="dark">
+  <title>Use Ondatrace in Claude | Ondatrace</title>
+  <meta name="description" content="How to connect Ondatrace to Claude, what Claude can then do, example prompts and troubleshooting.">
+  <link rel="icon" type="image/svg+xml" href="../favicon.svg?v=5">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../style.css?v=30">
+</head>
+<body>
+  <a href="#top" class="skip-link">Skip to main content</a>
+
+  <header class="topbar">
+    <div class="wrap topbar-inner">
+      <a href="../" class="brand" aria-label="Ondatrace home"><svg class="brand-wordmark" viewBox="0 0 421.1511 64" aria-hidden="true" focusable="false"><g transform="translate(0 2.3) scale(.88)"><circle cx="32" cy="32" r="26" fill="none" stroke="currentColor" stroke-width="7"/><path d="M32 14 37 27 50 32 37 37 32 50 27 37 14 32 27 27Z" fill="none" stroke="#079b91" stroke-width="2.7" stroke-linejoin="round"/></g><g fill="currentColor" transform="translate(6.741094 0)"><path d="M96.6328125 32.0234375V56.0H83.9765625V52.09765625V37.6484375Q83.9765625 32.55078125 83.748046875 30.6171875Q83.51953125 28.68359375 82.95703125 27.76953125Q82.21875 26.5390625 80.953125 25.853515625Q79.6875 25.16796875 78.0703125 25.16796875Q74.1328125 25.16796875 71.8828125 28.208984375Q69.6328125 31.25 69.6328125 36.62890625V56.0H57.046875V16.625H69.6328125V22.390625Q72.48046875 18.9453125 75.6796875 17.310546875Q78.87890625 15.67578125 82.74609375 15.67578125Q89.56640625 15.67578125 93.099609375 19.859375Q96.6328125 24.04296875 96.6328125 32.0234375Z"/><path d="M135.09375 22.390625V1.296875H147.75V56.0H135.09375V50.3046875Q132.4921875 53.78515625 129.36328125 55.40234375Q126.234375 57.01953125 122.12109375 57.01953125Q114.84375 57.01953125 110.16796875 51.236328125Q105.4921875 45.453125 105.4921875 36.34765625Q105.4921875 27.2421875 110.16796875 21.458984375Q114.84375 15.67578125 122.12109375 15.67578125Q126.19921875 15.67578125 129.345703125 17.310546875Q132.4921875 18.9453125 135.09375 22.390625ZM126.796875 47.87890625Q130.83984375 47.87890625 132.966796875 44.92578125Q135.09375 41.97265625 135.09375 36.34765625Q135.09375 30.72265625 132.966796875 27.76953125Q130.83984375 24.81640625 126.796875 24.81640625Q122.7890625 24.81640625 120.662109375 27.76953125Q118.53515625 30.72265625 118.53515625 36.34765625Q118.53515625 41.97265625 120.662109375 44.92578125Q122.7890625 47.87890625 126.796875 47.87890625Z"/><path d="M177.4921875 38.28125Q173.5546875 38.28125 171.568359375 39.6171875Q169.58203125 40.953125 169.58203125 43.5546875Q169.58203125 45.9453125 171.181640625 47.298828125Q172.78125 48.65234375 175.62890625 48.65234375Q179.1796875 48.65234375 181.60546875 46.103515625Q184.03125 43.5546875 184.03125 39.72265625V38.28125ZM196.72265625 33.53515625V56.0H184.03125V50.1640625Q181.5 53.75 178.3359375 55.384765625Q175.171875 57.01953125 170.63671875 57.01953125Q164.51953125 57.01953125 160.705078125 53.451171875Q156.890625 49.8828125 156.890625 44.1875Q156.890625 37.26171875 161.654296875 34.02734375Q166.41796875 30.79296875 176.61328125 30.79296875H184.03125V29.80859375Q184.03125 26.8203125 181.67578125 25.431640625Q179.3203125 24.04296875 174.328125 24.04296875Q170.28515625 24.04296875 166.8046875 24.8515625Q163.32421875 25.66015625 160.3359375 27.27734375V17.6796875Q164.37890625 16.6953125 168.45703125 16.185546875Q172.53515625 15.67578125 176.61328125 15.67578125Q187.265625 15.67578125 191.994140625 19.876953125Q196.72265625 24.078125 196.72265625 33.53515625Z"/><path d="M222.17578125 5.4453125V16.625H235.1484375V25.625H222.17578125V42.32421875Q222.17578125 45.06640625 223.265625 46.033203125Q224.35546875 47.0 227.58984375 47.0H234.05859375V56.0H223.265625Q215.8125 56.0 212.701171875 52.888671875Q209.58984375 49.77734375 209.58984375 42.32421875V25.625H203.33203125V16.625H209.58984375V5.4453125Z"/><path d="M272.09765625 27.34765625Q270.4453125 26.57421875 268.810546875 26.205078125Q267.17578125 25.8359375 265.5234375 25.8359375Q260.671875 25.8359375 258.052734375 28.947265625Q255.43359375 32.05859375 255.43359375 37.859375V56.0H242.84765625V16.625H255.43359375V23.09375Q257.859375 19.2265625 261.005859375 17.451171875Q264.15234375 15.67578125 268.546875 15.67578125Q269.1796875 15.67578125 269.91796875 15.728515625Q270.65625 15.78125 272.0625 15.95703125Z"/><path d="M296.00390625 38.28125Q292.06640625 38.28125 290.080078125 39.6171875Q288.09375 40.953125 288.09375 43.5546875Q288.09375 45.9453125 289.693359375 47.298828125Q291.29296875 48.65234375 294.140625 48.65234375Q297.69140625 48.65234375 300.1171875 46.103515625Q302.54296875 43.5546875 302.54296875 39.72265625V38.28125ZM315.234375 33.53515625V56.0H302.54296875V50.1640625Q300.01171875 53.75 296.84765625 55.384765625Q293.68359375 57.01953125 289.1484375 57.01953125Q283.03125 57.01953125 279.216796875 53.451171875Q275.40234375 49.8828125 275.40234375 44.1875Q275.40234375 37.26171875 280.166015625 34.02734375Q284.9296875 30.79296875 295.125 30.79296875H302.54296875V29.80859375Q302.54296875 26.8203125 300.1875 25.431640625Q297.83203125 24.04296875 292.83984375 24.04296875Q288.796875 24.04296875 285.31640625 24.8515625Q281.8359375 25.66015625 278.84765625 27.27734375V17.6796875Q282.890625 16.6953125 286.96875 16.185546875Q291.046875 15.67578125 295.125 15.67578125Q305.77734375 15.67578125 310.505859375 19.876953125Q315.234375 24.078125 315.234375 33.53515625Z"/><path d="M358.7578125 17.85546875V28.12109375Q356.19140625 26.36328125 353.607421875 25.51953125Q351.0234375 24.67578125 348.24609375 24.67578125Q342.97265625 24.67578125 340.037109375 27.751953125Q337.1015625 30.828125 337.1015625 36.34765625Q337.1015625 41.8671875 340.037109375 44.943359375Q342.97265625 48.01953125 348.24609375 48.01953125Q351.19921875 48.01953125 353.853515625 47.140625Q356.5078125 46.26171875 358.7578125 44.5390625V54.83984375Q355.8046875 55.9296875 352.763671875 56.474609375Q349.72265625 57.01953125 346.6640625 57.01953125Q336.01171875 57.01953125 330.0 51.552734375Q323.98828125 46.0859375 323.98828125 36.34765625Q323.98828125 26.609375 330.0 21.142578125Q336.01171875 15.67578125 346.6640625 15.67578125Q349.7578125 15.67578125 352.763671875 16.220703125Q355.76953125 16.765625 358.7578125 17.85546875Z"/><path d="M408.92578125 36.20703125V39.79296875H379.5Q379.95703125 44.22265625 382.69921875 46.4375Q385.44140625 48.65234375 390.36328125 48.65234375Q394.3359375 48.65234375 398.501953125 47.474609375Q402.66796875 46.296875 407.0625 43.90625V53.609375Q402.59765625 55.296875 398.1328125 56.158203125Q393.66796875 57.01953125 389.203125 57.01953125Q378.515625 57.01953125 372.591796875 51.587890625Q366.66796875 46.15625 366.66796875 36.34765625Q366.66796875 26.71484375 372.486328125 21.1953125Q378.3046875 15.67578125 388.5 15.67578125Q397.78125 15.67578125 403.353515625 21.265625Q408.92578125 26.85546875 408.92578125 36.20703125ZM395.98828125 32.0234375Q395.98828125 28.4375 393.896484375 26.240234375Q391.8046875 24.04296875 388.4296875 24.04296875Q384.7734375 24.04296875 382.48828125 26.099609375Q380.203125 28.15625 379.640625 32.0234375Z"/></g></svg></a>
+      <nav class="topnav" aria-label="Main">
+        <a href="../agent/" class="nav-key">AI agent</a>
+        <a href="../consulting/" class="nav-key"><span class="nav-long">AI Consulting for PMOs</span><span class="nav-short">Consulting</span></a>
+        <a href="../templates/" class="nav-key">Templates</a>
+        <a href="../about/" class="nav-key">About Us</a>
+        <a href="../contact/" class="nav-key">Contact</a>
+        <a href="https://app.ondatrace.com/login" class="nav-extra">Sign in</a>
+        <a href="../try/" class="btn btn-small">Try the demo</a>
+      </nav>
+    </div>
+  </header>
+
+  <main id="top" tabindex="-1">
+    <section class="doc-hero">
+      <div class="wrap">
+        <p class="hero-eyebrow">Guide</p>
+        <h1>Use Ondatrace in Claude</h1>
+        <p class="doc-lede">Connect Ondatrace to Claude to see what needs your attention, check a project and act on a finding without leaving the conversation. Questions: <a href="mailto:ondatrace@ondatrace.com">ondatrace@ondatrace.com</a>.</p>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="wrap policy">
+          <h2>What it does</h2>
+          <p>Ondatrace reads the project tools, email, chat and meetings your organization has connected, and keeps findings about your projects with the evidence behind each one. The Claude connector lets Claude read those saved findings for you and shows them in an Ondatrace card inside the conversation.</p>
+          <ul><li>Claude acts as you, in one organization, and sees only what you can see in Ondatrace.</li><li>Claude reads what Ondatrace has already saved. Asking a question doesn't start a new scan of your tools.</li><li>Nothing is sent, scheduled or approved without you pressing a button in the card.</li></ul>
+
+          <h2>Before you start</h2>
+          <ul><li>An Ondatrace account that belongs to an organization. If you don't have one, <a href="../contact/">contact us</a>.</li><li>A Claude plan that lets you add custom connectors. On a team plan, your Claude administrator may need to add the connector first.</li><li>At least one source connected in Ondatrace, so there is something to read.</li></ul>
+
+          <h2>Connect</h2>
+          <ol><li>In Claude, open <b>Settings</b>, then <b>Connectors</b>, and choose <b>Add custom connector</b>.</li><li>Name it Ondatrace and enter the address <code>https://app.ondatrace.com/mcp</code>.</li><li>Choose <b>Connect</b>. Claude opens an Ondatrace page in your browser. Sign in if asked.</li><li>Pick the organization, choose what Claude may do (see below) and choose <b>Connect</b>.</li><li>Back in Claude, start a new chat and ask: <i>Open Ondatrace</i>.</li></ol>
+
+          <h2>What Claude may do</h2>
+          <p>You choose this on the Ondatrace approval page. Your administrator can limit which options you are offered.</p>
+          <table class="policy-table"><thead><tr><th scope="col">Permission</th><th scope="col">What it allows</th></tr></thead><tbody><tr><td>Read</td><td>See findings, projects, decisions, portfolio reviews, source health and your own support cases. Always included.</td></tr><tr><td>Suggest</td><td>Add a note, rate a finding, propose a project change, set a date to look again, ask a teammate in Ondatrace to check a date, prepare a portfolio review draft and report an issue to support. A proposal changes nothing until a person approves it.</td></tr><tr><td>Decide</td><td>Use the buttons in the card to approve or decline a proposed change, save a new target date, send a follow-up message or schedule a meeting. These are your clicks. Claude can't press them for you.</td></tr></tbody></table>
+
+          <h2>Things to try</h2>
+          <table class="policy-table"><thead><tr><th scope="col">Ask Claude</th><th scope="col">What happens</th></tr></thead><tbody><tr><td>Open Ondatrace and show me what needs my attention today.</td><td>The card opens on Today with your top items. Open one to see the reason, the suggested next steps and the evidence.</td></tr><tr><td>What's the status of the Vendor launch project in Ondatrace, and what was decided since October 1?</td><td>Claude reads the saved project record: milestones, open findings, stale sources and the decisions recorded after that date.</td></tr><tr><td>In Ondatrace, propose moving the Vendor launch target date to May 29. The vendor confirmed a two-week slip.</td><td>Needs Suggest. Claude files a proposal with your reason. The date changes only when someone approves it in Ondatrace.</td></tr><tr><td>Prepare an Ondatrace portfolio review draft for October 1 to October 31.</td><td>Needs Suggest. Claude saves a draft from the records for that period. You publish it yourself in Ondatrace.</td></tr><tr><td>Which of my Ondatrace sources are behind?</td><td>Claude lists each connected source, when it last checked in and whether findings may be incomplete.</td></tr></tbody></table>
+          <p>Use your own project names. If Claude can't find a project, ask it to list your Ondatrace projects first.</p>
+
+          <h2>Acting on a finding in the card</h2>
+          <p>Open a finding to see the suggested next steps. Depending on the finding and the tools you've connected, the card can:</p>
+          <ul><li>draft a follow-up message and send it from your email or chat account once you press Send</li><li>fill in a calendar invite for you to finish in your own calendar</li><li>schedule a Zoom or Webex meeting once you press Schedule</li><li>check whether you can edit a Smartsheet plan, and who can if you can't</li><li>change a target date in Ondatrace, with a preview first. Your other tools aren't changed.</li></ul>
+          <p>You see the recipient and the full text before anything goes out. Sending, scheduling and saving a date need the Decide permission.</p>
+
+          <h2>Notes from your other Claude connectors</h2>
+          <p>If you ask it to, Claude can save a short note in Ondatrace about something it found in another tool you've connected to Claude. The note is private to you, marked unverified, never shown to your team and deleted after 30 days. You can ask Claude to list or delete your notes at any time. Claude doesn't do this unless you ask.</p>
+
+          <h2>Troubleshooting</h2>
+          <table class="policy-table"><thead><tr><th scope="col">What you see</th><th scope="col">What to do</th></tr></thead><tbody><tr><td>Claude says to sign in to Ondatrace first</td><td>Open the Ondatrace connector in Claude and choose <b>Connect</b>, then finish the approval page.</td></tr><tr><td>Claude can read but can't save a note or proposal</td><td>The connection is read-only. In Claude choose <b>Disconnect</b>, then <b>Connect</b>, and tick <b>Suggest</b> on the approval page. Reconnect alone may keep read-only access. If Suggest isn't offered, ask your Ondatrace administrator.</td></tr><tr><td>The permission checkboxes never appear</td><td>Remove the Ondatrace connector in Claude and add it again with the same address.</td></tr><tr><td>The card looks out of date or a button is missing</td><td>Start a new chat. If that doesn't help, disconnect and connect again so Claude loads the current card.</td></tr><tr><td>The wrong organization's projects appear</td><td>Disconnect, connect again and pick the right organization on the approval page.</td></tr><tr><td>Today is empty or a warning says sources are behind</td><td>Choose <b>Open Sources</b> in the card, or open Sources in Ondatrace, and reconnect the source that needs attention.</td></tr><tr><td>A send or meeting fails</td><td>The card shows what went wrong. Check that the email, chat or meeting account is still connected in Ondatrace, then try again.</td></tr><tr><td>Something else</td><td>Ask Claude to report an issue to Ondatrace support, use the help button in the card, or email <a href="mailto:ondatrace@ondatrace.com">ondatrace@ondatrace.com</a>.</td></tr></tbody></table>
+
+          <h2>Disconnect</h2>
+          <p>In Ondatrace, open <a href="https://app.ondatrace.com/account/assistants">Connected assistants</a> and choose <b>Disconnect</b>. Access stops at once. You can also remove the connector in Claude's settings.</p>
+
+          <h2>Your data</h2>
+          <ul><li>Claude receives only the Ondatrace records your account can see, when you or Claude ask for them.</li><li>Text copied from your emails, chats, tickets and meetings is marked as source material, and Claude is told to treat it as information, not instructions.</li><li>Ondatrace doesn't read your Claude conversations, memory or files. It receives only what a tool call sends.</li><li>Ondatrace keeps a record of each request Claude makes: who made it, which action and when.</li></ul>
+          <p>See the <a href="https://app.ondatrace.com/privacy">app privacy notice</a>, the <a href="https://app.ondatrace.com/terms">app terms</a> and <a href="../trust/">App trust &amp; data flow</a>.</p>
+          <p>Last updated: November 11, 2026</p>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="wrap footer-inner">
+      <p>&copy; 2026 Ondatrace LLC. <a href="../trust/">App trust &amp; data flow</a> · <a href="https://app.ondatrace.com/login">Sign in</a> · <a href="mailto:ondatrace@ondatrace.com">ondatrace@ondatrace.com</a> · <a href="../consulting/">AI Consulting for PMOs</a> · <a href="../about/">About Us</a> · <a href="../terms/">Terms</a> · <a href="../refunds/">Refunds</a> · <a href="../license/">License</a> · <a href="../privacy/">Privacy</a></p>
+    </div>
+  </footer>
+</body>
+</html>
