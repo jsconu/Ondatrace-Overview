@@ -354,6 +354,7 @@ h1, h2, h3 { font-family: var(--font-display); color: var(--ink); margin: 0; }
 }
 
 .hero-ctas { display: flex; gap: 14px; flex-wrap: wrap; }
+.hero-plan-note { margin-top: 12px; font-size: 0.95rem; }
 
 /* ---------- sections ---------- */
 .section { padding: 76px 0; }
