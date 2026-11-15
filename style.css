@@ -354,6 +354,7 @@ h1, h2, h3 { font-family: var(--font-display); color: var(--ink); margin: 0; }
 }
 
 .hero-ctas { display: flex; gap: 14px; flex-wrap: wrap; }
+.hero-plan-note { margin-top: 12px; font-size: 0.95rem; }
 
 /* ---------- sections ---------- */
 .section { padding: 76px 0; }
@@ -890,9 +891,7 @@ h1, h2, h3 { font-family: var(--font-display); color: var(--ink); margin: 0; }
   .tpl-grid { grid-template-columns: 1fr; }
   .tpl-teaser { flex-direction: column; align-items: flex-start; gap: 20px; }
 }
-/* Keep each nav link on one line. Below full width, keep only the two product links and the
-   demo button so the bar never overflows; on the narrowest phones the button goes too, since
-   every page repeats it in its own content. */
+/* Keep each nav link on one line. The navigation can wrap on small screens. */
 .topnav a { white-space: nowrap; }
 @media (max-width: 1120px) and (min-width: 761px) {
   .topnav a.nav-extra { display: none; }
@@ -901,10 +900,9 @@ h1, h2, h3 { font-family: var(--font-display); color: var(--ink); margin: 0; }
   .topnav { gap: 10px; }
   .topnav a { font-size: 0.85rem; }
 }
-/* Room for AI Consulting for PMOs up to 720px: drop the demo button and the Contact link (every page repeats the
-   button in its content, and every footer carries the contact email). */
+/* Keep the beta signup visible on phones. Other secondary buttons and Contact can defer to the page or footer. */
 @media (max-width: 720px) {
-  .topnav .btn { display: none; }
+  .topnav .btn:not([href="https://app.ondatrace.com/signup"]) { display: none; }
   .topnav a[href$="contact/"] { display: none; }
 }
 @media (max-width: 359px) {
