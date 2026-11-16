@@ -125,9 +125,9 @@
           </thead>
           <tbody>
             <tr><th scope="row">Memory</th><td>Varies by assistant and configuration; some have persistent memory.</td><td>Stores project records, decisions and evidence references in a shared PMO workspace, subject to access and retention rules.</td></tr>
-            <tr><th scope="row">What it reads</th><td>Depends on the connectors, permissions and tools made available to that assistant.</td><td>Reads authorized Ondatrace records and supported direct integrations. In the pilot you can also hand it single notes from tools you've connected in Claude or ChatGPT; connecting a tool there doesn't give Ondatrace access to it.</td></tr>
+            <tr><th scope="row">What it reads</th><td>Depends on the connectors, permissions and tools made available to that assistant.</td><td>Your own Claude reads the tools you've connected in Claude and saves what matters to Ondatrace. Connecting a tool in Claude doesn't give Ondatrace your login to it.</td></tr>
             <tr><th scope="row">How it judges</th><td>Can use instructions, structured tools and deterministic checks, depending on setup.</td><td>Supports defined checks and evidence-backed findings; AI interpretations still need review.</td></tr>
-            <tr><th scope="row">Change over time</th><td>Depends on the host's history, connector permissions and scheduling.</td><td>Retains saved project history and can run configured checks. Claude-assisted AI review is on demand; automatic model analysis depends on separately enabled service settings.</td></tr>
+            <tr><th scope="row">Change over time</th><td>Depends on the host's history, connector permissions and scheduling.</td><td>Keeps project history over time. Your Claude reviews your projects when you ask, on your own Claude plan.</td></tr>
             <tr><th scope="row">Evidence</th><td>May cite connected sources when retrieval supports it.</td><td>Shows supporting evidence where available and distinguishes recorded sources from inferred connections; missing or stale evidence should be treated as incomplete.</td></tr>
             <tr><th scope="row">Across the team</th><td>Separate personal agents can duplicate setup and apply different risk or status criteria across projects.</td><td>Shared configuration and consistent project-health rules across the PMO, without each PM maintaining their own agent.</td></tr>
             <tr><th scope="row">Privacy</th><td>Varies by host, connector and organization settings.</td><td>Membership and source-access rules determine visibility; some takeaways can be shared with leaders. See the <a href="https://app.ondatrace.com/privacy">app privacy notice</a>.</td></tr>
@@ -141,12 +141,11 @@
       <div class="wrap">
         <h2>Works with the tools you already use</h2>
         <p class="section-lede" style="margin-bottom:0">
-          For supported direct integrations, connect tools through Ondatrace, subject to their own account permissions: Jira, Kantata, Salesforce, Smartsheet, Slack,
-          Microsoft Teams, Outlook, Microsoft calendars and Webex. Record your project meetings too,
-          because many decisions are only ever said out loud.
+          Connect your tools in Claude, such as Slack, Outlook, Gmail, Jira and Google Drive. Claude reads them
+          and saves what matters to your project in Ondatrace. Save your meeting notes too, because many decisions
+          are only ever said out loud.
         </p>
-        <p class="section-note">Google Workspace and Zoom availability for outside accounts is subject to provider approval and your organization's access settings. Verify availability when onboarding.</p>
-        <p class="section-note">New in the pilot: if you've connected a tool in Claude or ChatGPT, you can ask the assistant to pass a short note from it into Ondatrace. You choose each note. It stays private to you, your sign-in for that tool is never shared, and nothing is pulled in on its own.</p>
+        <p class="section-note">Free for one person, and it works best with a paid Claude plan. Team plans share one memory across your PMO, which is where cross-project risks show up. <a href="../claude/">How to set it up</a>.</p>
       </div>
     </section>
 
