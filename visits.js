@@ -10,21 +10,35 @@
     if (value) utm[key] = value.slice(0, 100);
   });
 
-  var body = JSON.stringify({
-    p: location.pathname,
-    r: document.referrer || null,
-    us: utm.utm_source || null,
-    um: utm.utm_medium || null,
-    uc: utm.utm_campaign || null
-  });
-  var url = "https://app.ondatrace.com/site-visit";
-  try {
-    if (navigator.sendBeacon) {
-      navigator.sendBeacon(url, new Blob([body], { type: "text/plain" }));
-    } else {
-      fetch(url, { method: "POST", body: body, mode: "no-cors", keepalive: true });
+  function countView(path) {
+    var body = JSON.stringify({
+      p: path,
+      r: document.referrer || null,
+      us: utm.utm_source || null,
+      um: utm.utm_medium || null,
+      uc: utm.utm_campaign || null
+    });
+    var url = "https://app.ondatrace.com/site-visit";
+    try {
+      if (navigator.sendBeacon) {
+        navigator.sendBeacon(url, new Blob([body], { type: "text/plain" }));
+      } else {
+        fetch(url, { method: "POST", body: body, mode: "no-cors", keepalive: true });
+      }
+    } catch (e) { /* counting must never break the page */ }
+  }
+
+  countView(location.pathname);
+  ["launch-finding", "launch-proposal"].forEach(function (id) {
+    var step = document.getElementById(id);
+    if (!step) return;
+    function onOpen() {
+      if (!step.open) return;
+      countView("/demo-steps/" + id);
+      step.removeEventListener("toggle", onOpen);
     }
-  } catch (e) { /* counting must never break the page */ }
+    step.addEventListener("toggle", onOpen);
+  });
 
   if (Object.keys(utm).length) {
     document.querySelectorAll('a[href^="https://app.ondatrace.com/signup"]').forEach(function (link) {
