@@ -1167,3 +1167,23 @@ main a:not(.btn):not(.card-link):not(.tpl-preview) { color: var(--accent-ink); t
 .celestial-agent .hn-hub { fill: #0f766e; }
 .celestial-agent .hn-hub-ring { stroke: #d4c79d; }
 .celestial-agent .helm-card figcaption { color: #d6e8df; }
+
+/* Homepage walkthrough */
+.launch-hero { background: #081c1b; color: #eff9f5; padding: clamp(36px, 6vw, 88px) 0; }
+.launch-layout { display: grid; grid-template-columns: 1fr 1fr; align-items: start; gap: clamp(24px, 5vw, 72px); }
+.launch-intro h1 { font-size: clamp(2.2rem, 4.5vw, 4.4rem); line-height: 1.04; letter-spacing: -.045em; margin: 16px 0; }
+.launch-intro > p:not(.eyebrow) { max-width: 46ch; color: #c7dcd6; margin-bottom: 24px; }
+.launch-hero .eyebrow { color: #8ee3d1; }
+.launch-signup { display: inline-block; padding: 12px 0; margin-right: 10px; }
+.launch-intro .btn { margin-right: 14px; }
+.launch-hero a:not(.btn) { color: #a3efdf; text-decoration: underline; }
+.launch-panel { background: #132e2c; border: 1px solid #42605b; border-radius: 16px; padding: clamp(18px, 3vw, 32px); scroll-margin-top: 85px; }
+.launch-panel h2 { font-size: clamp(1.45rem, 2.2vw, 2rem); margin: 8px 0 18px; }
+.launch-source { display: grid; gap: 3px; border-top: 1px solid #42605b; padding: 12px 0; }
+.launch-source span, .launch-footer span { color: #b4cac5; font-size: .86rem; }
+.launch-source time { color: #ffd591; }
+.launch-panel details { border-top: 1px solid #42605b; }
+.launch-panel summary { color: #a3efdf; cursor: pointer; padding: 12px 0; font-weight: 600; }
+.launch-panel details p { margin: 0 0 12px; }
+.launch-footer { border-top: 1px solid #42605b; padding-top: 14px; margin-top: 14px; display: grid; gap: 4px; }
+@media (max-width: 760px) { .launch-layout { grid-template-columns: minmax(0,1fr); } }
