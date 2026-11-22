@@ -12,7 +12,8 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="style.css?v=31">
+  <link rel="preload" as="image" href="img/teal-space-galleon.png" fetchpriority="high">
+  <link rel="stylesheet" href="style.css?v=30">
 </head>
 <body>
   <a href="#top" class="skip-link">Skip to main content</a>
@@ -27,42 +28,28 @@
         <a href="about/" class="nav-key">About Us</a>
         <a href="contact/" class="nav-key">Contact</a>
         <a href="https://app.ondatrace.com/login" class="nav-extra">Sign in</a>
-        <a href="#launch-demo" class="btn btn-small">Try the demo</a>
+        <a href="try/" class="btn btn-small">Try the demo</a>
       </nav>
     </div>
   </header>
 
   <main id="top" tabindex="-1">
-    <section class="launch-hero" aria-labelledby="launch-title">
-      <div class="wrap launch-layout">
-        <div class="launch-intro">
-          <p class="eyebrow">Cross-team launch planning</p>
-          <h1 id="launch-title">Marketing emails customers Tuesday. Engineering ships Thursday.</h1>
-          <p>Engineering plans in Jira. Marketing plans in monday.com. Follow one dashboard launch and see the conflict before customers do.</p>
-          <a href="#launch-demo" class="btn btn-primary btn-large">Explore the demo</a>
-          <a class="launch-signup" href="https://app.ondatrace.com/signup?ref=launch-hero">Sign up for Ondatrace Lite</a>
+    <section class="hero celestial-home">
+      <div class="wrap hero-inner">
+        <p class="hero-eyebrow">For project management offices</p>
+        <h1>Level up your PMO. Turn AI insights into action.</h1>
+        <p class="hero-sub">
+          Ondatrace helps project managers and PMO leaders get more done with less chasing. Use our
+          AI-enabled PMO workspace to review authorized project evidence, get hands-on help putting AI to work in your PMO, or
+          start today with a template that needs no setup.
+        </p>
+        <div class="hero-ctas">
+          <a href="try/" class="btn btn-primary btn-large">Try the interactive demo</a>
+          <a href="https://app.ondatrace.com/signup?ref=home-top" class="btn btn-ghost btn-large">Sign up for a free account</a>
+          <a href="consulting/" class="btn btn-ghost btn-large">AI consulting</a>
+          <a href="templates/" class="btn btn-ghost btn-large">Use ready-made templates</a>
         </div>
-        <article id="launch-demo" class="launch-panel" aria-labelledby="launch-case" tabindex="-1">
-          <p class="eyebrow">Interactive demo · Sample project</p>
-          <h2 id="launch-case">Customer dashboard launch</h2>
-          <div class="launch-source"><span>Engineering · Jira</span><strong>Release dashboard to production</strong><time datetime="2027-06-10">Thu, June 10</time></div>
-          <div class="launch-source"><span>Marketing · monday.com</span><strong>Send “Your new dashboard is live” email</strong><time datetime="2027-06-08">Tue, June 8</time></div>
-          <details id="launch-finding">
-            <summary>See what Ondatrace caught</summary>
-            <p>The email promises customers access two days before Engineering plans to enable it.</p>
-            <details id="launch-proposal">
-              <summary>Review the proposed change</summary>
-              <p><strong>Proposed for Marketing review</strong></p>
-              <p>Hold Tuesday’s email. Send it Thursday once Engineering confirms customers can open the dashboard.</p>
-              <p>The PM can take this proposal to Marketing for approval.</p>
-              <a class="btn btn-primary" href="https://app.ondatrace.com/signup?ref=launch-end">Try Ondatrace Lite on my project</a>
-            </details>
-          </details>
-          <footer class="launch-footer">
-            <a href="https://app.ondatrace.com/signup?ref=launch-demo">Sign up for free</a>
-            <span>For one person · No credit card · Connect Claude after signup</span>
-          </footer>
-        </article>
+        <p class="section-note">Ondatrace is in beta. We’ll ask our first group of users for feedback to improve the product. No credit card required. If you run into an issue, <a href="mailto:ondatrace@ondatrace.com">email Ondatrace support</a>.</p>
       </div>
     </section>
 
@@ -183,6 +170,6 @@
       <p>&copy; 2026 Ondatrace LLC. <a href="trust/">App trust &amp; data flow</a> · <a href="https://app.ondatrace.com/login">Sign in</a> · <a href="mailto:ondatrace@ondatrace.com">ondatrace@ondatrace.com</a> · <a href="consulting/">AI Consulting for PMOs</a> · <a href="about/">About Us</a> · <a href="terms/">Terms</a> · <a href="refunds/">Refunds</a> · <a href="license/">License</a> · <a href="privacy/">Privacy</a></p>
     </div>
   </footer>
-  <script src="/visits.js?v=2" defer></script>
+  <script src="/visits.js" defer></script>
 </body>
 </html>
