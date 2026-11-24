@@ -1,55 +1,53 @@
-"""Refresh the static AI Skills page with one complete snapshot of GitHub downloads and configured Agensi uses."""
+"""Refresh the static AI Skills page with one complete snapshot of GitHub downloads and Agensi listing uses."""
 
 import json
 import os
 import re
 from datetime import datetime
-from html.parser import HTMLParser
 from pathlib import Path
+from urllib.error import HTTPError
 from urllib.request import Request, urlopen
 from zoneinfo import ZoneInfo
 
 
-# Map "pmo" and "coach" to the confirmed slugs of their approved Agensi listings.
-AGENSI_LISTINGS = {}
-
-
-class ListingText(HTMLParser):
-    """Read visible text in Agensi's server-rendered listing, excluding scripts."""
-    def __init__(self):
-        super().__init__()
-        self.text = []
-        self.hidden = False
-
-    def handle_starttag(self, tag, attrs):
-        if tag in ("script", "style"):
-            self.hidden = True
-
-    def handle_endtag(self, tag):
-        if tag in ("script", "style"):
-            self.hidden = False
-
-    def handle_data(self, data):
-        if not self.hidden and data.strip():
-            self.text.append(data.strip())
+# Agensi listings per skill card. Each listing page embeds the same use counter
+# that the Agensi creator dashboard shows ("Uses"), as install_count.
+AGENSI_LISTINGS = {
+    "pmo": [
+        "build-the-portfolio-report", "challenge-my-status", "check-the-decision",
+        "check-the-success-metrics", "choose-today-s-focus", "debrief-the-meeting",
+        "draft-the-charter", "draft-the-stakeholder-update", "find-capacity-conflicts",
+        "find-recurring-lessons", "find-the-projects", "group-portfolio-risks",
+        "interview-the-sponsor", "plan-change-adoption", "plan-the-handoff",
+        "prep-the-portfolio-review", "prioritize-the-backlog", "reconcile-the-dates",
+        "review-a-change-request", "review-the-budget", "run-the-retrospective",
+        "trace-a-decision", "trace-the-impact", "triage-the-risks", "write-the-weekly-update",
+    ],
+    "coach": ["personal-career-coach"],
+}
 
 
 def agensi_uses(slug):
+    """Return the listing's use count, or None while the listing is not public (still in review)."""
     if not re.fullmatch(r"[a-z0-9]+(?:-[a-z0-9]+)*", slug):
         raise ValueError("Invalid Agensi listing slug")
     url = f"https://www.agensi.io/skills/{slug}"
     request = Request(url, headers={"User-Agent": "Ondatrace public skill statistics"})
-    with urlopen(request, timeout=30) as response:
-        if response.geturl().rstrip("/") != url:
-            raise ValueError(f"Agensi redirected away from {slug}")
-        parser = ListingText()
-        parser.feed(response.read().decode("utf-8"))
-        parser.close()
-    matches = re.findall(r"(?:^| )(\d{1,3}(?:,\d{3})+|\d+) uses? Times used to date\b",
-                         " ".join(parser.text), re.IGNORECASE)
+    try:
+        with urlopen(request, timeout=30) as response:
+            if response.geturl().rstrip("/") != url:
+                return None
+            html = response.read().decode("utf-8")
+    except HTTPError as error:
+        if error.code == 404:
+            return None
+        raise
+    if f'slug:"{slug}"' not in html:
+        raise ValueError(f"Agensi page for {slug} does not describe that listing")
+    matches = re.findall(r"\binstall_count:(\d+)\b", html)
     if len(matches) != 1:
         raise ValueError(f"Could not verify an exact Agensi use count for {slug}")
-    return int(matches[0].replace(",", ""))
+    return int(matches[0])
 
 
 def pages(url):
@@ -101,8 +99,9 @@ def main():
         downloads = download_count(repo)
         count = downloads
         label = "downloads"
-        if slug := AGENSI_LISTINGS.get(element):
-            uses = agensi_uses(slug)
+        live = [n for n in map(agensi_uses, AGENSI_LISTINGS.get(element, [])) if n is not None]
+        if live:
+            uses = sum(live)
             count += uses
             label = f"combined · {downloads:,} GitHub downloads + {uses:,} Agensi uses"
         total += count
