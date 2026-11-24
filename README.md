@@ -144,10 +144,11 @@ Ondatrace is a private working prototype under active development, with design-p
 
 The AI Skills page shows the total downloads of skill ZIP and Markdown assets across published
 GitHub releases. The nightly workflow updates both totals together and requests a Pages rebuild.
-Once an Agensi listing is approved, add its verified slug under `pmo` or `coach` in
-`AGENSI_LISTINGS` in the refresh script. Each configured card then shows both sources;
-the headline combines release downloads and marketplace uses. If a configured source
-cannot supply an exact count, the last complete snapshot stays visible.
+It also adds the use counts of the Agensi listings named in `AGENSI_LISTINGS` in the refresh
+script. Each listing page embeds the same counter the Agensi creator dashboard shows as "Uses".
+Listings still in review (not yet public) count as zero until they go live. Add new listings'
+slugs there. If GitHub or a public Agensi page cannot supply an exact count, the last complete
+snapshot stays visible.
 The former templates URL redirects to the skills page.
 
 ### Store policies
