@@ -1,16 +1,16 @@
 {
   "pmo": {
     "count": 158,
-    "label": "combined \u00b7 158 GitHub downloads + 0 Agensi uses",
+    "label": "combined \u00b7 158 GitHub + 0 Agensi downloads",
     "agensiUses": 0
   },
   "coach": {
     "count": 4,
-    "label": "combined \u00b7 4 GitHub downloads + 0 Agensi uses",
+    "label": "combined \u00b7 4 GitHub + 0 Agensi downloads",
     "agensiUses": 0
   },
   "total": {
     "count": 162,
-    "label": "Total downloads and uses"
+    "label": "Total downloads"
   }
 }
