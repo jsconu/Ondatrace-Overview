@@ -1,12 +1,55 @@
-"""Refresh the static AI Skills page with one complete GitHub release snapshot."""
+"""Refresh the static AI Skills page with one complete snapshot of GitHub downloads and configured Agensi uses."""
 
 import json
 import os
 import re
 from datetime import datetime
+from html.parser import HTMLParser
 from pathlib import Path
 from urllib.request import Request, urlopen
 from zoneinfo import ZoneInfo
+
+
+# Map "pmo" and "coach" to the confirmed slugs of their approved Agensi listings.
+AGENSI_LISTINGS = {}
+
+
+class ListingText(HTMLParser):
+    """Read visible text in Agensi's server-rendered listing, excluding scripts."""
+    def __init__(self):
+        super().__init__()
+        self.text = []
+        self.hidden = False
+
+    def handle_starttag(self, tag, attrs):
+        if tag in ("script", "style"):
+            self.hidden = True
+
+    def handle_endtag(self, tag):
+        if tag in ("script", "style"):
+            self.hidden = False
+
+    def handle_data(self, data):
+        if not self.hidden and data.strip():
+            self.text.append(data.strip())
+
+
+def agensi_uses(slug):
+    if not re.fullmatch(r"[a-z0-9]+(?:-[a-z0-9]+)*", slug):
+        raise ValueError("Invalid Agensi listing slug")
+    url = f"https://www.agensi.io/skills/{slug}"
+    request = Request(url, headers={"User-Agent": "Ondatrace public skill statistics"})
+    with urlopen(request, timeout=30) as response:
+        if response.geturl().rstrip("/") != url:
+            raise ValueError(f"Agensi redirected away from {slug}")
+        parser = ListingText()
+        parser.feed(response.read().decode("utf-8"))
+        parser.close()
+    matches = re.findall(r"(?:^| )(\d{1,3}(?:,\d{3})+|\d+) uses? Times used to date\b",
+                         " ".join(parser.text), re.IGNORECASE)
+    if len(matches) != 1:
+        raise ValueError(f"Could not verify an exact Agensi use count for {slug}")
+    return int(matches[0].replace(",", ""))
 
 
 def pages(url):
@@ -53,15 +96,23 @@ def replace_element(html, pattern, replacement):
 def main():
     path = Path(__file__).resolve().parents[1] / "ai-skills/index.html"
     html = path.read_text()
-    counts = {}
+    total = 0
     for element, repo in (("pmo", "pmo-skills"), ("coach", "personal-career-coach")):
-        count = download_count(repo)
-        counts[element] = count
-        print(f"{repo}: {count}")
-    counts["total"] = sum(counts.values())
-    for element, count in counts.items():
+        downloads = download_count(repo)
+        count = downloads
+        label = "downloads"
+        if slug := AGENSI_LISTINGS.get(element):
+            uses = agensi_uses(slug)
+            count += uses
+            label = f"combined · {downloads:,} GitHub downloads + {uses:,} Agensi uses"
+        total += count
         tag = f'span id="{element}-downloads"'
-        html = replace_element(html, f'<{tag}>[^<]*</span>', f'<{tag}>{count:,}</span>')
+        row = f'<{tag}>{count:,}</span></strong> <small>{label}</small>'
+        html = replace_element(html, f'<{tag}>[^<]*</span></strong> <small>[^<]*</small>', row)
+        print(f"{repo}: {count:,} {label}")
+    title = "Total downloads and uses" if AGENSI_LISTINGS else "Total skill downloads"
+    html = replace_element(html, r'<span id="total-downloads">[^<]*</span></strong> <small>[^<]*</small>',
+                           f'<span id="total-downloads">{total:,}</span></strong> <small>{title}</small>')
     now = datetime.now(ZoneInfo("America/Denver"))
     display = now.strftime("%b %d, %Y at %I:%M %p %Z").replace(" 0", " ")
     html = replace_element(html, r'<time id="downloads-updated" datetime="[^"]*">[^<]*</time>',
