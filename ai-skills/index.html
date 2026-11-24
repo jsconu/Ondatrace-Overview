@@ -202,6 +202,44 @@
       requestAnimationFrame(tick);
     })();
   </script>
+  <script>
+    (() => {
+      const interval = 15 * 60 * 1000;
+      const format = new Intl.NumberFormat("en-US");
+      let lastCheck = 0;
+      let timer;
+      let pending = false;
+
+      async function refresh() {
+        if (document.hidden || pending || Date.now() - lastCheck < interval) return;
+        pending = true;
+        lastCheck = Date.now();
+        clearTimeout(timer);
+        timer = setTimeout(refresh, interval);
+        try {
+          const response = await fetch("./counts.json", { cache: "no-cache" });
+          if (!response.ok) return;
+          const counts = await response.json();
+          const keys = ["pmo", "coach", "total"];
+          if (!keys.every(key => Number.isSafeInteger(counts[key]?.count) &&
+              counts[key].count >= 0 && typeof counts[key].label === "string")) return;
+          if (counts.total.count !== counts.pmo.count + counts.coach.count) return;
+          for (const key of keys) {
+            const number = document.getElementById(key + "-downloads");
+            number.textContent = format.format(counts[key].count);
+            number.closest("p").querySelector("small").textContent = counts[key].label;
+          }
+        } catch {
+          // Keep the last complete snapshot visible if the request fails.
+        } finally {
+          pending = false;
+        }
+      }
+
+      refresh();
+      document.addEventListener("visibilitychange", refresh);
+    })();
+  </script>
   <script src="/visits.js" defer></script>
 </body>
 </html>

@@ -143,7 +143,8 @@ Ondatrace is a private working prototype under active development, with design-p
 ### AI skill downloads
 
 The AI Skills page shows the total downloads of skill ZIP and Markdown assets across published
-GitHub releases. The nightly workflow updates both totals together and requests a Pages rebuild.
+GitHub releases. The workflow checks both totals every 15 minutes and rebuilds Pages when counts change.
+Open AI Skills pages refresh from the same published snapshot.
 It also adds the use counts of the Agensi listings named in `AGENSI_LISTINGS` in the refresh
 script. Each listing page embeds the same counter the Agensi creator dashboard shows as "Uses".
 Listings still in review (not yet public) count as zero until they go live. Add new listings'

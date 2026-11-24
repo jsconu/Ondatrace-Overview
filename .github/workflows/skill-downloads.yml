@@ -1,7 +1,7 @@
 name: Refresh AI skill downloads
 on:
   schedule:
-    - cron: '58 23 * * *'
+    - cron: '7,22,37,52 * * * *'
       timezone: America/Denver
   workflow_dispatch:
   push:
@@ -25,16 +25,18 @@ jobs:
         env:
           GH_TOKEN: ${{ github.token }}
         run: python3 scripts/update_skill_downloads.py
-      - name: Publish the dated snapshot
+      - name: Publish changed counts
         env:
           GH_TOKEN: ${{ github.token }}
         run: |
           set -eu
           git config user.name 'github-actions[bot]'
           git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
-          git add ai-skills/index.html
+          git add ai-skills/index.html ai-skills/counts.json
           if ! git diff --cached --quiet; then
             git commit -m 'Refresh AI skill download counts'
             git push origin HEAD:master
+          elif curl -fsSL --max-time 15 https://ondatrace.com/ai-skills/counts.json | cmp -s - ai-skills/counts.json; then
+            exit 0
           fi
           gh api --method POST "repos/$GITHUB_REPOSITORY/pages/builds"

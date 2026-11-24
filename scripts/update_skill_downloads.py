@@ -112,6 +112,7 @@ def replace_element(html, pattern, replacement):
 def main():
     path = Path(__file__).resolve().parents[1] / "ai-skills/index.html"
     html = path.read_text()
+    snapshot = {}
     total = 0
     for element, repo in (("pmo", "pmo-skills"), ("coach", "personal-career-coach")):
         files = downloads_by_file(repo)
@@ -126,6 +127,7 @@ def main():
             uses = sum(live)
             count += uses
             label = f"combined · {downloads:,} GitHub downloads + {uses:,} Agensi uses"
+        snapshot[element] = {"count": count, "label": label}
         total += count
         tag = f'span id="{element}-downloads"'
         row = f'<{tag}>{count:,}</span></strong> <small>{label}</small>'
@@ -134,7 +136,9 @@ def main():
     title = "Total downloads and uses" if AGENSI_LISTINGS else "Total skill downloads"
     html = replace_element(html, r'<span id="total-downloads">[^<]*</span></strong> <small>[^<]*</small>',
                            f'<span id="total-downloads">{total:,}</span></strong> <small>{title}</small>')
+    snapshot["total"] = {"count": total, "label": title}
     path.write_text(html)
+    path.with_name("counts.json").write_text(json.dumps(snapshot, indent=2) + "\n")
 
 
 if __name__ == "__main__":
