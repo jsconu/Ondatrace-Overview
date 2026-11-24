@@ -140,7 +140,7 @@
              <div class="hero-ctas">
                <a class="btn btn-primary" href="https://app.ondatrace.com/signup?ref=skills-agent" aria-label="Sign up for a free Ondatrace account">Sign up free</a>
                <a class="btn btn-ghost" href="../try/" aria-label="Try the Ondatrace demo">Try the demo</a>
-               <a class="btn btn-ghost" href="#insights" aria-label="How Ondatrace works">How it works</a>
+               <a class="btn btn-ghost" href="../thesis/" aria-label="How Ondatrace works">How it works</a>
                <button class="btn btn-ghost btn-soon" type="button" disabled aria-disabled="true" title="Coming soon">Add from Anthropic directory<span class="soon-tag">Coming soon</span></button>
              </div>
            </article>
@@ -187,98 +187,6 @@
       <div class="wrap">
         <h2>Works with any AI platform</h2>
         <p class="section-lede">Use PMO Skills and Personal Career Coach with Claude, ChatGPT, Gemini, Copilot or any other AI assistant. No account needed.</p>
-      </div>
-    </section>
-    <section class="section" id="insights">
-      <div class="wrap">
-        <h2>Insights no single project agent can see alone</h2>
-        <p class="section-lede">
-          Important risks often sit between projects, tools and teams. Ondatrace connects those
-          signals so PMs and leaders can see what changed, what else is affected and where to act.
-        </p>
-        <div class="cards cards-3 callouts">
-          <div class="card">
-            <p class="eyebrow">Schedules</p>
-            <h3>Dates that no longer hold</h3>
-            <p>It notices when the plan says on track but the tickets, emails or meetings say otherwise. When one project slips, it shows which other projects depend on that work.</p>
-          </div>
-          <div class="card">
-            <p class="eyebrow">Risks</p>
-            <h3>Risks that stay visible</h3>
-            <p>It picks up new risks from what people write and say. Each risk stays open until something shows it's resolved, even after people stop mentioning it.</p>
-          </div>
-          <div class="card">
-            <p class="eyebrow">Actions</p>
-            <h3>A next step for every finding</h3>
-            <p>Each finding comes with a suggested next step, an owner and a list of who needs to hear about the change. Nothing important happens until you approve it.</p>
-          </div>
-        </div>
-        <p class="section-note">In the demo it finds a customer promise that slipped work can't meet, a spending freeze one team never heard about, and an engineer that three projects need during her week off.</p>
-      </div>
-    </section>
-
-    <section class="section section-alt" id="memory">
-      <div class="wrap">
-        <h2>Long-term memory that doesn't leak</h2>
-        <p class="section-lede">
-          Most AI agents and scheduled AI tasks have a leaky-bucket memory. Each run can only hold
-          so much text, so they carry forward a summary of what came before. Every summary drops
-          details. A few weeks later, the date a salesperson promised or the risk someone raised in
-          a meeting is gone. Ondatrace keeps a long-term memory built for project work.
-        </p>
-        <div class="cards cards-3 callouts">
-          <div class="card">
-            <h3>Stored as records</h3>
-            <p>Projects, dates, decisions, risks and promises are each kept as their own record, with a link to where they came from.</p>
-          </div>
-          <div class="card">
-            <h3>Updated without losing detail</h3>
-            <p>Each check reads only what changed and updates those records. Older facts stay exactly as they were recorded.</p>
-          </div>
-          <div class="card">
-            <h3>History you can use</h3>
-            <p>It can tell you that a go-live date has moved three times, or that a risk has been open for six weeks.</p>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <section class="section" id="different">
-      <div class="wrap">
-        <h2>One coordinated PMO workflow, not a patchwork of agents</h2>
-        <p class="section-lede">
-          Individual AI agents can be useful, but separate setups often duplicate work and apply
-          different definitions of risk, status and priority. Ondatrace is designed around a shared
-          record, consistent evaluation rules and portfolio-level visibility, so the PMO can benefit
-          from AI without asking every project manager to build and maintain their own system.
-        </p>
-        <table class="compare">
-          <thead>
-            <tr><th scope="col"><span class="sr-only">Topic</span></th><th scope="col">General AI agent or scheduled job</th><th scope="col">Ondatrace</th></tr>
-          </thead>
-          <tbody>
-            <tr><th scope="row">Memory</th><td>Varies by assistant and configuration; some have persistent memory.</td><td>Stores project records, decisions and evidence references in a shared PMO workspace, subject to access and retention rules.</td></tr>
-            <tr><th scope="row">What it reads</th><td>Depends on the connectors, permissions and tools made available to that assistant.</td><td>Your own Claude reads the tools you've connected in Claude and saves what matters to Ondatrace. Connecting a tool in Claude doesn't give Ondatrace your login to it.</td></tr>
-            <tr><th scope="row">How it judges</th><td>Can use instructions, structured tools and deterministic checks, depending on setup.</td><td>Supports defined checks and evidence-backed findings; AI interpretations still need review.</td></tr>
-            <tr><th scope="row">Change over time</th><td>Depends on the host's history, connector permissions and scheduling.</td><td>Keeps project history over time. Your Claude reviews your projects when you ask, on your own Claude plan.</td></tr>
-            <tr><th scope="row">Evidence</th><td>May cite connected sources when retrieval supports it.</td><td>Shows supporting evidence where available and distinguishes recorded sources from inferred connections; missing or stale evidence should be treated as incomplete.</td></tr>
-            <tr><th scope="row">Across the team</th><td>Separate personal agents can duplicate setup and apply different risk or status criteria across projects.</td><td>Shared configuration and consistent project-health rules across the PMO, without each PM maintaining their own agent.</td></tr>
-            <tr><th scope="row">Privacy</th><td>Varies by host, connector and organization settings.</td><td>Membership and source-access rules determine visibility; some takeaways can be shared with leaders. See the <a href="https://app.ondatrace.com/privacy">app privacy notice</a>.</td></tr>
-          </tbody>
-        </table>
-        <p class="section-note">Ondatrace can be used through its Claude MCP connection. Source text is untrusted input, not permission to take action. These are product-design differences, not the results of a controlled comparison with a particular competing assistant.</p>
-      </div>
-    </section>
-
-    <section class="section section-alt" id="connect">
-      <div class="wrap">
-        <h2>Works with the tools you already use</h2>
-        <p class="section-lede" style="margin-bottom:0">
-          Connect your tools in Claude, such as Slack, Outlook, Gmail, Jira and Google Drive. Claude reads them
-          and saves what matters to your project in Ondatrace. Save your meeting notes too, because many decisions
-          are only ever said out loud.
-        </p>
-        <p class="section-note">Free for one person, and it works best with a paid Claude plan. Team plans share one memory across your PMO, which is where cross-project risks show up. <a href="../claude/">How to set it up</a>.</p>
       </div>
     </section>
   </main>
