@@ -3,11 +3,9 @@
 import json
 import os
 import re
-from datetime import datetime
 from pathlib import Path
 from urllib.error import HTTPError
 from urllib.request import Request, urlopen
-from zoneinfo import ZoneInfo
 
 
 # Agensi listings per skill card. Each listing page embeds the same use counter
@@ -112,10 +110,6 @@ def main():
     title = "Total downloads and uses" if AGENSI_LISTINGS else "Total skill downloads"
     html = replace_element(html, r'<span id="total-downloads">[^<]*</span></strong> <small>[^<]*</small>',
                            f'<span id="total-downloads">{total:,}</span></strong> <small>{title}</small>')
-    now = datetime.now(ZoneInfo("America/Denver"))
-    display = now.strftime("%b %d, %Y at %I:%M %p %Z").replace(" 0", " ")
-    html = replace_element(html, r'<time id="downloads-updated" datetime="[^"]*">[^<]*</time>',
-                           f'<time id="downloads-updated" datetime="{now.isoformat(timespec="minutes")}">{display}</time>')
     path.write_text(html)
 
 
