@@ -53,11 +53,15 @@ def replace_element(html, pattern, replacement):
 def main():
     path = Path(__file__).resolve().parents[1] / "ai-skills/index.html"
     html = path.read_text()
+    counts = {}
     for element, repo in (("pmo", "pmo-skills"), ("coach", "personal-career-coach")):
         count = download_count(repo)
+        counts[element] = count
+        print(f"{repo}: {count}")
+    counts["total"] = sum(counts.values())
+    for element, count in counts.items():
         tag = f'span id="{element}-downloads"'
         html = replace_element(html, f'<{tag}>[^<]*</span>', f'<{tag}>{count:,}</span>')
-        print(f"{repo}: {count}")
     now = datetime.now(ZoneInfo("America/Denver"))
     display = now.strftime("%b %d, %Y at %I:%M %p %Z").replace(" 0", " ")
     html = replace_element(html, r'<time id="downloads-updated" datetime="[^"]*">[^<]*</time>',
