@@ -4,7 +4,6 @@ import json
 import os
 import re
 from collections import Counter
-from html import escape
 from pathlib import Path
 from urllib.error import HTTPError
 from urllib.request import Request, urlopen
@@ -82,7 +81,7 @@ def downloads_by_file(repository):
     return totals
 
 
-def pmo_ranking(files, listing_uses):
+def log_pmo_ranking(files, listing_uses):
     downloads = Counter()
     bundles = 0
     for filename, count in files.items():
@@ -96,25 +95,11 @@ def pmo_ranking(files, listing_uses):
             for slug, value in listing_uses.items()}
     skills = sorted(downloads.keys() | uses.keys(),
                     key=lambda skill: (-(downloads[skill] + (uses.get(skill) or 0)), skill))
-    rows = []
     for skill in skills:
-        name = "Choose today’s focus" if skill == "choose-todays-focus" else skill.replace("-", " ").capitalize()
         use_count = uses.get(skill)
-        use_cell = f"{use_count:,}" if use_count is not None else '<span aria-label="Unavailable">—</span>'
-        rows.append(f'<tr><th scope="row">{escape(name)}</th><td>{downloads[skill]:,}</td><td>{use_cell}</td></tr>')
-
-    def table(items):
-        return ('<table aria-label="Individual PMO skill popularity"><thead><tr><th scope="col">Skill</th>'
-                '<th scope="col">Downloads</th><th scope="col">Agensi uses</th></tr></thead>\n'
-                '<tbody>\n' + "\n".join(items) + '\n</tbody></table>')
-
-    ranking = table(rows[:5])
-    if len(rows) > 5:
-        ranking += (f'\n<details><summary>View {len(rows) - 5} more skills</summary>\n'
-                    + table(rows[5:]) + '\n</details>')
-    bundle_label = "download" if bundles == 1 else "downloads"
-    return (f'<p>Ranked by GitHub downloads plus Agensi uses. The PMO total also includes '
-            f'{bundles:,} full-bundle {bundle_label}.</p>\n' + ranking)
+        use_label = "unavailable" if use_count is None else f"{use_count:,}"
+        print(f"{skill}: {downloads[skill]:,} downloads, {use_label} Agensi uses")
+    print(f"Full PMO bundle: {bundles:,} downloads")
 
 
 def replace_element(html, pattern, replacement):
@@ -135,10 +120,7 @@ def main():
         label = "downloads"
         listing_uses = {slug: agensi_uses(slug) for slug in AGENSI_LISTINGS[element]}
         if element == "pmo":
-            start = "<!-- pmo-ranking:start -->"
-            end = "<!-- pmo-ranking:end -->"
-            html = replace_element(html, start + r"[\s\S]*?" + end,
-                                   start + "\n" + pmo_ranking(files, listing_uses) + "\n" + end)
+            log_pmo_ranking(files, listing_uses)
         live = [n for n in listing_uses.values() if n is not None]
         if live:
             uses = sum(live)
