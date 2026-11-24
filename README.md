@@ -140,19 +140,12 @@ Ondatrace is a private working prototype under active development, with design-p
 
 ## Maintaining the site
 
-### Changing a template price
+### AI skill downloads
 
-Prices and checkout links are edited by hand. When a price changes, update every place it appears:
-
-1. **Stripe (live):** add the new price to the product and set it as the default. Create a Payment
-   Link for it with Managed Payments off, customer names collected, terms acceptance required and
-   the custom confirmation message. Deactivate the old link, then archive the old price.
-2. **`templates/index.html`:** the price and the Buy button's `buy.stripe.com` link.
-3. **`index.html`:** the price note on the templates card.
-4. **pmo-agents repo:** the price table in `templates/README.md` and, if the license changes,
-   `templates/policies/license.md`.
-5. Open the new link and the live templates page to check the amount, then confirm the old link
-   says it's no longer active.
+The AI Skills page shows the total downloads of skill ZIP and Markdown assets across published
+GitHub releases. The nightly workflow updates both totals together and requests a Pages rebuild.
+If GitHub cannot supply either total, the last complete snapshot stays visible.
+The former templates URL redirects to the skills page.
 
 ### Store policies
 
