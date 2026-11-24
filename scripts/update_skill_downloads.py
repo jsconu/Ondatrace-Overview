@@ -127,7 +127,7 @@ def main():
             uses = sum(live)
             count += uses
             label = f"combined · {downloads:,} GitHub downloads + {uses:,} Agensi uses"
-        snapshot[element] = {"count": count, "label": label}
+        snapshot[element] = {"count": count, "label": label, "agensiUses": sum(live) if live else None}
         total += count
         tag = f'span id="{element}-downloads"'
         row = f'<{tag}>{count:,}</span></strong> <small>{label}</small>'
