@@ -1,0 +1,3 @@
+# Jekyll skips dot folders by default; the MCP Registry reads /.well-known/mcp-registry-auth.
+include:
+  - .well-known

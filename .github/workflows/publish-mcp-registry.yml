@@ -1,0 +1,64 @@
+name: Publish to the MCP Registry
+# Publishes mcp/server.json to registry.modelcontextprotocol.io under com.ondatrace/*.
+# Ownership of ondatrace.com is proven with the registry's HTTP method: each run makes a
+# fresh Ed25519 key, puts the public half at https://ondatrace.com/.well-known/mcp-registry-auth,
+# waits for the site to serve it, then signs in with the private half. No key is stored anywhere.
+on:
+  workflow_dispatch:
+  push:
+    branches: [master]
+    paths:
+      - 'mcp/server.json'
+      - '.github/workflows/publish-mcp-registry.yml'
+permissions:
+  contents: write
+  pages: write
+concurrency:
+  group: mcp-registry
+  cancel-in-progress: false
+jobs:
+  publish:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Install mcp-publisher
+        run: |
+          set -eu
+          curl -fsSL "https://github.com/modelcontextprotocol/registry/releases/latest/download/mcp-publisher_linux_amd64.tar.gz" | tar xz mcp-publisher
+          ./mcp-publisher --help >/dev/null
+      - name: Validate server.json
+        working-directory: mcp
+        run: ../mcp-publisher validate
+      - name: Publish a fresh public key on ondatrace.com
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          set -eu
+          umask 077
+          openssl genpkey -algorithm Ed25519 -out "$RUNNER_TEMP/key.pem"
+          PUBLIC_KEY="$(openssl pkey -in "$RUNNER_TEMP/key.pem" -pubout -outform DER | tail -c 32 | base64)"
+          mkdir -p .well-known
+          echo "v=MCPv1; k=ed25519; p=${PUBLIC_KEY}" > .well-known/mcp-registry-auth
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add .well-known/mcp-registry-auth
+          git commit -m 'Rotate the MCP Registry public key'
+          for i in 1 2 3; do git pull --rebase -q origin master && git push -q origin HEAD:master && break; sleep 5; done
+          gh api --method POST "repos/$GITHUB_REPOSITORY/pages/builds" >/dev/null
+          for i in $(seq 1 60); do
+            if curl -fsSL --max-time 15 "https://ondatrace.com/.well-known/mcp-registry-auth?run=$GITHUB_RUN_ID-$i" | cmp -s - .well-known/mcp-registry-auth; then
+              echo "Public key is live on ondatrace.com"; exit 0
+            fi
+            sleep 10
+          done
+          echo "The public key did not appear on ondatrace.com within 10 minutes" >&2; exit 1
+      - name: Sign in and publish
+        working-directory: mcp
+        run: |
+          set -eu
+          PRIVATE_KEY="$(openssl pkey -in "$RUNNER_TEMP/key.pem" -noout -text | grep -A3 'priv:' | tail -n +2 | tr -d ' :\n')"
+          ../mcp-publisher login http --domain ondatrace.com --private-key "$PRIVATE_KEY"
+          ../mcp-publisher publish
+          rm -f "$RUNNER_TEMP/key.pem"
+      - name: Confirm the listing
+        run: curl -fsSL "https://registry.modelcontextprotocol.io/v0.1/servers?search=com.ondatrace/ondatrace" | head -c 1500
