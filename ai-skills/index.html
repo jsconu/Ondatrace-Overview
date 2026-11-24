@@ -323,15 +323,45 @@
       const interval = 15 * 60 * 1000;
       const format = new Intl.NumberFormat("en-US");
       let lastCheck = 0;
-      let timer;
+      let hasLiveCounts = false;
+
+      async function githubDownloads(repository) {
+        let total = 0;
+        for (let page = 1; ; page++) {
+          const url = new URL("https://api.github.com/repos/jsconu/" + repository + "/releases");
+          url.searchParams.set("per_page", "100");
+          url.searchParams.set("page", page);
+          const response = await fetch(url, { cache: "no-cache" });
+          if (!response.ok) throw new Error("GitHub counts unavailable");
+          const releases = await response.json();
+          for (const release of releases) {
+            if (release.draft) continue;
+            for (const asset of release.assets) {
+              if (asset.state === "uploaded" && /\.(zip|md)$/.test(asset.name)) {
+                total += asset.download_count;
+              }
+            }
+          }
+          if (releases.length < 100) return total;
+        }
+      }
+
+      function liveCount(downloads, snapshot) {
+        const uses = snapshot.agensiUses;
+        if (uses === null) return { count: downloads, label: "downloads" };
+        if (!Number.isSafeInteger(uses) || uses < 0) throw new Error("Invalid Agensi count");
+        return {
+          count: downloads + uses,
+          label: "combined · " + format.format(downloads) + " GitHub downloads + " +
+            format.format(uses) + " Agensi uses"
+        };
+      }
       let pending = false;
 
       async function refresh() {
         if (document.hidden || pending || Date.now() - lastCheck < interval) return;
         pending = true;
         lastCheck = Date.now();
-        clearTimeout(timer);
-        timer = setTimeout(refresh, interval);
         try {
           const response = await fetch("./counts.json", { cache: "no-cache" });
           if (!response.ok) return;
@@ -340,6 +370,19 @@
           if (!keys.every(key => Number.isSafeInteger(counts[key]?.count) &&
               counts[key].count >= 0 && typeof counts[key].label === "string")) return;
           if (counts.total.count !== counts.pmo.count + counts.coach.count) return;
+          try {
+            const [pmo, coach] = await Promise.all([
+              githubDownloads("pmo-skills"), githubDownloads("personal-career-coach")
+            ]);
+            const livePmo = liveCount(pmo, counts.pmo);
+            const liveCoach = liveCount(coach, counts.coach);
+            counts.pmo = livePmo;
+            counts.coach = liveCoach;
+            counts.total.count = livePmo.count + liveCoach.count;
+            hasLiveCounts = true;
+          } catch {
+            if (hasLiveCounts) return;
+          }
           for (const key of keys) {
             const number = document.getElementById(key + "-downloads");
             number.textContent = format.format(counts[key].count);
@@ -353,6 +396,7 @@
       }
 
       refresh();
+      setInterval(refresh, interval);
       document.addEventListener("visibilitychange", refresh);
     })();
   </script>
