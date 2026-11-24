@@ -3,6 +3,8 @@
 import json
 import os
 import re
+from collections import Counter
+from html import escape
 from pathlib import Path
 from urllib.error import HTTPError
 from urllib.request import Request, urlopen
@@ -66,24 +68,57 @@ def pages(url):
         page += 1
 
 
-def download_count(repository):
+def downloads_by_file(repository):
     base = f"https://api.github.com/repos/jsconu/{repository}/releases"
-    total = 0
-    matched = False
+    totals = Counter()
     for release in pages(base):
         if release["draft"]:
             continue
         for asset in pages(f"{base}/{release['id']}/assets"):
             if asset["state"] == "uploaded" and asset["name"].endswith((".zip", ".md")):
-                total += asset["download_count"]
-                matched = True
-    if not matched:
+                totals[asset["name"]] += asset["download_count"]
+    if not totals:
         raise ValueError(f"No published skill assets found in {repository}")
-    return total
+    return totals
+
+
+def pmo_ranking(files, listing_uses):
+    downloads = Counter()
+    bundles = 0
+    for filename, count in files.items():
+        skill = Path(filename).stem
+        if skill == "pmo-skills-all":
+            bundles += count
+        else:
+            downloads[skill] += count
+
+    uses = {("choose-todays-focus" if slug == "choose-today-s-focus" else slug): value
+            for slug, value in listing_uses.items()}
+    skills = sorted(downloads.keys() | uses.keys(),
+                    key=lambda skill: (-(downloads[skill] + (uses.get(skill) or 0)), skill))
+    rows = []
+    for skill in skills:
+        name = "Choose today’s focus" if skill == "choose-todays-focus" else skill.replace("-", " ").capitalize()
+        use_count = uses.get(skill)
+        use_cell = f"{use_count:,}" if use_count is not None else '<span aria-label="Unavailable">—</span>'
+        rows.append(f'<tr><th scope="row">{escape(name)}</th><td>{downloads[skill]:,}</td><td>{use_cell}</td></tr>')
+
+    def table(items):
+        return ('<table aria-label="Individual PMO skill popularity"><thead><tr><th scope="col">Skill</th>'
+                '<th scope="col">Downloads</th><th scope="col">Agensi uses</th></tr></thead>\n'
+                '<tbody>\n' + "\n".join(items) + '\n</tbody></table>')
+
+    ranking = table(rows[:5])
+    if len(rows) > 5:
+        ranking += (f'\n<details><summary>View {len(rows) - 5} more skills</summary>\n'
+                    + table(rows[5:]) + '\n</details>')
+    bundle_label = "download" if bundles == 1 else "downloads"
+    return (f'<p>Ranked by GitHub downloads plus Agensi uses. The PMO total also includes '
+            f'{bundles:,} full-bundle {bundle_label}.</p>\n' + ranking)
 
 
 def replace_element(html, pattern, replacement):
-    html, matches = re.subn(pattern, replacement, html)
+    html, matches = re.subn(pattern, lambda _: replacement, html)
     if matches != 1:
         raise ValueError(f"Expected one dashboard element matching {pattern}")
     return html
@@ -94,10 +129,17 @@ def main():
     html = path.read_text()
     total = 0
     for element, repo in (("pmo", "pmo-skills"), ("coach", "personal-career-coach")):
-        downloads = download_count(repo)
+        files = downloads_by_file(repo)
+        downloads = sum(files.values())
         count = downloads
         label = "downloads"
-        live = [n for n in map(agensi_uses, AGENSI_LISTINGS.get(element, [])) if n is not None]
+        listing_uses = {slug: agensi_uses(slug) for slug in AGENSI_LISTINGS[element]}
+        if element == "pmo":
+            start = "<!-- pmo-ranking:start -->"
+            end = "<!-- pmo-ranking:end -->"
+            html = replace_element(html, start + r"[\s\S]*?" + end,
+                                   start + "\n" + pmo_ranking(files, listing_uses) + "\n" + end)
+        live = [n for n in listing_uses.values() if n is not None]
         if live:
             uses = sum(live)
             count += uses
