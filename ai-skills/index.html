@@ -11,6 +11,28 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="../style.css?v=30">
+  <style>
+    .skill-cards { row-gap: 16px; }
+    .skill-cards .hub-product h2 { margin: 0; }
+    .skill-cards .hero-ctas {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 10px;
+      margin-top: 0;
+      align-self: stretch;
+    }
+    @media (min-width: 761px) {
+      .skill-cards .hub-product {
+        display: grid;
+        grid-row: span 5;
+        grid-template-rows: subgrid;
+        row-gap: inherit;
+      }
+    }
+    @media (max-width: 420px) {
+      .skill-cards .hero-ctas { grid-template-columns: 1fr; }
+    }
+  </style>
 </head>
 <body>
   <a href="#top" class="skip-link">Skip to main content</a>
@@ -39,15 +61,15 @@
     </section>
     <section class="section" aria-label="Skill downloads">
       <div class="wrap">
-        <div class="hub-products">
+        <div class="hub-products skill-cards">
           <article class="hub-product" id="pmo-skills">
             <h2>PMO Skills</h2>
             <p>Review a status report, reconcile competing dates, trace a decision, or prepare a portfolio review. Each skill asks for evidence and flags what a project manager still needs to confirm.</p>
             <p><strong>Try it:</strong> Give your assistant a meeting transcript and ask which decisions were approved, which were proposed, and who owns the follow-up.</p>
             <p><strong><span id="pmo-downloads">98</span></strong> tracked downloads</p>
             <div class="hero-ctas">
-              <a class="btn btn-primary" href="https://github.com/jsconu/pmo-skills/releases/latest/download/pmo-skills-all.zip">Download PMO bundle</a>
-              <a class="btn btn-ghost" href="https://github.com/jsconu/pmo-skills">PMO Skills on GitHub</a>
+              <a class="btn btn-primary" href="https://github.com/jsconu/pmo-skills/releases/latest/download/pmo-skills-all.zip" aria-label="Download PMO Skills ZIP">Download ZIP</a>
+              <a class="btn btn-ghost" href="https://github.com/jsconu/pmo-skills" aria-label="View PMO Skills on GitHub">View on GitHub</a>
             </div>
           </article>
           <article class="hub-product" id="career-coach">
@@ -56,12 +78,12 @@
             <p><strong>Try it:</strong> Ask the coach to set up a private Friday dashboard. Automatic updates need an assistant that can schedule a review, read your chosen sources, and edit the dashboard.</p>
             <p><strong><span id="coach-downloads">0</span></strong> tracked downloads</p>
             <div class="hero-ctas">
-              <a class="btn btn-primary" href="https://github.com/jsconu/personal-career-coach/releases/latest/download/personal-career-coach.zip">Download Career Coach</a>
-              <a class="btn btn-ghost" href="https://github.com/jsconu/personal-career-coach">Career Coach on GitHub</a>
+              <a class="btn btn-primary" href="https://github.com/jsconu/personal-career-coach/releases/latest/download/personal-career-coach.zip" aria-label="Download Personal Career Coach ZIP">Download ZIP</a>
+              <a class="btn btn-ghost" href="https://github.com/jsconu/personal-career-coach" aria-label="View Personal Career Coach on GitHub">View on GitHub</a>
             </div>
           </article>
         </div>
-        <p class="section-note">Updated <time id="downloads-updated" datetime="2026-11-23T20:25-07:00">Nov 23, 2026 at 8:25 PM MST</time>. Totals refresh nightly, Mountain Time. Counts include GitHub release downloads of bundles and individual files. They exclude copied instructions, repository clones, and Career Coach downloads before release tracking began.</p>
+        <p class="section-note">Updated <time id="downloads-updated" datetime="2026-11-23T20:25-07:00">Nov 23, 2026 at 8:25 PM MST</time>. Totals refresh nightly, Mountain Time. Downloads from this page and from GitHub count toward the same totals. Each release file, including an individual skill or a bundle, counts separately. They exclude copied instructions, repository clones, and Career Coach downloads before release tracking began.</p>
       </div>
     </section>
     <section class="section section-alt">
