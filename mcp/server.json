@@ -2,14 +2,16 @@
   "$schema": "https://static.modelcontextprotocol.io/schemas/2025-12-11/server.schema.json",
   "name": "com.ondatrace/ondatrace",
   "title": "Ondatrace",
-  "description": "See what needs attention across your projects, with the evidence. Project memory for PMOs.",
+  "description": "See what needs attention across your projects. Project memory for PMOs.",
   "version": "1.0.0",
   "websiteUrl": "https://ondatrace.com/ai-skills/#ondatrace",
   "icons": [
     {
       "src": "https://ondatrace.com/icon-192.png",
       "mimeType": "image/png",
-      "sizes": ["192x192"]
+      "sizes": [
+        "192x192"
+      ]
     }
   ],
   "remotes": [
