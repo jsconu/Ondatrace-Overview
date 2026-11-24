@@ -126,14 +126,14 @@ def main():
         if live:
             uses = sum(live)
             count += uses
-            label = f"combined · {downloads:,} GitHub downloads + {uses:,} Agensi uses"
+            label = f"combined · {downloads:,} GitHub + {uses:,} Agensi downloads"
         snapshot[element] = {"count": count, "label": label, "agensiUses": sum(live) if live else None}
         total += count
         tag = f'span id="{element}-downloads"'
         row = f'<{tag}>{count:,}</span></strong> <small>{label}</small>'
         html = replace_element(html, f'<{tag}>[^<]*</span></strong> <small>[^<]*</small>', row)
         print(f"{repo}: {count:,} {label}")
-    title = "Total downloads and uses" if AGENSI_LISTINGS else "Total skill downloads"
+    title = "Total downloads"
     html = replace_element(html, r'<span id="total-downloads">[^<]*</span></strong> <small>[^<]*</small>',
                            f'<span id="total-downloads">{total:,}</span></strong> <small>{title}</small>')
     snapshot["total"] = {"count": total, "label": title}
