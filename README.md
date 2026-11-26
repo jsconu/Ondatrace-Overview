@@ -2,6 +2,8 @@
 
 **A public product and architecture case study for a private working prototype.**
 
+> **Get practical AI tips for project managers.** Skills, agents and workflows I actually use to run projects with AI, sent to your inbox. [Join the free email list](https://ondatrace.kit.com/pmo-skills)
+
 [Try the fictional demo](https://ondatrace.com/try/) · [Design decisions](https://ondatrace.com/agent/#decisions) · [How I build with AI](AI_COLLABORATION.md)
 
 **Status:** Private working prototype under active development, with design-partner validation as the next step. The demo illustrates intended workflows using fictional initiatives; it does not establish customer adoption, production reliability, or measured time savings.
